@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+     <h1 class="govuk-heading-xl">
+      Government funding for your planned apprenticeship 
+    </h1>
+
+    <p class="govuk-body-l">
+      Nulla in nulla irure elit do ut cillum ullamco aute irure ex fugiat sunt voluptate et commodo duis qui:
+    </p>
+
+    <div class="govuk-inset-text">
+      <p>
+        <b>Your organisation ltd</b>
+      </p>
+
+      <p>
+        Any apprenticeship, level 2-5
+      </p>
+
+      <p>
+        Valid for starts until {{data['planned-start-date']}}
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Fugiat cupidatat occaecat
+      </h2>
+      <p>
+        Est amet labore voluptate minim nisi sunt in labore sed enim nisi reprehenderit culpa dolor ad qui anim nisi ullamco.
+      </p>
+
+      
+
+      {% if data['loggedIn'] == 'true' %}
+      <p>
+        {{govukButton({
+          text: "Save and continue"
+        })}}
+      </p>
+
+      {% else %}
+      
+      <hr class="govuk-section-break govuk-section-break--xl">
+      {{ govukRadios({
+        classes: "govuk-radios--",
+        idPrefix: "create-account",
+        name: "create-account",
+        fieldset:
+        {
+          legend:
+          {
+            text: "Do you want to register now?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint:
+        {
+          text: "You will need to register in order to guarantee government funding for this apprenticeship."
+        },
+        items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+        ]
+      }) }}
+
+      <p>
+        {{ govukButton ({
+          text: "Save and continue"
+        })}}
+      </p>
+      {% endif %}
+    </form>
+  </div>
+
+  {% endblock %}

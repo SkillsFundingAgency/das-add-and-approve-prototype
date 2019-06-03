@@ -1,0 +1,199 @@
+
+{% extends "layout-prototype-info.html" %}
+
+{% set currentPage = 'approve' %}
+
+{% block pageTitle %}
+Approve
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Approve
+    </h1>
+
+    {% include './sprint-10/_summary.html' %}
+
+    <hr class="govuk-section-break govuk-section-break--xl">
+
+    <h2 class="govuk-heading-l">
+      Previous sprints
+    </h2>
+
+    {% set sprint9Html %}
+    {% include './sprint-09/_summary.html' %}
+    {% endset %}
+
+    {% set sprint8Html %}
+    {% include './sprint-08/_summary.html' %}
+    {% endset %}
+
+    {% set sprint7Html %}
+    {% include './sprint-07/_summary.html' %}
+    {% endset %}
+
+    {% set sprint6Html %}
+    {% include './sprint-06/_summary.html' %}
+    {% endset %}
+
+    {% set sprint5Html %}
+    {% include './sprint-05/_summary.html' %}
+    {% endset %}
+
+    {% set sprint4Html %}
+    {% include './sprint-04/_summary.html' %}
+    {% endset %}
+
+    {% set sprint3Html %}
+    {% include './sprint-03/_summary.html' %}
+    {% endset %}
+
+    {% set sprint2Html %}
+    {% include './sprint-02/_summary.html' %}
+    {% endset %}
+
+    {% set sprint1Html %}
+    {% include './sprint-01/_summary.html' %}
+    {% endset %}
+
+    {% from "accordion/macro.njk" import govukAccordion %}
+    {{ govukAccordion({
+      id: "accordion-default",
+      items:
+      [
+      {
+        heading:
+        {
+          text: "Sprint 9"
+        },
+        content:
+        {
+          html: sprint9Html
+        },
+        summary:
+        {
+          html: '10th&mdash;23rd May 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 8"
+        },
+        content:
+        {
+          html: sprint8Html
+        },
+        summary:
+        {
+          html: '26th April&mdash;9th May 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 7"
+        },
+        content:
+        {
+          html: sprint7Html
+        },
+        summary:
+        {
+          html: '12th&mdash;25th April 2019'
+        }
+      },{
+        heading:
+        {
+          text: "Sprint 6"
+        },
+        content:
+        {
+          html: sprint6Html
+        },
+        summary:
+        {
+          html: '29th March&mdash;11th April 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 5"
+        },
+        content:
+        {
+          html: sprint5Html
+        },
+        summary:
+        {
+          html: '15th&mdash;28th March 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 4"
+        },
+        content:
+        {
+          html: sprint4Html
+        },
+        summary:
+        {
+          html: '1st&mdash;14th March 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 3"
+        },
+        content:
+        {
+          html: sprint3Html
+        },
+        summary:
+        {
+          html: '15th&mdash;28th February 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 2"
+        },
+        content:
+        {
+          html: sprint2Html
+        },
+        summary:
+        {
+          html: '31st January&mdash;14th February 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 1"
+        },
+        content:
+        {
+          html: sprint1Html
+        },
+        summary:
+        {
+          html: '19th&mdash;30th January 2019'
+        }
+      }
+      ]
+    }) }}
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    
+  </div>
+
+  {% endblock %}

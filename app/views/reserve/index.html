@@ -1,0 +1,236 @@
+{% extends "layout-prototype-info.html" %}
+
+{% set currentPage = 'reserve' %}
+
+{% block pageTitle %}
+Reserve
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Reserve
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% set sprint11Html %}
+    {% include './sprint-11/_summary.html' %}
+    {% endset %}
+
+    {% set sprint10Html %}
+    {% include './sprint-10/_summary.html' %}
+    {% endset %}
+
+    {% set sprint09Html %}
+    {% include './sprint-09/_summary.html' %}
+    {% endset %}
+
+    {% set sprint08Html %}
+    {% include './sprint-08/_summary.html' %}
+    {% endset %}
+
+    {% set sprint07Html %}
+    {% include './sprint-07/_summary.html' %}
+    {% endset %}
+
+    {% set sprint06Html %}
+    {% include './sprint-06/_summary.html' %}
+    {% endset %}
+
+    {% set sprint05Html %}
+    {% include './sprint-05/_summary.html' %}
+    {% endset %}
+
+    {% set sprint04Html %}
+    {% include './sprint-04/_summary.html' %}
+    {% endset %}
+
+    {% set sprint03Html %}
+    {% include './sprint-03/_summary.html' %}
+    {% endset %}
+
+    {% set sprint02Html %}
+    {% include './sprint-02/_summary.html' %}
+    {% endset %}
+
+    {% set sprint01Html %}
+    {% include './sprint-01/_summary.html' %}
+    {% endset %}
+
+    {{sprint11Html | safe}}
+
+    <hr class="govuk-section-break govuk-section-break--xl">
+
+    <h2 class="govuk-heading-l">
+      Previous sprints
+    </h2>
+    {% from "accordion/macro.njk" import govukAccordion %}
+    
+    {{ govukAccordion({
+      id: "accordion-default",
+      items:
+      [
+      {
+        heading:
+        {
+          text: "Sprint 10"
+        },
+        content:
+        {
+          html: sprint10Html
+        },
+        summary:
+        {
+          html: '23rd April 2019&mdash;3rd May 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 9"
+        },
+        content:
+        {
+          html: sprint09Html
+        },
+        summary:
+        {
+          html: '8th April 2019&mdash;19th April 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 8"
+        },
+        content:
+        {
+          html: sprint08Html
+        },
+        summary:
+        {
+          html: '25th March 2019&mdash;5th April 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 7"
+        },
+        content:
+        {
+          html: sprint07Html
+        },
+        summary:
+        {
+          html: '11th March&mdash;22nd March 2019'
+        }
+      },
+      {
+        heading:
+        {
+          text: "Sprint 6"
+        },
+        content:
+        {
+          html: sprint06Html
+        },
+        summary:
+        {
+          html: '25th February&mdash;8th March 2019'
+        }
+      },{
+      heading:
+      {
+        text: "Sprint 5"
+      },
+      content:
+      {
+        html: sprint05Html
+      },
+      summary:
+      {
+        html: '11th February&mdash;22nd February 2019'
+      }
+    },
+    {
+      heading:
+      {
+        text: "Sprint 4"
+      },
+      content:
+      {
+        html: sprint04Html
+      },
+      summary:
+      {
+        html: '28th January&mdash;8th February 2019'
+      }
+    },
+    {
+      heading:
+      {
+        text: "Sprint 3"
+      },
+      content:
+      {
+        html: sprint03Html
+      },
+      summary:
+      {
+        html: '14th January&mdash;25th February 2019'
+      }
+    },
+    {
+      heading:
+      {
+        text: "Sprint 2"
+      },
+      content:
+      {
+        html: sprint02Html
+      },
+      summary:
+      {
+        html: '2nd&mdash;11th January 2019'
+      }
+    },
+    {
+      heading:
+      {
+        text: "Sprint 1"
+      },
+      content:
+      {
+        html: sprint01Html
+      },
+      summary:
+      {
+        html: 'December 2018'
+      }
+    }
+    ]
+  }) }}
+</div>
+
+<div class="govuk-grid-column-one-third">
+  <h2 class="govuk-heading-l">
+    Links for MVP builds
+  </h2>
+  
+  <div class="govuk-inset-text">
+    <h2 class="govuk-heading-s">
+      <a href="./build-01/">MVP 1</a>
+    </h2>
+
+    <p class="govuk-body-s">
+      This link will take you to the prototype showing what we're building against for our first release in April 2019-ish.
+    </p>
+  </div>
+</div>
+
+{% endblock %}
