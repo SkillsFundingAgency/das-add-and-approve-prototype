@@ -40,7 +40,7 @@ router.post('/confirmation', (req, res) => {
 	} else if (req.session.data['next-step'] == 'account-home') {
 	  res.redirect('account-home')
 	} else {
-    res.redirect('#') 
+    res.redirect('login') 
   }
 	})
   

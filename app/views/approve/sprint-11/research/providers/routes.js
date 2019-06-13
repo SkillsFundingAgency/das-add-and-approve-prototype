@@ -5,6 +5,11 @@ var _ = require('underscore');
 var moment = require('moment');
 const cryptoRandomString = require('crypto-random-string');
 
+// provider
+router.use('/add-multiple-apprentices-in-one-go', (req, res, next) => {
+   require(`./add-multiple-apprentices-in-one-go/routes`)(req, res, next);
+ })
+
 router.get('/', (req, res) => {
 	res.redirect(`/${req.feature}/email`)
 })
