@@ -23,15 +23,25 @@ router.get('*/manage-your-apprentices', function (req, res) {
   )
  })
 
+// Confirm employer (add)
+router.post('/add__confirm-employer', (req, res) => {
+	if (req.session.data['confirm-employer'] == 'yes' ) {
+		res.redirect(`start-adding`)
+	} else {
+		req.session.data['employer'] = ''
+		res.redirect(`add__choose-employer`)
+	}
+})
+  
 //end of journey screens
 router.post('/confirmation', (req, res) => {
 	if (req.session.data['next-step'] == 'upload') {
 	  res.redirect('upload')
-	} //else if (req.session.data['next-step'] == 'account-home') {
-	  //res.redirect('account-home')
-	//} else {
-    //  res.redirect('#') 
-   //}
+	} else if (req.session.data['next-step'] == 'account-home') {
+	  res.redirect('account-home')
+	} else {
+    res.redirect('#') 
+  }
 	})
   
   module.exports = router
