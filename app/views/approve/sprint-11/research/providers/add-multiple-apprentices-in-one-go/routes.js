@@ -36,7 +36,7 @@ router.post('/add__confirm-employer', (req, res) => {
 //end of journey screens
 router.post('/confirmation', (req, res) => {
 	if (req.session.data['next-step'] == 'upload') {
-	  res.redirect('upload')
+	  res.redirect('add__choose-employer')
 	} else if (req.session.data['next-step'] == 'account-home') {
 	  res.redirect('account-home')
 	} else {
