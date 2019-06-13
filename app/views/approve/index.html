@@ -4,23 +4,27 @@
 {% set currentPage = 'approve' %}
 
 {% block pageTitle %}
-Approve
+Add and approve
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Approve
+      Add and approve
     </h1>
 
-    {% include './sprint-10/_summary.html' %}
+    {% include './sprint-11/_summary.html' %}
 
     <hr class="govuk-section-break govuk-section-break--xl">
 
     <h2 class="govuk-heading-l">
       Previous sprints
     </h2>
+
+    {% set sprint10Html %}
+    {% include './sprint-10/_summary.html' %}
+    {% endset %}
 
     {% set sprint9Html %}
     {% include './sprint-09/_summary.html' %}
@@ -63,6 +67,20 @@ Approve
       id: "accordion-default",
       items:
       [
+      {
+        heading:
+        {
+          text: "Sprint 10"
+        },
+        content:
+        {
+          html: sprint10Html
+        },
+        summary:
+        {
+          html: '24th May&mdash;6th June 2019'
+        }
+      },
       {
         heading:
         {
