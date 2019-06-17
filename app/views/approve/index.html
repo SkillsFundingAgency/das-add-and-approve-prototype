@@ -9,10 +9,15 @@ Add and approve
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
       Add and approve
     </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
     {% include './sprint-11/_summary.html' %}
 
@@ -211,7 +216,32 @@ Add and approve
   </div>
 
   <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-l">
+      Build versions
+    </h2>
     
+    <div class="govuk-inset-text">
+      <h2 class="govuk-heading-s">
+        <a href="sprint-06/build/employers/stop-apprentice/apprentice-details">Stop apprenticeship</a>
+      </h2>
+  
+      <p class="govuk-body-s">
+        Being built by the CI team.
+      </p>
+
+      <hr class="govuk-section-break--l">
+
+      <h2 class="govuk-heading-s">
+        <a href="sprint-05/build/employers/employer-approve/email">Approve an apprentice - desktop</a>
+      </h2>
+      <h2 class="govuk-heading-s">
+        <a href="sprint-05/build/employers/employer-approve/email">Approve an apprentice - mobile</a>
+      </h2>
+  
+      <p class="govuk-body-s">
+        Being built by the Approvals team.
+      </p>
+    </div>
   </div>
 
   {% endblock %}
