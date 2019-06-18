@@ -19,15 +19,44 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form action="/form-handler" method="post" novalidate>
+          <h1 class="govuk-heading-xl">Start adding apprentices</h1>   
+          
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employer
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['employer']}}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Cohort reference
+              </dt>
+              <dd class="govuk-summary-list__value">
+                FGHJUK
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Message
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Could you do the necessary, please? Thanks in advance
+              </dd>
+            </div>                
+          </dl>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
+            <fieldset class="govuk-fieldset">                   
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
                   How would you like to add apprentices?
-                </h1>
+                </h2>
               </legend>
-
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="add-1" name="add-1" type="radio" value="1">
