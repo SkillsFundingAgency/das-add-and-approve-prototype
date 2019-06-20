@@ -29,10 +29,16 @@ Add apprentices by uploading a file
             </fieldset>
 
             <p class="govuk-body">
-                Use our <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/607025/ProviderBulkUploadSampleCSV_6April2017.csv" title="CSV template">csv template</a> to upload details for multiple apprentices at the same time. The file must contain mandatory information in a specific format. More guidance on this is available in our <a href="apprenticeship-service-bulk-upload-specification">bulk upload specification document</a>.              
+                Use our <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/607025/ProviderBulkUploadSampleCSV_6April2017.csv" title="CSV template">csv template</a> to upload details for multiple apprentices at the same time. 
+            </p>
+            <p class="govuk-body">
+                The file must contain mandatory information in a specific format. 
+            </p>
+            <p class="govuk-body"> 
+                More guidance on this is available in our <a href="apprenticeship-service-bulk-upload-specification">bulk upload specification document</a>.              
             </p>
 
-              {{ govukDetails({
+             <!-- {{ govukDetails({
                 summaryText: "Help with preparing and uploading a file",
                 html: "If the course is a Standard:<ul class='govuk-list govuk-list--bullet'>
                     <li>Insert programme type ‘25’</li>
@@ -44,7 +50,7 @@ Add apprentices by uploading a file
                       <li>Leave Standard code blank</li>
                     </ul><ul class='govuk-list govuk-list--bullet'><li>If you open this file using Excel to view or edit it then it will show the default date format of dd/mm/yyyy. You will need to reformat this before you save and close the file</li></ul>
                     <ul class='govuk-list govuk-list--bullet'><li>The start and end dates are month and year - not full dates and are not formatted as dates in Excel</li></ul>"
-              }) }}  
+              }) }}  -->
 
               {{ govukWarningText({
                 text: "Uploading a file will overwrite any existing apprentice records in this cohort.",
@@ -53,7 +59,10 @@ Add apprentices by uploading a file
 
             {{ govukFileUpload({
               id: "file-upload-1",
-              name: "file-upload-1"
+              name: "file-upload-1",
+              label: {
+                text: "Upload a file"
+              }
             }) }}
 
           </div>

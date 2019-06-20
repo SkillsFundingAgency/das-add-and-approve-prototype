@@ -26,7 +26,7 @@ router.get('*/manage-your-apprentices', function (req, res) {
 // Confirm employer (add)
 router.post('/add__confirm-employer', (req, res) => {
 	if (req.session.data['confirm-employer'] == 'yes' ) {
-		res.redirect(`start-adding`)
+		res.redirect(`start-adding-provider`)
 	} else {
 		req.session.data['employer'] = ''
 		res.redirect(`add__choose-employer`)

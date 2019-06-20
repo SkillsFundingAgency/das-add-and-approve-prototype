@@ -89,13 +89,23 @@
             }) }}
 
           </div>
-
-          {{ govukButton({
-            text: "Back to upload",
-            href: "upload-second-attempt"
+          {{ govukFileUpload({
+            id: "file-upload-1",
+            name: "file-upload-1",
+            label: {
+              text: "Upload a file"
+            }
           }) }}
 
-         
+
+          {{ govukButton({
+            text: "Upload",
+            href: "upload-in-progress-1"
+          }) }}
+
+         <p class="govuk-body">
+           <a href="upload">Cancel</a>
+         </p>
           
         </form>
       </div>
