@@ -1,0 +1,87 @@
+{% extends "layout-provider-account-more.html" %}
+
+{% block pageTitle %}
+  Start adding apprentices
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/form-handler" method="post" novalidate>
+          <h1 class="govuk-heading-xl">Start adding apprentices</h1>   
+          
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employer
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['employer']}}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Cohort reference
+              </dt>
+              <dd class="govuk-summary-list__value">
+                FGHJUK
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Message
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Could you do the necessary, please? Thanks in advance
+              </dd>
+            </div>                
+          </dl>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">                   
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  How would you like to add apprentices?
+                </h2>
+              </legend>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-1" name="add-1" type="radio" value="1">
+                  <label class="govuk-label govuk-radios__label" for="add-1">
+                    One at a time
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-2" name="add-2" type="radio" value="2">
+                  <label class="govuk-label govuk-radios__label" for="add-2">
+                    Upload from a file
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {{ govukButton({
+            text: "Save and continue",
+            href: "upload"
+          }) }}
+          
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
