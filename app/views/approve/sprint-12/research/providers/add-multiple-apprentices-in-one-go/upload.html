@@ -38,21 +38,7 @@ Add apprentices by uploading a file
                 More guidance on this is available in our <a href="apprenticeship-service-bulk-upload-specification">bulk upload specification document</a>.              
             </p>
 
-             <!-- {{ govukDetails({
-                summaryText: "Help with preparing and uploading a file",
-                html: "If the course is a Standard:<ul class='govuk-list govuk-list--bullet'>
-                    <li>Insert programme type ‘25’</li>
-                    <li>Leave Framework code and Framework pathway code blank</li>
-                    <li>Insert a Standard code as recorded in your ILR</li>
-                  </ul>If the course is a Framework:<ul class='govuk-list govuk-list--bullet'>
-                      <li>Insert a programme type code from the <a href='apprenticeship-service-bulk-upload-specification'>bulk upload specification document</a></li>
-                      <li>Insert a Framework code and Framework pathway code from the LARS database</li>
-                      <li>Leave Standard code blank</li>
-                    </ul><ul class='govuk-list govuk-list--bullet'><li>If you open this file using Excel to view or edit it then it will show the default date format of dd/mm/yyyy. You will need to reformat this before you save and close the file</li></ul>
-                    <ul class='govuk-list govuk-list--bullet'><li>The start and end dates are month and year - not full dates and are not formatted as dates in Excel</li></ul>"
-              }) }}  -->
-
-              {{ govukWarningText({
+            {{ govukWarningText({
                 text: "Uploading a file will overwrite any existing apprentice records in this cohort.",
                 iconFallbackText: "Warning"
               }) }}
