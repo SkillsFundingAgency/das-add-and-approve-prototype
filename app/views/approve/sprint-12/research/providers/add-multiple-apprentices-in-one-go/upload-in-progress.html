@@ -15,7 +15,7 @@ Add apprentices by uploading a file
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-9"  style="background-color: white; border: solid 5px #005ea5">
-          <h1 class="govuk-panel__title" style="color:black;">Upload in progress</h1>          
+          <h1 class="govuk-panel__title" style="color:black;">Upload in progress...</h1>          
         </div>
         <form action="/form-handler" method="post" novalidate>
           <div class="govuk-form-group  govuk-!-margin-bottom-9">
@@ -67,6 +67,6 @@ Add apprentices by uploading a file
 <script>
   var timer = setTimeout(function() {
       window.location='add--review-cohort'
-  }, 7000);
+  }, 5000);
 </script>
 {% endblock %}
