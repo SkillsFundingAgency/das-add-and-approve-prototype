@@ -17,7 +17,7 @@ router.post('/start-adding', (req, res) => {
 		res.redirect('upload')
 	  }
 	  else if (req.session.data['approve'] == 'approve') {
-		res.redirect('start-adding')
+		res.redirect('approval-confirmed')
 	  } else {
 	  res.redirect('#')
 	}
