@@ -23,6 +23,19 @@ router.post('/start-adding', (req, res) => {
 	}
 })
 
+router.post('/review-cohort', (req, res) => {
+	if (req.session.data['approve'] == 'add-1') {
+	  res.redirect('apprentice-details')
+	} else if (req.session.data['approve'] == 'upload') {
+		res.redirect('upload')
+	  }
+	  else if (req.session.data['approve'] == 'approve') {
+		res.redirect('approval-confirmed')
+	  } else {
+	  res.redirect('#')
+	}
+})
+
 // Confirm employer (add)
 router.post('/add__confirm-employer', (req, res) => {
 	if (req.session.data['confirm-employer'] == 'yes' ) {
