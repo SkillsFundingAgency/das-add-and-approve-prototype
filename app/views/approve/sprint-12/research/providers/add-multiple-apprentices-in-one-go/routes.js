@@ -9,19 +9,19 @@ router.get('/', (req, res) => {
 	res.redirect(`/${req.feature}/email`)
 })
 
-router.get('*/manage-your-apprentices', function (req, res) {
-	res.render('approve/sprint-10/research/providers/manage-your-apprentices', {
-   "query" : req.query,
-   }
-  )
- })
-
- router.get('*/manage-your-apprentices-filters', function (req, res) {
-	res.render('approve/sprint-10/research/providers/manage-your-apprentices-filters', {
-   "query" : req.query,
-   }
-  )
- })
+//review an apprentice
+router.post('/start-adding', (req, res) => {
+	if (req.session.data['approve'] == 'add-1') {
+	  res.redirect('apprentice-details')
+	} else if (req.session.data['approve'] == 'upload') {
+		res.redirect('upload')
+	  }
+	  else if (req.session.data['approve'] == 'approve') {
+		res.redirect('start-adding')
+	  } else {
+	  res.redirect('#')
+	}
+})
 
 // Confirm employer (add)
 router.post('/add__confirm-employer', (req, res) => {
