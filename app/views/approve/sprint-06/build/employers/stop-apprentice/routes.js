@@ -110,5 +110,14 @@ router.post('/stop-date', (req, res) => {
 	 res.redirect(`confirm-stop`)
 })
 
+//edit-stop-date
+router.post('/edit-stop-date', (req, res) => {
+	var month = req.session.data['stop-date-month']
+	var year =  req.session.data['stop-date-year']
+	req.session.data['formattedDate'] = moment().date(1).month(month - 1).year(year).format('MMMM YYYY')
+
+	res.redirect(`apprentice-details-stop-date-edited`)
+})
+
 
 module.exports = router
