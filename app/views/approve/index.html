@@ -19,7 +19,7 @@ Add and approve
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './sprint-12/_summary.html' %}
+    {% include './sprint-13/_summary.html' %}
 
     <hr class="govuk-section-break govuk-section-break--xl">
 
@@ -27,6 +27,10 @@ Add and approve
       Previous sprints
     </h2>
 
+    {% set sprint12Html %}
+    {% include './sprint-12/_summary.html' %}
+    {% endset %}
+    
     {% set sprint11Html %}
     {% include './sprint-11/_summary.html' %}
     {% endset %}
@@ -76,6 +80,20 @@ Add and approve
       id: "accordion-default",
       items:
       [
+      {
+        heading:
+        {
+          text: "Sprint 12"
+        },
+        content:
+        {
+          html: sprint11Html
+        },
+        summary:
+        {
+          html: '21st June&mdash;4th July 2019'
+        }
+      },
       {
         heading:
         {
