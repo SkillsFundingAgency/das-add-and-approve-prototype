@@ -28,11 +28,7 @@ GOV.UK Prototype Kit
       If you ask your training provider to add them, you need to check and agree the details before any payments are made.
     </p>
 
-    <p class="govuk-body-l">
-      Your provider will have to select or make a new funding reservation on your behalf if you choose this option.
-    </p>
-
-    {{ govukRadios({
+       {{ govukRadios({
         idPrefix: "confirm-provider",
         name: "confirm-provider",
         fieldset:
@@ -52,7 +48,10 @@ GOV.UK Prototype Kit
         },
         {
           value: "no",
-          text: "I would like my provider to add apprentices"
+          text: "I would like my provider to add apprentices",
+          hint: {
+            text: "Your provider will have to select or make a new funding reservation on your behalf if you choose this option"
+          }
         }
         ]
       }) }}
