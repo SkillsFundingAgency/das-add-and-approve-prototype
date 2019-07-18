@@ -110,11 +110,11 @@
       
       {{ govukTextarea({
         id: "msg-content",
-        name: "msg-content",
+        name: "msg-content",      
         type: "textarea",
         classes: "govuk-textarea",
         label: {
-          html: "Let ABC Training Limited know about any errors they need to fix or what you'd like them to do next (optional)"
+          html: "Let "+data['provider-name']+" know about changes you've made, or what you'd like them to do next (optional)"
         },
         rows: 5
       }) }}
