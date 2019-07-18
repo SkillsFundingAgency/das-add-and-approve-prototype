@@ -41,5 +41,6 @@ module.exports = {
 	"reservation-endRange": moment().add(2,'months').endOf('month').format('DD MMMM YYYY'),
 	"course-name": "Unknown",
 	"records": records,
-	"providerrecords": providerrecords
+	"providerrecords": providerrecords,
+	"name": "Sarah Philips"
 }

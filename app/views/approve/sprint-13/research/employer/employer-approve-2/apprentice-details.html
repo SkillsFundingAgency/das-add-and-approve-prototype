@@ -57,7 +57,7 @@ GOV.UK Prototype Kit
         Training provider
       </h3>
       <p class="govuk-!-margin-bottom-6">
-        APEX TRAINING LIMITED
+        {{data['provider-name']}}
       </p>
 
       {% call govukFieldset({
@@ -70,9 +70,9 @@ GOV.UK Prototype Kit
       }) %}
 
       {{ govukInput({
-        
         id: "first-name",
         name: "first-name",
+        value: data['name'],
         classes: "govuk-input--width"
       }) }}
 
