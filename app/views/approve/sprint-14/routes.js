@@ -13,6 +13,11 @@ router.get('/', function (req, res) {
 })
 
 // employer approvals
+router.use('/research/employer/employer-approve', (req, res, next) => {
+  require(`./research/employer/employer-approve/routes`)(req, res, next);
+})
+
+// employer approvals
 router.use('/research/employer/employer-approve-2', (req, res, next) => {
   require(`./research/employer/employer-approve-2/routes`)(req, res, next);
 })
