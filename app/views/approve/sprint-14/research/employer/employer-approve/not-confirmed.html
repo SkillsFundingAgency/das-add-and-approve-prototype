@@ -1,4 +1,4 @@
-{% extends "layout-account.html" %}
+{% extends "layout-account-prototype.html" %}
 
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
@@ -19,6 +19,10 @@
       <p>
         Your training provider will receive notification of any changes you've asked them to make shortly.
       </p>
+
+      <!--<h2 class="govuk-heading-m">What's next?</h2>
+      <p><a href="https://marvelapp.com/3ff4j45">Go to homepage</a></p>
+      <p><a href="login">Sign out</a></p>-->
 
       <form method="post">
         {{ govukRadios({
@@ -49,7 +53,6 @@
           text: "Continue"
         })}}
       </form>
-
     </div>
   </div>
 
