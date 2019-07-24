@@ -204,42 +204,47 @@
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-        {{ govukRadios({
-          idPrefix: "approve",
-          name: "approve",
-          fieldset:
-          {
-            legend:
-            {
-              text: "Choose an option",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
-            }
-          },
-          items: [
-          {
-            value: "yes",
-            text: "Approve these details including my changes"
-          },
-          {
-            value: "no",
-            text: "Send my changes to the employer to review or add details"
-          }
-          ]
-        }) }}
-  
-        
+        {% set textHtml %}
         {{ govukTextarea({
           id: "msg-content",
-          name: "msg-content",      
+          name: "msg-content",
           type: "textarea",
           classes: "govuk-textarea",
           label: {
-            html: "Let "+data['employer']+" know about changes you've made, or what you'd like them to do next (optional)"
+            html: "Let "+data['employer']+" know about any errors they need to fix or what you'd like them to do next (optional)"
           },
           rows: 5
         }) }}
+        {% endset -%}
 
+      {{ govukRadios({
+        idPrefix: "approve",
+        name: "approve",
+        fieldset:
+        {
+          legend:
+          {
+            text: "Approve these details?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
+          }
+        },
+        items: [
+        {
+          value: "yes",
+          text: "Yes, including any updates"
+        },
+        {
+          value: "no",
+          text: "No, send to employer to review",
+          conditional: {
+            html: textHtml
+          }
+        }
+        ]
+      }) }}
+
+    
         {{ govukButton({
           text: "Save and submit"
         }) }}
