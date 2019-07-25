@@ -204,6 +204,19 @@
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+        {% set textapproveHtml %}
+        {{ govukTextarea({
+          id: "msg-content-approve",
+          name: "msg-content-approve",
+          type: "textarea",
+          classes: "govuk-textarea",
+          label: {
+            html: "Let "+data['employer']+" know about changes you've made, or what you'd like them to do next (optional)"
+          },
+          rows: 5
+        }) }}
+        {% endset -%}
+
         {% set textHtml %}
         {{ govukTextarea({
           id: "msg-content",
@@ -211,7 +224,7 @@
           type: "textarea",
           classes: "govuk-textarea",
           label: {
-            html: "Let "+data['employer']+" know about changes you've made, or what you'd like them to do next (optional)"
+            html: "Let "+data['employer']+" know about any errors they need to fix or what you'd like them to do next (optional)"
           },
           rows: 5
         }) }}
@@ -234,7 +247,7 @@
           value: "yes",
           text: "Yes, including any edits I've made",
           conditional: {
-            html: textHtml
+            html: textapproveHtml
           }
         },
         {
