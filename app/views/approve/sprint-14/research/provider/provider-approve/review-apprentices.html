@@ -211,7 +211,7 @@
           type: "textarea",
           classes: "govuk-textarea",
           label: {
-            html: "Let "+data['employer']+" know about any errors they need to fix or what you'd like them to do next (optional)"
+            html: "Let "+data['employer']+" know about changes you've made, or what you'd like them to do next (optional)"
           },
           rows: 5
         }) }}
@@ -232,7 +232,10 @@
         items: [
         {
           value: "yes",
-          text: "Yes, including any updates"
+          text: "Yes, including any edits I've made",
+          conditional: {
+            html: textHtml
+          }
         },
         {
           value: "no",
