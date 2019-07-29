@@ -19,8 +19,11 @@ router.post('/review-an-apprentice', (req, res) => {
 router.post('/review-apprentices', (req, res) => {
 	if (req.session.data['approve'] == 'yes' ) {
 		res.redirect(`confirmation`)
-	} else {
+	} else if (req.session.data['approve'] == 'no' ) {
 		res.redirect(`not-confirmed`)
+	}
+	else {
+		res.redirect(`review-apprentices-error`)
 	}
 })
 
@@ -28,8 +31,11 @@ router.post('/review-apprentices', (req, res) => {
 router.post('/review-apprentices-2', (req, res) => {
 	if (req.session.data['approve'] == 'yes' ) {
 		res.redirect(`confirmation`)
-	} else {
+	} else if (req.session.data['approve'] == 'no' ) {
 		res.redirect(`not-confirmed`)
+	}
+	else {
+		res.redirect(`review-apprentices-2-error`)
 	}
 })
 

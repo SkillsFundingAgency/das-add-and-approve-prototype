@@ -1,0 +1,63 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+	text: "Back",
+	href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<form action="choose-provider">
+			<h1 class="govuk-heading-xl">
+				Add an apprentice
+			</h1>
+
+			<p>
+				Add details of one or more apprentices to your account, and authorise payments to their training provider.
+			</p>
+
+			<h2 class="govuk-heading-m">
+				Before you start
+			</h2>
+
+			<p>
+				You must: 
+			</p>
+
+			<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-9">
+				<li>
+					know the names of your apprentices 
+				</li>
+				<li>
+					know your training provider's UK Provider Reference Number (UKPRN) - your training provider can tell you this
+				</li>
+				<li>
+					make sure the organisation that's named on the contract you have with your training provider is in your account - <a href="#">view organisations in this account</a>
+				</li>
+				<li>
+					make sure the PAYE scheme that each apprentice is paid through is in your account - <a href="#">view PAYE schemes in this account</a>
+				</li>
+			</ul>			
+
+			<p>
+				{{govukButton({
+					text: "Start now",
+					classes: "govuk-button--start"
+				})}}
+			</p>
+		</form>
+	</div>
+
+	<div class="govuk-grid-column-one-third">
+	</div>
+</div>
+
+{% endblock %}
