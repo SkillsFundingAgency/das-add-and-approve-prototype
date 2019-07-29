@@ -27,6 +27,11 @@ router.use('/research/employer/employer-led-add', (req, res, next) => {
   require(`./research/employer/employer-led-add/routes`)(req, res, next);
 })
 
+// provider adds
+router.use('/research/provider/provider-adds', (req, res, next) => {
+  require(`./research/provider/provider-adds/routes`)(req, res, next);
+})
+
 // provider approvals
 router.use('/research/provider/provider-approve', (req, res, next) => {
   require(`./research/provider/provider-approve/routes`)(req, res, next);
