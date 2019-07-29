@@ -15,10 +15,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "You must choose an option",
+              href: "#approve"
+            }
+          ]
+        }) }}
+
       <form method="post" class="form">
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
-          Approve apprentice details
+          Review apprentice details
         </h1>
 
         <div class="govuk-grid-row">
@@ -28,14 +38,14 @@
             </p>
             <p>
               <b>Message from your training provider, {{data['provider-name']}}:</b>
-              <br>Hi there, could you do the necessary for these apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester.
+              <br>Hi there, could you do the necessary for these two apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester.
             </p>
           </div>    
         </div>
     
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     
-        <h2 class="govuk-heading-l">6 apprentice details to approve</h2>
+        <h2 class="govuk-heading-l">2 apprentice details to review</h2>
 
         <!--<div class="govuk-grid-row govuk-!-padding-top-6 govuk-!-padding-bottom-4" id="app-review-cohorts">
           <div class="govuk-grid-column-one-half">
@@ -67,7 +77,7 @@
           {% set name = data['name'] %}
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Barry Block</td>
+              <td class="govuk-table__cell">{{name}}</td>
               <td class="govuk-table__cell">Bespoke Saddler, Level 3 (Standard)</td>
               <td class="govuk-table__cell">Sep 2019 to Oct 2020</td>
               <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
@@ -87,56 +97,16 @@
               </td>
             </tr>
             <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Janet Field</td>                
-                <td class="govuk-table__cell">Bespoke Saddler, Level 3 (Standard)</td>
-                <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-                <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-                <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                  <a href="apprentice-details">Edit</a><br><br>
-                  <a href="#">Delete</a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">{{name}}</td>              
-                <td class="govuk-table__cell">Bespoke Saddler, Level 3 (Standard)</td>
-                <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-                <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-                <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                  <a href="apprentice-details">Edit</a><br><br>
-                  <a href="#">Delete</a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Darren Testington</td>
-                <td class="govuk-table__cell">Bespoke Saddler, Level 3 (Standard)</td>
-                <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-                <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-                <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                  <a href="apprentice-details">Edit</a><br><br>
-                  <a href="#">Delete</a>
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Bobby Wright</td>
-                <td class="govuk-table__cell">Bespoke Saddler, Level 3 (Standard)</td>
-                <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-                <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-                <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                  <a href="apprentice-details">Edit</a><br><br>
-                  <a href="#">Delete</a>
-                </td>
-              </tr>
-            <tr class="govuk-table__row">
               <td class="govuk-table__cell"><b>Total price (excluding VAT)</b></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell" style="text-align: right;"><b>£60,000</b></td>
+              <td class="govuk-table__cell" style="text-align: right;"><b>£20,000</b></td>
               <td class="govuk-table__cell"></td>
             </tr>
           </tbody>
         </table> 
       
-        <p class="govuk-body govuk-!-margin-bottom-9"><a href="add--apprentice-details">Add another apprentice</a></p>
+        <p class="govuk-body govuk-!-margin-bottom-9"><a href="add--apprentice-details">Add another</a></p>
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -162,8 +132,13 @@
           {
             text: "Approve these details?",
             isPageHeading: true,
+
             classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
           }
+        },
+        errorMessage: 
+        {
+          text: "You must choose an option"
         },
         items: [
         {
