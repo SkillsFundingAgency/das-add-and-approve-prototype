@@ -110,6 +110,19 @@
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+        {% set textapproveHtml %}
+        {{ govukTextarea({
+          id: "msg-content-approve",
+          name: "msg-content-approve",
+          type: "textarea",
+          classes: "govuk-textarea",
+          label: {
+            html: "Let "+data['provider-name']+" know what you'd like them to do next (optional)"
+          },
+          rows: 5
+        }) }}
+        {% endset -%}
+
         {% set textHtml %}
         {{ govukTextarea({
           id: "msg-content",
@@ -143,7 +156,10 @@
         items: [
         {
           value: "yes",
-          text: "Yes, approve these details"
+          text: "Yes, approve these details",
+          conditional: {
+            html: textapproveHtml
+          }
         },
         {
           value: "no",
