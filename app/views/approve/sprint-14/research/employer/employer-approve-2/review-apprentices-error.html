@@ -34,12 +34,11 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <p>
-              <b>Organisation:</b> {{data['employer']}}
-            </p>
-            <p>
               <b>Message from your training provider, {{data['provider-name']}}:</b>
-              <br>Hi there, could you do the necessary for these two apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester.
-            </p>
+            </p>      
+            {{ govukInsetText({ 
+              text: "Hi there, could you do the necessary for these two apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester."
+            }) }}
           </div>    
         </div>
     
