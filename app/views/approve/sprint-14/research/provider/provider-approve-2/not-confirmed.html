@@ -1,0 +1,56 @@
+{% extends "./layout-provider-current.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Message sent to employer
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Message sent to employer</h1>
+      </div>
+
+      <p>
+        BIG COMPANY LTD will receive notification of any changes you've made shortly.
+      </p>
+
+      <form method="post">
+        {{ govukRadios({
+          idPrefix: "next-step",
+          name: "next-step",
+          fieldset:
+          {
+            legend:
+            {
+              text: "What's next?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
+            }
+          },
+          items: [
+          {
+            value: "homepage",
+            text: "Go to homepage"
+          },
+          {
+            value: "signout",
+            text: "Sign out"
+          }
+          ]
+        }) }}
+        
+        {{ govukButton ({
+          text: "Continue"
+        })}}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

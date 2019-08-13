@@ -42,4 +42,9 @@ router.use('/research/provider/provider-approve', (req, res, next) => {
   require(`./research/provider/provider-approve/routes`)(req, res, next);
 })
 
+// provider approvals - iteration 2
+router.use('/research/provider/provider-approve-2', (req, res, next) => {
+  require(`./research/provider/provider-approve-2/routes`)(req, res, next);
+})
+
 module.exports = router
