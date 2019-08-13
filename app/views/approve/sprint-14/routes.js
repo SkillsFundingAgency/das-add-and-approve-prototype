@@ -28,6 +28,11 @@ router.use('/research/employer/employer-approve-3', (req, res, next) => {
 })
 
 // employer approvals
+router.use('/research/employer/employer-approve-4', (req, res, next) => {
+  require(`./research/employer/employer-approve-4/routes`)(req, res, next);
+})
+
+// employer approvals
 router.use('/research/employer/employer-led-add', (req, res, next) => {
   require(`./research/employer/employer-led-add/routes`)(req, res, next);
 })
