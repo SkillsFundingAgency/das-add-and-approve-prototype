@@ -11,7 +11,7 @@ router.post('/review-an-apprentice', (req, res) => {
 	if (req.session.data['approve'] == 'yes' ) {
 		res.redirect(`confirmation`)
 	} else {
-		res.redirect(`not-confirmed`)
+		res.redirect(`account-home`)
 	}
 })
 
@@ -35,9 +35,7 @@ router.post('/review-apprentices-2', (req, res) => {
 
 //end of journey screens
 router.post('/confirmation', (req, res) => {
-if (req.session.data['next-step'] == 'manage') {
-	res.redirect('manage-your-apprentices')
-} else if (req.session.data['next-step'] == 'homepage') {
+if (req.session.data['next-step'] == 'homepage') {
 	res.redirect('account-home')
 } else {
 	res.redirect('login1')
