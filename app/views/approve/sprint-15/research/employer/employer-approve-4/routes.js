@@ -18,6 +18,15 @@ router.post('/review-an-apprentice', (req, res) => {
 	}
 })
 
+//review an apprentice
+router.post('/review-an-apprentice-2', (req, res) => {
+	if (req.session.data['approve'] == 'yes') {
+	  res.redirect('confirmation')
+	} else {
+	  res.redirect('not-confirmed')
+	}
+})
+
   //end of journey screens
 router.post('/confirmation', (req, res) => {
 	if (req.session.data['next-step'] == 'homepage') {
