@@ -1,14 +1,7 @@
-{% extends "layout-account.html" %}
+{% extends "layout-account-no-header.html" %}
 
 {% block pageTitle %}
   Approve apprentice details
-{% endblock %}
-
-{% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript: window.history.go(-1)"
-}) }}
 {% endblock %}
 
 {% block content %}
