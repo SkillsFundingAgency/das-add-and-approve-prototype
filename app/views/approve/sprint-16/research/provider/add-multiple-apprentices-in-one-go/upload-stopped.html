@@ -1,0 +1,115 @@
+{% extends "layout-provider-account-more.html" %}
+
+{% block pageTitle %}
+  Upload stopped
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form action="/form-handler" method="post" novalidate>
+
+          <div class="govuk-form-group  govuk-!-margin-bottom-9">
+            <!--<div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-9" style="background-color: white; border: solid 5px #b10e1e;">
+              <h1 class="govuk-panel__title" style="color:black;">Upload has errors</h1>
+            </div>-->
+      
+            <div>
+              <h1 class="govuk-panel__title govuk-!-margin-bottom-9">Upload stopped</h1>
+            </div>
+
+            <p class="govuk-body">There are <b>2</b> errors across <b>2</b> records that you need to fix.</p>
+
+            {{ govukTable({
+              caption: "Records with errors",
+              firstCellIsHeader: true,
+              head: [
+                {
+                  text: "Row"
+                },
+                {
+                  text: "Unique learner number"
+                },
+                {
+                  text: "Name"
+                },
+                {
+                  text: "Date of birth"
+                },
+                {
+                  text: "Errors"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "1"
+                  },
+                  {
+                    text: "9999999999"
+                  },
+                  {
+                    text: "Denise Darryl"
+                  },
+                  {
+                    text: "10 Dec 2002"
+                  },
+                  {
+                    html: "You must enter a valid <b>unique learner number</b>"
+                  }
+                ],
+                [
+                {
+                  text: "2"
+                },
+                {
+                  text: "9999999999"
+                },
+                {
+                  text: "Harmesh Kullar"
+                },
+                {
+                  text: "21 Oct 2000"
+                },
+                {
+                  html: "You must enter a valid <b>unique learner number</b>"
+                }
+                ]
+              ]
+            }) }}
+
+          </div>
+          {{ govukFileUpload({
+            id: "file-upload-1",
+            name: "file-upload-1",
+            label: {
+              text: "Upload a file"
+            }
+          }) }}
+
+
+          {{ govukButton({
+            text: "Upload",
+            href: "upload-in-progress-1"
+          }) }}
+
+         <p class="govuk-body">
+           <a href="upload">Cancel</a>
+         </p>
+          
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout-provider-account-more.html" %}
+
+{% block pageTitle %}
+  Upload multiple apprentices
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/form-handler" method="post" novalidate>
+
+          <div class="govuk-form-group  govuk-!-margin-bottom-9">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-4">
+                  Upload in progress
+                </h1>
+              </legend>
+            </fieldset>
+
+         
+
+          </div>
+          
+          <p><a href="add--review-cohort">Imagine the upload has completed</a></p>
+          
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

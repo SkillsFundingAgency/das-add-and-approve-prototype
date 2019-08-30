@@ -1,0 +1,106 @@
+{% extends "layout-provider-account-more.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Records uploaded successfully
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-9">
+        <h1 class="govuk-panel__title">Records uploaded successfully</h1>
+      </div>
+
+      {{ govukTable({
+        caption: "Records uploaded",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Planned start date"
+          },
+          {
+            text: "Price"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Abby Smith"
+            },
+            {
+              text: "Jul 2019"
+            },
+            {
+              text: "£1,500"
+            }
+          ],
+          [
+            {
+              text: "Adnan Tester"
+            },
+            {
+              text: "Jul 2019"
+            },
+            {
+              text: "£1,500"
+            }
+          ],
+          [
+            {
+              text: "Billy Fish"
+            },
+            {
+              text: "Jul 2019"
+            },
+            {
+              text: "£1,500"
+            }
+          ]
+        ]
+      }) }}
+
+      <form method="post">
+      {{ govukRadios({
+        idPrefix: "next-step",
+        name: "next-step",
+        fieldset:
+        {
+          legend:
+          {
+            text: "What's next?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
+          }
+        },
+        items: [
+        {
+          value: "upload",
+          text: "Upload records to a new cohort"
+        },
+        {
+          value: "account-home",
+          text: "Go to homepage"
+        },
+        {
+          value: "signout",
+          text: "Sign out"
+        }
+        ]
+      }) }}
+      
+      {{ govukButton ({
+        text: "Continue"
+      })}}
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
