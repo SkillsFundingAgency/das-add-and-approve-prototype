@@ -13,13 +13,18 @@ router.get('/', function (req, res) {
 })
 
 // provider add multiple apprentices in one go
-router.use('/build/provider/add-multiple-apprentices-in-one-go', (req, res, next) => {
-  require(`./build/provider/add-multiple-apprentices-in-one-go/routes`)(req, res, next);
+router.use('/research/provider/add-multiple-apprentices-in-one-go', (req, res, next) => {
+  require(`./research/provider/add-multiple-apprentices-in-one-go/routes`)(req, res, next);
 })
 
 // provider manage your apprentices
-router.use('/build/provider/manage-your-apprentices', (req, res, next) => {
-  require(`./build/provider/manage-your-apprentices/routes`)(req, res, next);
+router.use('/research/provider/manage-your-apprentices', (req, res, next) => {
+  require(`./research/provider/manage-your-apprentices/routes`)(req, res, next);
+})
+
+// employer manage your apprentices
+router.use('/research/employer/manage-your-apprentices', (req, res, next) => {
+  require(`./research/employer/manage-your-apprentices/routes`)(req, res, next);
 })
 
 module.exports = router
