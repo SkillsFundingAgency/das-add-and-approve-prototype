@@ -160,36 +160,18 @@
         
         <p class="govuk-body govuk-!-margin-bottom-9"><a href="add--apprentice-details">Add another apprentice</a></p>
 
-        <!--<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds govuk-!-margin-top-4">-->
-
-            {% set textapproveHtml %}
-            {{ govukTextarea({
-              id: "msg-content-approve",
-              name: "msg-content-approve",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Let "+data['provider-name']+" know what you'd like them to do next (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
-
-            {% set textHtml %}
-            {{ govukTextarea({
-              id: "msg-content",
-              name: "msg-content",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Let "+data['provider-name']+" know about any errors they need to fix or what you'd like them to do next (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
+        {% set textHtml %}
+        {{ govukTextarea({
+          id: "msg-content",
+          name: "msg-content",
+          type: "textarea",
+          classes: "govuk-textarea",
+          label: {
+            html: "Leave "+data['provider-name']+" a message (optional)"
+          },
+          rows: 5
+        }) }}
+        {% endset -%}
 
           {{ govukRadios({
             idPrefix: "approve",
@@ -206,9 +188,9 @@
             items: [
             {
               value: "yes",
-              text: "Approve these details including my changes",
+              text: "Approve these details, including my changes",
               conditional: {
-                html: textapproveHtml
+                html: textHtml
               }
             },
             {
