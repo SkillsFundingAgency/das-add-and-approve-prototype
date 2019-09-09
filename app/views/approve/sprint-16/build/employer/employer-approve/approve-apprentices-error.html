@@ -4,15 +4,7 @@
   Approve apprentice details
 {% endblock %}
 
-{% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript: window.history.go(-1)"
-}) }}
-{% endblock %}
-
 {% block content %}
-  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
@@ -27,12 +19,10 @@
     }) }}
 
   </div>
-</div>
+</div>  
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-      
 
       <form method="post" class="form">
 
@@ -53,7 +43,7 @@
               <b>Message from {{data['provider-name']}}:</b>
             </p>
               {{ govukInsetText({ 
-                text: "No message added"
+                text: "Hi there, could you do the necessary for these apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester."
               }) }}
   
           <!--</div>    
@@ -81,6 +71,58 @@
         </div>-->
 
         <h2 class="govuk-heading-m govuk-!-margin-top-6">3 x Bespoke Saddler, Level: 3 (Standard)</h2>
+        
+        <!--<div class="govuk-inset-text" style="border-left-color:#1d70b8;">
+          <h3 class="govuk-heading-s">1 apprenticeship above funding band maximum</h3>
+          <p>The price for this apprenticeship is above its <a href="#">funding band maximum</a> of £3,000. You'll need to pay the difference directly to the training provider.</p>
+        </div>-->
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Name</th>              
+              <th class="govuk-table__header" scope="col">Date of birth</th>
+              <th class="govuk-table__header" scope="col">Training dates</th>
+              <th class="govuk-table__header" scope="col" style="text-align: right;">Price</th>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+          {% set name = data['name'] %}
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Bobby Wright</td>
+              <td class="govuk-table__cell">11 May 2002</td>
+              <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
+              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell">
+                <a href="apprentice-details?first-name={{name}}">Edit</a><!--<br><br>
+                <a href="#">Delete</a>-->
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Darren Testing</td>
+              <td class="govuk-table__cell">16 Feb 2000</td>
+              <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
+              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell">
+                <a href="apprentice-details">Edit</a><!--<br><br>
+                <a href="#">Delete</a>-->
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Sarah Philips</td>                
+              <td class="govuk-table__cell">3 Dec 2002</td>
+              <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
+              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell">
+                <a href="apprentice-details">Edit</a><!--<br><br>
+                <a href="#">Delete</a>-->
+              </td>
+            </tr>
+          </tbody>          
+        </table>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-9">3 x Business Administrator, Level: 4 (Standard)</h2>
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -99,9 +141,8 @@
               <td class="govuk-table__cell">1 Mar 2001</td>
               <td class="govuk-table__cell">Sep 2019 to Oct 2020</td>
               <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                <a href="apprentice-details?first-name={{name}}">Edit</a><br><br>
-                <a href="#">Delete</a>
+              <td class="govuk-table__cell">
+                <a href="apprentice-details?first-name={{name}}">Edit</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -109,9 +150,8 @@
               <td class="govuk-table__cell">10 Oct 2000</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
               <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                <a href="apprentice-details">Edit</a><br><br>
-                <a href="#">Delete</a>
+              <td class="govuk-table__cell">
+                <a href="apprentice-details">Edit</a>
               </td>
             </tr>
             <tr class="govuk-table__row">
@@ -119,96 +159,41 @@
               <td class="govuk-table__cell">21 Dec 2002</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
               <td class="govuk-table__cell" style="text-align: right;">£10,000</td>
-              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                <a href="apprentice-details">Edit</a><br><br>
-                <a href="#">Delete</a>
+              <td class="govuk-table__cell">
+                <a href="apprentice-details">Edit</a>
               </td>
             </tr>
           </tbody>
         </table>
 
-        <h2 class="govuk-heading-m govuk-!-margin-top-9">3 x Business Administrator, Level: 4 (Standard)</h2>
-
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header" scope="col">Name</th>              
-              <th class="govuk-table__header" scope="col">Date of birth</th>
-              <th class="govuk-table__header" scope="col">Training dates</th>
-              <th class="govuk-table__header" scope="col" style="text-align: right;">Price</th>
-              <th class="govuk-table__header" scope="col"></th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">                        
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Bobby Wright</td>
-              <td class="govuk-table__cell">15 Apr 2002</td>
-              <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,000</td>
-              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                <a href="apprentice-details">Edit</a><br><br>
-                <a href="#">Delete</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Darren Testington</td>
-              <td class="govuk-table__cell">2 Feb 1999</td>
-              <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,000</td>
-              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                <a href="apprentice-details">Edit</a><br><br>
-                <a href="#">Delete</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">{{name}}</td>              
-              <td class="govuk-table__cell">23 Sep 2001</td>
-              <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,000</td>
-              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
-                <a href="apprentice-details">Edit</a><br><br>
-                <a href="#">Delete</a>
-              </td>
-            </tr>
-            <span class="govuk-!-margin-top-9">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="2"><b>Total apprenticeship training price (excluding VAT)</b></td>              
-              <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell" style="text-align:right;"><b>£42,000</b></td>
-              <td class="govuk-table__cell"><br><br><br></td>
-            </tr>
-          </span>
-          </tbody>
-        </table> 
-        
-        <p class="govuk-body govuk-!-margin-bottom-9"><a href="add--apprentice-details">Add another apprentice</a></p>
-
-        <!--<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds govuk-!-margin-top-4">-->
+          <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+                Total apprenticeship training price (excluding VAT)
+              </h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <h2 class="govuk-heading-m margin-bottom-6 govuk-!-margin-top-6" style="float:right; padding-right: 54px;">
+                £43,000
+              </h2>
+            </div>
+        </div>
 
-            {% set textapproveHtml %}
+        <p class="govuk-body govuk-!-margin-bottom-9">
+          <a href="add--apprentice-details">Add another apprentice</a>
+          <a href="#" style="float:right;">Delete this group</a>
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
+
+            {% set textHtml %}
             {{ govukTextarea({
               id: "msg-content-approve",
               name: "msg-content-approve",
               type: "textarea",
               classes: "govuk-textarea",
               label: {
-                html: "Let "+data['provider-name']+" know what you'd like them to do next (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
-
-            {% set textHtml %}
-            {{ govukTextarea({
-              id: "msg-content",
-              name: "msg-content",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Let "+data['provider-name']+" know about any errors they need to fix or what you'd like them to do next (optional)"
+                html: "Leave "+data['provider-name']+" a message (optional)"
               },
               rows: 5
             }) }}
@@ -218,7 +203,7 @@
             idPrefix: "approve",
             name: "approve",
             errorMessage: {
-              "text": "Your must choose an option"
+              "text": "You must choose an option"
             },
             fieldset:
             {
@@ -232,14 +217,14 @@
             items: [
             {
               value: "yes",
-              text: "Yes, approve and send to provider",
+              text: "Yes, approve and send to training provider",
               conditional: {
-                html: textapproveHtml
+                html: textHtml
               }
             },
             {
               value: "no",
-              text: "No, request changes from provider",
+              text: "No, request changes from training provider",
               conditional: {
                 html: textHtml
               }

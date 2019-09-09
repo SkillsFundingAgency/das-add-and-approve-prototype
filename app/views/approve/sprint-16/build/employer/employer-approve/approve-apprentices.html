@@ -56,10 +56,10 @@
 
         <h2 class="govuk-heading-m govuk-!-margin-top-6">3 x Bespoke Saddler, Level: 3 (Standard)</h2>
         
-        <div class="govuk-inset-text" style="border-left-color:#1d70b8;">
+        <!--<div class="govuk-inset-text" style="border-left-color:#1d70b8;">
           <h3 class="govuk-heading-s">1 apprenticeship above funding band maximum</h3>
           <p>The price for this apprenticeship is above its <a href="#">funding band maximum</a> of £3,000. You'll need to pay the difference directly to the training provider.</p>
-        </div>
+        </div>-->
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -77,7 +77,7 @@
               <td class="govuk-table__cell">Bobby Wright</td>
               <td class="govuk-table__cell">11 May 2002</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right; border-bottom:5px solid #1d70b8;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details?first-name={{name}}">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -147,43 +147,37 @@
                 <a href="apprentice-details">Edit</a>
               </td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="2"><b>Total apprenticeship training price (excluding VAT)</b></td>              
-              <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell" style="text-align:right;"><b>£43,500</b></td>
-              <td class="govuk-table__cell"><br><br><br></td>
-            </tr>
           </tbody>
         </table>
-        
-        <p class="govuk-body govuk-!-margin-bottom-9"><a href="add--apprentice-details">Add another apprentice</a></p>
-
-        <!--<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds govuk-!-margin-top-4">-->
+          <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+                Total apprenticeship training price (excluding VAT)
+              </h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <h2 class="govuk-heading-m margin-bottom-6 govuk-!-margin-top-6" style="float:right; padding-right: 54px;">
+                £43,000
+              </h2>
+            </div>
+        </div>
 
-            {% set textapproveHtml %}
+        <p class="govuk-body govuk-!-margin-bottom-9">
+          <a href="add--apprentice-details">Add another apprentice</a>
+          <a href="#" style="float:right;">Delete this group</a>
+        </p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6">
+
+            {% set textHtml %}
             {{ govukTextarea({
               id: "msg-content-approve",
               name: "msg-content-approve",
               type: "textarea",
               classes: "govuk-textarea",
               label: {
-                html: "Let "+data['provider-name']+" know what you'd like them to do next (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
-
-            {% set textHtml %}
-            {{ govukTextarea({
-              id: "msg-content",
-              name: "msg-content",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Let "+data['provider-name']+" know about any errors they need to fix or what you'd like them to do next (optional)"
+                html: "Leave "+data['provider-name']+" a message (optional)"
               },
               rows: 5
             }) }}
@@ -206,7 +200,7 @@
               value: "yes",
               text: "Yes, approve and send to training provider",
               conditional: {
-                html: textapproveHtml
+                html: textHtml
               }
             },
             {
