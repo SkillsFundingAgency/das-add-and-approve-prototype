@@ -4,15 +4,7 @@
   Approve apprentice details
 {% endblock %}
 
-{% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript: window.history.go(-1)"
-}) }}
-{% endblock %}
-
 {% block content %}
-  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
@@ -29,10 +21,8 @@
   </div>
 </div>
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-      
 
       <form method="post" class="form">
 
@@ -53,7 +43,7 @@
               <b>Message from {{data['provider-name']}}:</b>
             </p>
               {{ govukInsetText({ 
-                text: "No message added"
+                text: "Hi there, could you do the necessary for these apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester."
               }) }}
   
           <!--</div>    
@@ -170,82 +160,74 @@
                 <a href="#">Delete</a>
               </td>
             </tr>
-            <span class="govuk-!-margin-top-9">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="2"><b>Total apprenticeship training price (excluding VAT)</b></td>              
-              <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell" style="text-align:right;"><b>£42,000</b></td>
-              <td class="govuk-table__cell"><br><br><br></td>
-            </tr>
-          </span>
           </tbody>
         </table> 
         
-        <p class="govuk-body govuk-!-margin-bottom-9"><a href="add--apprentice-details">Add another apprentice</a></p>
-
-        <!--<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds govuk-!-margin-top-4">-->
+          <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+                Total apprenticeship training price (excluding VAT)
+              </h2>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <h2 class="govuk-heading-m margin-bottom-6 govuk-!-margin-top-6" style="float:right; padding-right: 54px;">
+                £43,000
+              </h2>
+            </div>
+        </div>
 
-            {% set textapproveHtml %}
-            {{ govukTextarea({
-              id: "msg-content-approve",
-              name: "msg-content-approve",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Let "+data['provider-name']+" know what you'd like them to do next (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
+        <p class="govuk-body govuk-!-margin-bottom-9">
+          <a href="add--apprentice-details">Add another apprentice</a>
+          <a href="#" style="float:right;">Delete this group</a>
+        </p>
 
-            {% set textHtml %}
-            {{ govukTextarea({
-              id: "msg-content",
-              name: "msg-content",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Let "+data['provider-name']+" know about any errors they need to fix or what you'd like them to do next (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
 
-          {{ govukRadios({
-            idPrefix: "approve",
-            name: "approve",
-            errorMessage: {
-              "text": "Your must choose an option"
+        {% set textHtml %}
+          {{ govukTextarea({
+            id: "msg-content-approve",
+            name: "msg-content-approve",
+            type: "textarea",
+            classes: "govuk-textarea",
+            label: {
+              html: "Leave "+data['provider-name']+" a message (optional)"
             },
-            fieldset:
-            {
-              legend:
-              {
-                text: "Approve these details?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
-              }
-            },
-            items: [
-            {
-              value: "yes",
-              text: "Yes, approve and send to provider",
-              conditional: {
-                html: textapproveHtml
-              }
-            },
-            {
-              value: "no",
-              text: "No, request changes from provider",
-              conditional: {
-                html: textHtml
-              }
-            }
-            ]
+            rows: 5
           }) }}
+        {% endset -%}
+
+            {{ govukRadios({
+              idPrefix: "approve",
+              name: "approve",
+              errorMessage: {
+                "text": "You must choose an option"
+              },
+              fieldset:
+              {
+                legend:
+                {
+                  text: "Approve these details?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
+                }
+              },
+              items: [
+              {
+                value: "yes",
+                text: "Yes, approve and send to training provider",
+                conditional: {
+                  html: textHtml
+                }
+              },
+              {
+                value: "no",
+                text: "No, request changes from training provider",
+                conditional: {
+                  html: textHtml
+                }
+              }
+              ]
+            }) }}
 
             {{ govukButton({
               text: "Save and submit"
