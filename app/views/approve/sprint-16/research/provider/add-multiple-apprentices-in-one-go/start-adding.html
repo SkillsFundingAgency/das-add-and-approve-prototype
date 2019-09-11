@@ -1,7 +1,7 @@
 {% extends "layout-provider-account-more.html" %}
 
 {% block pageTitle %}
-Review your cohort
+  Start adding apprentices
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,192 +17,35 @@ Review your cohort
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <form method="post">
-          <h1 class="govuk-heading-xl">Review your cohort</h1>   
-          
-          <h2 class="govuk-heading-m"><b>1</b> incomplete apprentice record, total cost is <b>£1,500</b>.</h2>
-         
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Employer
-              </dt>
-              <dd class="govuk-summary-list__value">
-                BIG COMPANY LTD
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Cohort reference
-              </dt>
-              <dd class="govuk-summary-list__value">
-                FGHJUK
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Status
-              </dt>
-              <dd class="govuk-summary-list__value">
-                New request
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Message
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Could you do the necessary, please? Thanks in advance
-              </dd>
-            </div>                
-          </dl>
-        
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-          <h3 class="govuk-heading-m govuk-!-margin-top-9">
-            1 x Academic Professional, Level: 7 (Standard)
-          </h3>
-      
-          <p>
-            Training code: 272
-          </p>
-      
-          <table class="govuk-table govuk-!-margin-bottom-9">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col">
-                  Name
-                </th>
-                <th class="govuk-table__header" scope="col">
-                  Unique learner number 	
-                </th>
-                <th class="govuk-table__header" scope="col">
-                  Date of birth 	
-                </th>
-                <th class="govuk-table__header" scope="col">
-                  Training dates 	
-                </th>
-                <th class="govuk-table__header" scope="col" colspan="2">
-                  Cost
-                </th>
-              </tr>
-            </thead>
-      
-            <tbody class="govuk-table__body">             
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                      Harmesh Kullar
-                    </td>
-                    <td class="govuk-table__cell">
-                      1234567890
-                    </td>
-                    <td class="govuk-table__cell">
-                      21 Oct 2000
-                    </td>
-                    <td class="govuk-table__cell">
-                      Jul 2019 to Aug 2020 
-                    </td>
-                    <td class="govuk-table__cell">
-                      £1,500
-                    </td>
-                    <td class="govuk-table__cell">
-                      <a href="review-an-apprentice" class="govuk-body-s">
-                        Edit
-                      </a>
-                    </td>
-                  </tr>
-            </tbody>
-          </table>
-
-          {% set textHtml %}
-          {{ govukTextarea({
-            id: "msg-content",
-            name: "msg-content",
-            type: "textarea",
-            classes: "govuk-textarea",
-            label: {
-              html: "Let the employer know what you'd like them to do (optional)"
-            },
-            rows: 5
-          }) }}
-          {% endset -%}
-
-        {{ govukRadios({
-          idPrefix: "approve",
-          name: "approve",
-          fieldset:
-          {
-            legend:
-            {
-              text: "What do you want to do next?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
-            }
-          },
-          items: [
-          {
-            value: "add-1",
-            text: "Add apprentices one at a time"
-          },
-          {
-            value: "upload",
-            text: "Add apprentices by uploading a file"
-          },
-          {
-            value: "approve",
-            text: "Approve and submit",
-            conditional: {
-              html: textHtml
-            }
-          },
-          {
-            value: "save",
-            text: "Save for later"
-          }
-          ]
-        }) }}
-
-         <!-- <div class="govuk-form-group">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/form-handler" method="post" novalidate>
+          <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">                   
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h2 class="govuk-fieldset__heading">
-                  What would you like to do next?
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h2 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+                  Add apprentices on behalf of {{data['employer']}}
                 </h2>
               </legend>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="add-1" name="add-1" type="radio" value="1">
                   <label class="govuk-label govuk-radios__label" for="add-1">
-                    Add apprentices one at a time
+                    One at a time
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="add-2" name="add-2" type="radio" value="2">
                   <label class="govuk-label govuk-radios__label" for="add-2">
-                    Add apprentices upload from a file
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="add-3" name="add-3" type="radio" value="3">
-                  <label class="govuk-label govuk-radios__label" for="add-3">
-                    Approve and submit
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="add-4" name="add-4" type="radio" value="4">
-                  <label class="govuk-label govuk-radios__label" for="add-4">
-                    Save for later
+                    Upload from a file
                   </label>
                 </div>
               </div>
             </fieldset>
-          </div>-->
+          </div>
 
           {{ govukButton({
-            text: "Save and continue"
+            text: "Save and continue",
+            href: "upload"
           }) }}
           
         </form>
