@@ -10,6 +10,16 @@ router.get('/', (req, res) => {
 })
 
 // Confirm employer (add)
+router.post('/add--one-or-more-employers', (req, res) => {
+	if (req.session.data['add'] == 'yes' ) {
+		res.redirect(`add__choose-employer`)
+	} else {
+		req.session.data['add'] = 'no'
+		res.redirect(`upload`)
+	}
+})
+
+// Confirm employer (add)
 router.post('/add__confirm-employer', (req, res) => {
 	if (req.session.data['confirm-employer'] == 'yes' ) {
 		res.redirect(`start-adding`)

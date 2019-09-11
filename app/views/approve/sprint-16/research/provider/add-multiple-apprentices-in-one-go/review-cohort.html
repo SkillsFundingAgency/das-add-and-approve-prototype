@@ -1,7 +1,7 @@
 {% extends "layout-provider-account-more.html" %}
 
 {% block pageTitle %}
-Review your cohort
+  Approve 3 apprentices' details
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,56 +22,13 @@ Review your cohort
               <h1 class="govuk-panel__title" style="color:black;">3 records uploaded successfully</h1>
             </div>
         <form method="post">
-          <h1 class="govuk-heading-xl">Review your cohort</h1>   
-          
-          <h2 class="govuk-heading-m"><b>3</b> incomplete apprentice records, total cost is <b>£4,500</b>.</h2>
-         
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Employer
-              </dt>
-              <dd class="govuk-summary-list__value">
-                BIG COMPANY LTD
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Cohort reference
-              </dt>
-              <dd class="govuk-summary-list__value">
-                FGHJUK
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Status
-              </dt>
-              <dd class="govuk-summary-list__value">
-                New request
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Message
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Could you do the necessary, please? Thanks in advance
-              </dd>
-            </div>                
-          </dl>
+          <h1 class="govuk-heading-xl">Approve 3 apprentices' details for {{data['employer']}}</h1>                       
         
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          <!--<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">-->
 
-          <h3 class="govuk-heading-m govuk-!-margin-top-9">
+          <h2 class="govuk-heading-m govuk-!-margin-top-9">
             3 x Academic Professional, Level: 7 (Standard)
-          </h3>
-      
-          <p>
-            Training code: 272
-          </p>
+          </h2>
       
           <table class="govuk-table govuk-!-margin-bottom-9">
             <thead class="govuk-table__head">
@@ -89,7 +46,7 @@ Review your cohort
                   Training dates 	
                 </th>
                 <th class="govuk-table__header" scope="col" colspan="2">
-                  Cost
+                  Price
                 </th>
               </tr>
             </thead>
@@ -185,6 +142,20 @@ Review your cohort
                   </tr>-->
             </tbody>
           </table>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-6">
+                  Total apprenticeship training price (excluding VAT)
+                </h2>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <h2 class="govuk-heading-m margin-bottom-6" style="float:right; padding-right: 72px;">
+                  £4,500
+                </h2>
+              </div>
+          </div>
+  
 
           {% set textHtml %}
           {{ govukTextarea({
