@@ -1,0 +1,253 @@
+{% extends "layout-provider-account-more.html" %}
+
+{% block pageTitle %}
+  Approve 3 apprentices' details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-9"  style="background-color: white; border: solid 5px #28a197">
+              <h1 class="govuk-panel__title" style="color:black;">3 records uploaded successfully</h1>
+            </div>
+        <form method="post">
+          <h1 class="govuk-heading-xl">Approve 3 apprentices' details for {{data['employer']}}</h1>                       
+        
+          <!--<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">-->
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-9">
+            3 x Academic Professional, Level: 7 (Standard)
+          </h2>
+      
+          <table class="govuk-table govuk-!-margin-bottom-9">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">
+                  Name
+                </th>
+                <th class="govuk-table__header" scope="col">
+                  Unique learner number 	
+                </th>
+                <th class="govuk-table__header" scope="col">
+                  Date of birth 	
+                </th>
+                <th class="govuk-table__header" scope="col">
+                  Training dates 	
+                </th>
+                <th class="govuk-table__header" scope="col" colspan="2">
+                  Price
+                </th>
+              </tr>
+            </thead>
+      
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  John Adams
+                </td>
+                <td class="govuk-table__cell">
+                  3456789012
+                </td>
+                <td class="govuk-table__cell">
+                  1 Jan 2001
+                </td>
+                <td class="govuk-table__cell">
+                  Jul 2019 to Aug 2020 
+                </td>
+                <td class="govuk-table__cell">
+                  £1,500
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="review-an-apprentice" class="govuk-body-s">
+                    Edit
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    Denise Darryl
+                  </td>
+                  <td class="govuk-table__cell">
+                    2345678901
+                  </td>
+                  <td class="govuk-table__cell">
+                    10 Dec 2002
+                  </td>
+                  <td class="govuk-table__cell">
+                    Jul 2019 to Aug 2020 
+                  </td>
+                  <td class="govuk-table__cell">
+                    £1,500
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="review-an-apprentice" class="govuk-body-s">
+                      Edit
+                    </a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      Marty Fly
+                    </td>
+                    <td class="govuk-table__cell">
+                      4567890123
+                    </td>
+                    <td class="govuk-table__cell">
+                      30 Sep 2001
+                    </td>
+                    <td class="govuk-table__cell">
+                      Jul 2019 to Aug 2020 
+                    </td>
+                    <td class="govuk-table__cell">
+                      £1,500
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a href="review-an-apprentice" class="govuk-body-s">
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                <!--<tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      Harmesh Kullar
+                    </td>
+                    <td class="govuk-table__cell">
+                      1234567890
+                    </td>
+                    <td class="govuk-table__cell">
+                      21 Oct 2000
+                    </td>
+                    <td class="govuk-table__cell">
+                      Jul 2019 to Aug 2020 
+                    </td>
+                    <td class="govuk-table__cell">
+                      £1,500
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a href="review-an-apprentice" class="govuk-body-s">
+                        Edit
+                      </a>
+                    </td>
+                  </tr>-->
+            </tbody>
+          </table>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-6">
+                  Total apprenticeship training price (excluding VAT)
+                </h2>
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <h2 class="govuk-heading-m margin-bottom-6" style="float:right; padding-right: 72px;">
+                  £4,500
+                </h2>
+              </div>
+          </div>
+  
+
+          {% set textHtml %}
+          {{ govukTextarea({
+            id: "msg-content",
+            name: "msg-content",
+            type: "textarea",
+            classes: "govuk-textarea",
+            label: {
+              html: "Let the employer know what you'd like them to do (optional)"
+            },
+            rows: 5
+          }) }}
+          {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "approve",
+          name: "approve",
+          fieldset:
+          {
+            legend:
+            {
+              text: "What do you want to do next?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
+            }
+          },
+          items: [
+          {
+            value: "add-1",
+            text: "Add apprentices one at a time"
+          },
+          {
+            value: "upload",
+            text: "Add apprentices by uploading a file"
+          },
+          {
+            value: "approve",
+            text: "Approve and submit",
+            conditional: {
+              html: textHtml
+            }
+          },
+          {
+            value: "save",
+            text: "Save for later"
+          }
+          ]
+        }) }}
+
+         <!-- <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">                   
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-fieldset__heading">
+                  What would you like to do next?
+                </h2>
+              </legend>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-1" name="add-1" type="radio" value="1">
+                  <label class="govuk-label govuk-radios__label" for="add-1">
+                    Add apprentices one at a time
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-2" name="add-2" type="radio" value="2">
+                  <label class="govuk-label govuk-radios__label" for="add-2">
+                    Add apprentices upload from a file
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-3" name="add-3" type="radio" value="3">
+                  <label class="govuk-label govuk-radios__label" for="add-3">
+                    Approve and submit
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="add-4" name="add-4" type="radio" value="4">
+                  <label class="govuk-label govuk-radios__label" for="add-4">
+                    Save for later
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>-->
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+          
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
