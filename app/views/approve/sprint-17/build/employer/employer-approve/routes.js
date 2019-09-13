@@ -51,12 +51,21 @@ router.post('/confirmation', (req, res) => {
 	}
 	})
 
-	router.post('/not-confirmed', (req, res) => {
-		if (req.session.data['next-step'] == 'homepage') {
-			res.redirect('https://das-registration-prototype.herokuapp.com/1-0/registration/interim-homepage')
-		} else {
-			res.redirect('login')
-		}
-		})
+router.post('/not-confirmed', (req, res) => {
+	if (req.session.data['next-step'] == 'homepage') {
+		res.redirect('https://das-registration-prototype.herokuapp.com/1-0/registration/interim-homepage')
+	} else {
+		res.redirect('login')
+	}
+	})
 
-  module.exports = router
+//review an apprentice
+router.post('/confirm-deletion', (req, res) => {
+	if (req.session.data['delete'] == 'yes') {
+	  res.redirect('approve-apprentices-deletion')
+	} else {
+	  res.redirect('approve-apprentices')
+	}
+	})
+
+module.exports = router
