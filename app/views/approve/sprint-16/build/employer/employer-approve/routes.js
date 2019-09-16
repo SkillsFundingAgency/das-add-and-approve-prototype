@@ -42,6 +42,15 @@ router.post('/approve-apprentices-error', (req, res) => {
   }
 })
 
+//review an apprentice
+router.post('/confirm-deletion', (req, res) => {
+	if (req.session.data['delete'] == 'yes') {
+	  res.redirect('approve-apprentices-group-deletion')
+	} else {
+	  res.redirect('approve-apprentices')
+	}
+	})
+
 //end of journey screens
 router.post('/confirmation', (req, res) => {
 	if (req.session.data['next-step'] == 'homepage') {
