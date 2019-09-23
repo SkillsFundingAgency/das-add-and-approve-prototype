@@ -46,7 +46,7 @@ Manage your apprentices
               <input class="form-control form-control-3-4" name="" id="searchClients-old" type="text" value="{%if search %}{{search}}{%endif%}" style="display: none;">
             </div>
             <div class="search-submit">
-              <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search clients</button>
+              <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search</button>
             </div>
           </div>
         </fieldset>
@@ -54,7 +54,7 @@ Manage your apprentices
     </div>
   </form>
 </div>
-<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
+<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4" style="background-color:#DEE0E2;">
   <div style="background-color:#DEE0E2; padding:10px; height:25px;">
     <p class="govuk-!-margin-bottom-9"> 
       <span class="govuk-heading-s" style="float:left; padding-left:15px; font-weight:700;">Filter apprentices</span>           
@@ -63,8 +63,6 @@ Manage your apprentices
     <p class="govuk-grid-row govuk-!-margin-bottom-9"> 
         <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>2</b> with alerts. <a href="manage-your-apprentices" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
         <span style="float:right; padding-right:15px;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
-        <!--<br><br>    
-        <span style="float:right; padding-right:15px;"><a href="download" title="Download current view as a spreadsheet">Download current view (CSV)</a></span>-->
     </p>
   </div>
   <div class="govuk-visually-hidden">
