@@ -21,6 +21,7 @@ Manage your apprentices
     </legend>      
   </fieldset>
 </div>
+
 <div class="govuk-grid-column-two-thirds govuk-grid-row">
   <form action="manage-your-apprentices-filters" method="get">
     <div class="row-group">
@@ -46,7 +47,7 @@ Manage your apprentices
               <input class="form-control form-control-3-4" name="" id="searchClients-old" type="text" value="{%if search %}{{search}}{%endif%}" style="display: none;">
             </div>
             <div class="search-submit">
-              <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search clients</button>
+              <button class="button" type="submit" id="searchSubmit" name="searchSubmit" value="Search">Search</button>
             </div>
           </div>
         </fieldset>
@@ -54,130 +55,131 @@ Manage your apprentices
     </div>
   </form>
 </div>
-<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4" style="background-color:#DEE0E2;">
-  <div style="background-color:#DEE0E2; padding:10px; height:25px;">
-    <p class="govuk-!-margin-bottom-9"> 
-      <span class="govuk-heading-s" style="float:left; font-weight:700;">Filter apprentices</span>           
-      <span style="float:right; padding-right:15px;"><a href="manage-your-apprentices">Hide</a></span>
-    </p>
 
-    <div class="govuk-grid-row">                
-      <div class="govuk-grid-column-one-third">                  
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="employer">
-            Training provider
-          </label>
-          <input class="govuk-input" id="employer" name="employer" type="text">
+<div class="govuk-grid-column-two-thirds govuk-grid-row" style="background-color:#DEE0E2;">
+  <p class="govuk-grid-row govuk-!-margin-top-4"> 
+    <span class="govuk-heading-s" style="float:left; padding-left:15px; font-weight:700;">Filter apprentices</span>           
+    <span style="float:right; padding-right:15px;"><a href="manage-your-apprentices">Hide</a></span>
+  </p>
+  <div class="govuk-grid-row">   
+
+    <div class="govuk-grid-column-one-half">                  
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="course">
+          Apprenticeship training course
+        </label>          
+        <select class="govuk-select" id="course" name="course" style="min-width:100%;">
+          <option value="-" selected></option>
+          <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
+          <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
+          <option value="saddler">Bespoke Saddler: Level 3 (Standard)</option>
+        </select>  
+      </div>        
+      <div class="govuk-form-group">  
+        <label class="govuk-label" for="employer">
+          Training provider
+        </label>
+        <select class="govuk-select" id="employer" name="employer" style="min-width:100%;">
+            <option value="-" selected></option>
+            <option value="grooverider">ABC Training Ltd</option>
+            <option value="redshoeslimited">DEF Providers</option>
+          </select>
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="start-date">
-            Planned start date
-          </label>
-          <input class="govuk-input" id="start-date" name="start-date" type="text">
-        </div>   
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="funding-status">
-            Funding status
-          </label>
-          <input class="govuk-input" id="funding-status" name="funding-status" type="text">
-        </div>                     
-        <p>
-          {{ govukButton ({
-            text: "Filter apprentices"
-          })}}
-        </p>
-      </div>
 
-      <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="course">
-            Apprenticeship training course
-          </label>
-          <input class="govuk-input" id="course" name="course" type="text">              
-        </div>  
-        <div class="gov-form-group">
-          <label class="govuk-label" for="end-date">
-            Planned end date
-          </label>
-          <input class="govuk-input" id="end-date" name="end-date" type="text">
-        </div>              
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="funding-status">
+          Funding status
+        </label>
+        <select class="govuk-select" id="funding-status" name="funding-status" style="min-width:100%;">
+          <option value="-" selected></option>
+          <option value="Transferred funds">Transferred funds</option>            
+        </select>
+      </div>                     
+      <div class="govuk-form-group">
+        {{ govukButton ({
+          text: "Filter"
+        })}}
       </div>
+    </div>
 
-      <div class="govuk-grid-column-one-third">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="status">
-            Status
-          </label>
-          <input class="govuk-input" id="status" name="status" type="text">              
-        </div>  
-        <div class="gov-form-group">
-          <label class="govuk-label" for="alerts">
-            Alerts
-          </label>
-          <input class="govuk-input" id="alerts" name="alerts" type="text">
-        </div>          
-      </div>
-    </div>    
-  </div> 
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="start-date">
+          Planned start date
+        </label>
+        <select class="govuk-select" id="start-date" name="start-date" style="min-width:100%;">
+            <option value="-" selected></option>
+          <option value="jan2019">Jan 2019</option>
+          <option value="mar2019">Mar 2019</option>
+          <option value="mar2020">Mar 2020</option>
+        </select>
+      </div> 
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="status">
+          Status
+        </label>
+        <select class="govuk-select" id="end-date" name="status" style="min-width:100%;">
+          <option value="-" selected></option>
+          <option value="Completed">Completed</option>
+          <option value="Live">Live</option>
+          <option value="Paused">Paused</option>
+          <option value="Stopped">Stopped</option>
+          <option value="Waiting to start">Waiting to start</option>
+        </select>      
+      </div>             
+    </div>  
+  </div>  
+
+</div> 
+
+<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4 govuk-!-margin-top-6">
+  <p class="govuk-grid-row" style="background-color:#fff;"> 
+    <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>2</b> with alerts. <a href="manage-your-apprentices-filters" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
+    <span style="float:right; padding-right:15px;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
+  </p>
 </div>
-<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
-    <p class="govuk-grid-row " style="background-color:#fff;"> 
-        <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>5</b> with alerts. <a href="manage-your-apprentices-filters" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
-        <span style="float:right; padding-right:15px;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
-        <!--<br><br>    
-        <span style="float:right; padding-right:15px;"><a href="download" title="Download current view as a spreadsheet">Download current view (CSV)</a></span>-->
-    </p>
-  </div>
-  <div class="govuk-visually-hidden">
+
+<div class="govuk-visually-hidden">
+  {%for record in data.records%}
+  <span class="data-name">{{record.name}}</span>          
+  <span class="data-uln">{{record.uln}}</span>
+  {%endfor%}
+</div>
+
+<table class="govuk-table" id="apprentice-table" style="font-size:18px;">          
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:20%;">Name</th>                  
+      <th class="govuk-table__header" scope="col" aria-sort="ascending">Apprenticeship training course</th>  
+      <th class="govuk-table__header" scope="col" aria-sort="ascending">Planned start date</th>      
+      <th class="govuk-table__header" scope="col" aria-sort="ascending">Training provider</th>            
+      <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:5%;">Status</th>        
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
     {%for record in data.records%}
-    <span class="data-name">{{record.name}}</span>          
-    <span class="data-uln">{{record.uln}}</span>
-    {%endfor%}
-  </div>
-  <table class="govuk-table" id="apprentice-table" style="font-size:18px;">          
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:15%;">Name</th>      
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">ULN</th>        
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Training provider</th>    
-            <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:20%;">Apprenticeship training course</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Planned start date</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Planned end date</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:5%;">Status</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Alerts</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        {%for record in data.providerrecords%}
-        {%if query.search %}
-          {% if query.search in record.name or query.search in record.uln %}
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
-            <td class="govuk-table__cell">{{record.uln}}</td>                            
-            <td class="govuk-table__cell">{{record.employer}}</td>
-            <td class="govuk-table__cell">{{record.course}}</td>
-            <td class="govuk-table__cell">{{record.startDate}}</td>   
-            <td class="govuk-table__cell">{{record.endDate}}</td>             
-            <td class="govuk-table__cell">{{record.status}}</td>
-            <td class="govuk-table__cell"><a href="alerts">{{record.alert}}</a></td>
-          </tr>
-          {%endif%} 
-          {%else%}
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
-            <td class="govuk-table__cell">{{record.uln}}</td>                            
-            <td class="govuk-table__cell">{{record.employer}}</td>
-            <td class="govuk-table__cell">{{record.course}}</td>
-            <td class="govuk-table__cell">{{record.startDate}}</td> 
-            <td class="govuk-table__cell">{{record.endDate}}</td>              
-            <td class="govuk-table__cell">{{record.status}}</td>
-            <td class="govuk-table__cell"><a href="alerts">{{record.alert}}</a></td>
-          </tr>
-          {%endif%}          
-        {%endfor%}            
-      </tbody>
-    </table>      
-  </div>
+    {%if query.search %}
+      {% if query.search in record.name or query.search in record.uln %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
+        <td class="govuk-table__cell">{{record.course}}</td>
+        <td class="govuk-table__cell">{{record.startDate}}</td>   
+        <td class="govuk-table__cell">{{record.trainingProvider}}</td>
+        <td class="govuk-table__cell">{{record.status}}</td>
+      </tr>
+      {%endif%} 
+      {%else%}
+      <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
+          <td class="govuk-table__cell">{{record.course}}</td>
+          <td class="govuk-table__cell">{{record.startDate}}</td>   
+          <td class="govuk-table__cell">{{record.trainingProvider}}</td>
+          <td class="govuk-table__cell">{{record.status}}</td> 
+      </tr>
+      {%endif%}          
+    {%endfor%}            
+  </tbody>
+</table>      
 
 {% endblock %}
 
@@ -252,7 +254,7 @@ accessibleAutocomplete({
   autoselect: true,
   minLength: 1,
   onConfirm: fireSearch,
-  //placeholder: 'Search by apprentice name or ULN',
+  //placeholder: 'Search by apprentice name or training provider',
   displayMenu: 'overlay'
 });
 myInput.style.display = 'none';

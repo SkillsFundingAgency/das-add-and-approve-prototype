@@ -148,13 +148,13 @@ Manage your apprentices
         </tr>
       </thead>
       <tbody class="govuk-table__body">
-        {%for record in data.providerrecords%}
+        {%for record in data.records%}
         {%if query.search %}
           {% if query.search in record.name or query.search in record.uln %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
             <td class="govuk-table__cell">{{record.uln}}</td>                            
-            <td class="govuk-table__cell">{{record.employer}}</td>
+            <td class="govuk-table__cell">{{record.provider}}</td>
             <td class="govuk-table__cell">{{record.course}}</td>
             <td class="govuk-table__cell">{{record.startDate}}</td>   
             <td class="govuk-table__cell">{{record.endDate}}</td>             
@@ -166,7 +166,7 @@ Manage your apprentices
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
             <td class="govuk-table__cell">{{record.uln}}</td>                            
-            <td class="govuk-table__cell">{{record.employer}}</td>
+            <td class="govuk-table__cell">{{record.provider}}</td>
             <td class="govuk-table__cell">{{record.course}}</td>
             <td class="govuk-table__cell">{{record.startDate}}</td> 
             <td class="govuk-table__cell">{{record.endDate}}</td>              

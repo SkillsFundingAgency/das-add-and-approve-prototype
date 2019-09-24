@@ -53,70 +53,64 @@ Manage your apprentices
       </div>
     </div>
   </form>
-</div>
-<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
+
   <div style="background-color:#DEE0E2; padding:10px; height:25px;">
     <p class="govuk-!-margin-bottom-9"> 
-      <span class="govuk-heading-s" style="float:left; padding-left:15px; font-weight:700;">Filter apprentices</span>           
-      <span style="float:right; padding-right:15px;"><a href="manage-your-apprentices-filters">Show</a></span>
+      <span class="govuk-heading-s" style="float:left; padding-left:5px; font-weight:700;">Filter apprentices</span>           
+      <span style="float:right; padding-right:5px;"><a href="manage-your-apprentices-filters">Show</a></span>
     </p>
+  </div>
+</div>
+<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
+    <div style="padding:10px; height:25px;">
     <p class="govuk-grid-row govuk-!-margin-bottom-9"> 
-        <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>5</b> with alerts. <a href="manage-your-apprentices" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
-        <span style="float:right; padding-right:15px;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
+        <span style="float:left; padding-left:5px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total. <a href="manage-your-apprentices" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
+        <span style="float:right; padding-right:5px;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
         <!--<br><br>    
         <span style="float:right; padding-right:15px;"><a href="download" title="Download current view as a spreadsheet">Download current view (CSV)</a></span>-->
     </p>
   </div>
   <div class="govuk-visually-hidden">
-    {%for record in data.providerrecords%}
+    {%for record in data.records%}
     <span class="data-name">{{record.name}}</span>          
     <span class="data-employer">{{record.uln}}</span>
     {%endfor%}
   </div>
 </div>
-  <table class="govuk-table" id="apprentice-table" style="font-size:18px;">          
-      <thead class="govuk-table__head">
+<table class="govuk-table" id="apprentice-table" style="font-size:18px;">          
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:20%;">Name</th>                  
+        <th class="govuk-table__header" scope="col" aria-sort="ascending">Apprenticeship training course</th>  
+        <th class="govuk-table__header" scope="col" aria-sort="ascending">Planned start date</th>      
+        <th class="govuk-table__header" scope="col" aria-sort="ascending">Training provider</th>            
+        <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:5%;">Status</th>        
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {%for record in data.records%}
+      {%if query.search %}
+        {% if query.search in record.name %}
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:15%;">Name</th>      
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">ULN</th>        
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Employer</th>    
-            <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:20%;">Apprenticeship training course</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Planned start date</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Planned end date</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:5%;">Status</th>
-            <th class="govuk-table__header" scope="col" aria-sort="ascending">Alerts</th>
+          <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
+          <td class="govuk-table__cell">{{record.course}}</td>
+          <td class="govuk-table__cell">{{record.startDate}}</td>   
+          <td class="govuk-table__cell">{{record.trainingProvider}}</td>
+          <td class="govuk-table__cell">{{record.status}}</td>
         </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        {%for record in data.providerrecords%}
-        {%if query.search %}
-          {% if query.search in record.name or query.search in record.uln %}
-          <tr class="govuk-table__row">
+        {%endif%} 
+        {%else%}
+        <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
-            <td class="govuk-table__cell">{{record.uln}}</td>                            
-            <td class="govuk-table__cell">{{record.employer}}</td>
             <td class="govuk-table__cell">{{record.course}}</td>
             <td class="govuk-table__cell">{{record.startDate}}</td>   
-            <td class="govuk-table__cell">{{record.endDate}}</td>             
-            <td class="govuk-table__cell">{{record.status}}</td>
-            <td class="govuk-table__cell"><a href="alerts">{{record.alert}}</a></td>
-          </tr>
-          {%endif%} 
-          {%else%}
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
-            <td class="govuk-table__cell">{{record.uln}}</td>                            
-            <td class="govuk-table__cell">{{record.employer}}</td>
-            <td class="govuk-table__cell">{{record.course}}</td>
-            <td class="govuk-table__cell">{{record.startDate}}</td> 
-            <td class="govuk-table__cell">{{record.endDate}}</td>              
-            <td class="govuk-table__cell">{{record.status}}</td>
-            <td class="govuk-table__cell"><a href="alerts">{{record.alert}}</a></td>
-          </tr>
-          {%endif%}          
-        {%endfor%}            
-      </tbody>
-    </table>      
+            <td class="govuk-table__cell">{{record.trainingProvider}}</td>
+            <td class="govuk-table__cell">{{record.status}}</td> 
+        </tr>
+        {%endif%}          
+      {%endfor%}            
+    </tbody>
+  </table>     
   </div>
 
 {% endblock %}
@@ -192,7 +186,7 @@ accessibleAutocomplete({
   autoselect: true,
   minLength: 1,
   onConfirm: fireSearch,
-  //placeholder: 'Search by apprentice name or uln',
+  //placeholder: 'Search by apprentice name',
   displayMenu: 'overlay'
 });
 myInput.style.display = 'none';
