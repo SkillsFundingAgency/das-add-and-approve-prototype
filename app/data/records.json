@@ -38,7 +38,7 @@
     "course": "Accountancy: Level 3 (Standard)",
     "startDate": "Jan 2019",
     "trainingProvider": "DEF Providers",
-    "status": "Completed"
+    "status": "Paused"
   },
   {
     "name": "Albert Schweitzer",
@@ -52,7 +52,7 @@
     "course": "Bespoke Saddler: Level 3 (Standard)",
     "startDate": "Mar 2020",
     "trainingProvider": "ABC Training Ltd",
-    "status": "Live"
+    "status": "Stopped"
   },
   {
     "name": "Alvy Singer",
@@ -94,7 +94,7 @@
     "course": "Accountancy: Level 7 (Standard)",
     "startDate": "May 2019",
     "trainingProvider": "ABC Training Ltd",
-    "status": "Live"
+    "status": "Paused"
   },
   {
     "name": "Astrid Conway",
