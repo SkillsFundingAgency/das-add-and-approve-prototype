@@ -4,7 +4,7 @@
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block pageTitle %}
-  Message sent to training provider
+  Notification sent to training provider
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Message sent to training provider</h1>
+        <h1 class="govuk-panel__title">Notification sent to training provider</h1>
       </div>
 
       <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -42,7 +42,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Approved by
+            Submitted by
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['employer']}}
@@ -54,11 +54,17 @@
         What's next?
       </h2>
 
-      <p>Your training provider will review this apprentice record and contact you as soon as possible.</p>
+      <p>Your training provider will review these apprentice details and contact you as soon as possible.</p>
 
-      <p class="govuk-!-margin-top-9" style="padding:20px; background-color: lightgray;">
-        Survey goes here (but looks like the survey link so don't code this)
-      </p>
+      <div class="govuk-!-margin-top-9" style="padding:20px 20px 0 20px; background-color: lightgray; border-left-color:#666;">
+        <h2 class="govuk-heading-m">
+          Help us improve this section
+        </h2>
+        <p class="govuk-body-m">Take a 3 minute survey about adding apprentices so that we can improve the service.</p>
+        {{ govukButton ({
+          text: "Take the survey"
+        })}}
+      </div>
 
     </div>
   </div>

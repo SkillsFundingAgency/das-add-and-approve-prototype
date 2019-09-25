@@ -5,12 +5,29 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "You must complete all apprentice details before you can approve this record",
+          href: "#approve"
+        }
+      ]
+    }) }}
+
+       
+  </div>
+</div>  
+
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <form method="post" class="form">
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-9 govuk-!-margin-top-6">
           Approve 6 apprentices' details
         </h1>
       </div>
@@ -77,7 +94,7 @@
               <td class="govuk-table__cell">Bobby Wright</td>
               <td class="govuk-table__cell">11 May 2002</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right; border-bottom: 5px solid #b10e1e;"></td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details?first-name={{name}}">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -87,7 +104,7 @@
               <td class="govuk-table__cell">Darren Testing</td>
               <td class="govuk-table__cell">16 Feb 2000</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right; border-bottom: 5px solid #b10e1e;"></td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -97,7 +114,7 @@
               <td class="govuk-table__cell">Sarah Philips</td>                
               <td class="govuk-table__cell">3 Dec 2002</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right; border-bottom: 5px solid #b10e1e;"></td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -168,61 +185,20 @@
           <a href="confirm-deletion" style="float:right;">Delete this group</a>
         </p>
 
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
 
-            {% set textHtml %}
-            {{ govukTextarea({
-              id: "msg-content-approve",
-              name: "msg-content-approve",
-              type: "textarea",
-              classes: "govuk-textarea",
-              label: {
-                html: "Leave "+data['provider-name']+" a message (optional)"
-              },
-              rows: 5
-            }) }}
-            {% endset -%}
+           
 
-          {{ govukRadios({
-            idPrefix: "approve",
-            name: "approve",
-            fieldset:
-            {
-              legend:
-              {
-                text: "Approve these details?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
-              }
-            },
-            items: [
-            {
-              value: "yes",
-              text: "Yes, approve and notify training provider",
-              conditional: {
-                html: textHtml
-              }
-            },
-            {
-              value: "no",
-              text: "No, request changes from training provider",
-              conditional: {
-                html: textHtml
-              }
-            }
-            ]
-          }) }}
+        {{ govukButton({
+          text: "Continue to agreement"
+        }) }}
 
-          {{ govukButton({
-            text: "Save and submit"
-          }) }}
+        <p class="govuk-body govuk-!-margin-top-6">
+          <a href="your-cohorts">Save and exit</a>
+        </p>
 
-          <p class="govuk-body  govuk-!-margin-top-6">
-            <a href="your-cohorts">Save and exit</a>
-          </p>
-            
-          </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+</div>
 {% endblock %}

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
       <form method="post" class="form">
@@ -56,10 +56,10 @@
 
         <h2 class="govuk-heading-m govuk-!-margin-top-6">3 x Bespoke Saddler, Level: 3 (Standard)</h2>
         
-        <!--<div class="govuk-inset-text" style="border-left-color:#1d70b8;">
+        <div class="govuk-inset-text" style="border-left-color:#1d70b8;">
           <h3 class="govuk-heading-s">1 apprenticeship above funding band maximum</h3>
           <p>The price for this apprenticeship is above its <a href="#">funding band maximum</a> of £3,000. You'll need to pay the difference directly to the training provider.</p>
-        </div>-->
+        </div>
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -77,7 +77,7 @@
               <td class="govuk-table__cell">Bobby Wright</td>
               <td class="govuk-table__cell">11 May 2002</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right; border-bottom: #1d70b8 5px solid;"></td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details?first-name={{name}}">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -87,7 +87,7 @@
               <td class="govuk-table__cell">Darren Testing</td>
               <td class="govuk-table__cell">16 Feb 2000</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right; border-bottom: #1d70b8 5px solid;"></td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -97,7 +97,7 @@
               <td class="govuk-table__cell">Sarah Philips</td>                
               <td class="govuk-table__cell">3 Dec 2002</td>
               <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
-              <td class="govuk-table__cell" style="text-align: right;">£4,500</td>
+              <td class="govuk-table__cell" style="text-align: right; border-bottom: #1d70b8 5px solid;"></td>
               <td class="govuk-table__cell">
                 <a href="apprentice-details">Edit</a><!--<br><br>
                 <a href="#">Delete</a>-->
@@ -168,7 +168,7 @@
           <a href="confirm-deletion" style="float:right;">Delete this group</a>
         </p>
 
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
 
             {% set textHtml %}
             {{ govukTextarea({
@@ -186,6 +186,9 @@
           {{ govukRadios({
             idPrefix: "approve",
             name: "approve",
+            errorMessage: {
+              "text": "You must choose an option"
+            },
             fieldset:
             {
               legend:
@@ -213,14 +216,10 @@
             ]
           }) }}
 
-          {{ govukButton({
-            text: "Save and submit"
-          }) }}
+            {{ govukButton({
+              text: "Save and submit"
+            }) }}
 
-          <p class="govuk-body  govuk-!-margin-top-6">
-            <a href="your-cohorts">Save and exit</a>
-          </p>
-            
           </div>
       </form>
     </div>
