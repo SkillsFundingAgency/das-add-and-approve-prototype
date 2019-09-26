@@ -9,9 +9,9 @@
   <div class="govuk-grid-column-two-thirds">
     
     <div class="govuk-panel" style="border-color:#2e358b;">
-      <div class="govuk-panel__body">
-          You must sign your employer agreement before you can approve this record
-      </div>
+      <h1 class="govuk-panel__title">
+        You must sign your employer agreement before you can approve this record
+      </h1>
     </div>
        
   </div>
@@ -182,13 +182,15 @@
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
 
-           
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-9">
+        Sign your employer agreement to continue   
+        </h2>
 
         {{ govukButton({
-          text: "Continue to agreement"
+          text: "View employer agreement"
         }) }}
 
-        <p class="govuk-body  govuk-!-margin-top-6">
+        <p class="govuk-body">
           <a href="your-cohorts">Save and exit</a>
         </p>
 
