@@ -56,7 +56,7 @@ router.post('/approve-apprentices-incomplete-records', (req, res) => {
 //approve apprentices incomplete records
 router.post('/approve-apprentices-incomplete-records-error', (req, res) => {
 	if (req.session.data['approve'] == 'yes') {
-	  res.redirect('confirmed')
+	  res.redirect('approve-apprentices-incomplete-records-error')
 	} else if (req.session.data['approve'] == 'no') {
 	  res.redirect('not-confirmed')
 	} else {
