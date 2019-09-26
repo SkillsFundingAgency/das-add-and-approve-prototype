@@ -13,11 +13,10 @@
       errorList: [
         {
           text: "You must complete all apprentice details before you can approve this record",
-          href: "#approve"
+          href: "#details"
         }
       ]
     }) }}
-
        
   </div>
 </div>  
@@ -47,36 +46,9 @@
                 text: "Hi there, could you do the necessary for these apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester."
               }) }}
   
-          <!--</div>    
-        </div>-->
-    
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    
-        <!--<h2 class="govuk-heading-l govuk-!-margin-top-6">6 apprentice details to approve</h2>
-
-        <div class="govuk-grid-row govuk-!-padding-top-6 govuk-!-padding-bottom-4" id="app-review-cohorts">
-          <div class="govuk-grid-column-one-half">
-            <div class="all-apps" style="background-color:#005EA5;">
-              <h2 class="govuk-heading-xl">2</h2>
-              <p class="govuk-!-font-weight-bold govuk-!-font-size-24">Apprentices</p>
-            </div>
-          </div>
-    
-          <div class="govuk-grid-column-one-half">
-            <div class="total-cost" style="background-color:#005EA5;">
-              <h2 class="govuk-heading-xl">£20,000</h2>
-              <p class="govuk-!-font-weight-bold govuk-!-font-size-24">Total cost</p>
-            </div>
-          </div>
-
-        </div>-->
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" id="details">
 
         <h2 class="govuk-heading-m govuk-!-margin-top-6">3 x Bespoke Saddler, Level: 3 (Standard)</h2>
-        
-        <!--<div class="govuk-inset-text" style="border-left-color:#1d70b8;">
-          <h3 class="govuk-heading-s">1 apprenticeship above funding band maximum</h3>
-          <p>The price for this apprenticeship is above its <a href="#">funding band maximum</a> of £3,000. You'll need to pay the difference directly to the training provider.</p>
-        </div>-->
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -187,11 +159,55 @@
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
 
-           
+        {% set textHtml %}
+            {{ govukTextarea({
+              id: "msg-content-approve",
+              name: "msg-content-approve",
+              type: "textarea",
+              classes: "govuk-textarea",
+              label: {
+                html: "Leave "+data['provider-name']+" a message (optional)"
+              },
+              rows: 5
+            }) }}
+            {% endset -%}
 
-        {{ govukButton({
-          text: "Continue to agreement"
-        }) }}
+          {{ govukRadios({
+            idPrefix: "approve",
+            name: "approve",
+            errorMessage: {
+              "text": "You must choose an option"
+            },
+            fieldset:
+            {
+              legend:
+              {
+                text: "Approve these details?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
+              }
+            },
+            items: [
+            {
+              value: "yes",
+              text: "Yes, approve and notify training provider",
+              conditional: {
+                html: textHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No, request changes from training provider",
+              conditional: {
+                html: textHtml
+              }
+            }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Save and submit"
+          }) }}
 
         <p class="govuk-body govuk-!-margin-top-6">
           <a href="your-cohorts">Save and exit</a>

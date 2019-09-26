@@ -53,6 +53,18 @@ router.post('/approve-apprentices-incomplete-records', (req, res) => {
   }
 })
 
+//approve apprentices incomplete records
+router.post('/approve-apprentices-incomplete-records-error', (req, res) => {
+	if (req.session.data['approve'] == 'yes') {
+	  res.redirect('confirmed')
+	} else if (req.session.data['approve'] == 'no') {
+	  res.redirect('not-confirmed')
+	} else {
+	res.redirect('approve-apprentices-incomplete-records-error')
+  }
+})
+
+
 //review an apprentice
 router.post('/confirm-deletion', (req, res) => {
 	if (req.session.data['delete'] == 'yes') {
