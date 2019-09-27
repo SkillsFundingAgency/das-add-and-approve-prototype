@@ -72,8 +72,11 @@ router.post('/confirm-deletion', (req, res) => {
 router.post('/delete-apprentice', (req, res) => {
 	if (req.session.data['delete'] == 'yes') {
 	  res.redirect('approve-apprentices-deletion')
-	} else {
+	} else if (req.session.data['delete'] == 'no') {
 	  res.redirect('approve-apprentices')
+	}
+	else {
+	  res.redirect('delete-apprentice-error')
 	}
 	})
 
