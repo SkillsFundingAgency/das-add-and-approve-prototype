@@ -53,7 +53,7 @@ router.post('/approve-apprentices-incomplete-records', (req, res) => {
   }
 })
 
-//approve apprentices incomplete records
+//approve apprentices incomplete records error
 router.post('/approve-apprentices-incomplete-records-error', (req, res) => {
 	if (req.session.data['approve'] == 'yes') {
 	  res.redirect('approve-apprentices-incomplete-records-error')
@@ -64,6 +64,27 @@ router.post('/approve-apprentices-incomplete-records-error', (req, res) => {
   }
 })
 
+//approve apprentices unsigned agreement
+router.post('/approve-apprentices-unsigned-agreement', (req, res) => {
+	if (req.session.data['approve'] == 'yes') {
+	  res.redirect('agreement')
+	} else if (req.session.data['approve'] == 'no') {
+	  res.redirect('not-confirmed')
+	} else {
+	res.redirect('approve-apprentices-unsigned-agreement-error')
+  }
+})
+
+//approve apprentices unsigned agreement error
+router.post('/approve-apprentices-unsigned-agreement-error', (req, res) => {
+	if (req.session.data['approve'] == 'yes') {
+	  res.redirect('agreement')
+	} else if (req.session.data['approve'] == 'no') {
+	  res.redirect('not-confirmed')
+	} else {
+	res.redirect('approve-apprentices-unsigned-agreement-error')
+  }
+})
 
 //review an apprentice
 router.post('/confirm-deletion', (req, res) => {

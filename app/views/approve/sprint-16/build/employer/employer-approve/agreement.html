@@ -1,0 +1,40 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  View employer agreement
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">    
+    <div class="govuk-grid-column-two-thirds">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-9">
+          <h1 class="govuk-fieldset__heading">
+              ESFA employer agreement
+          </h1>
+        </legend> 
+      </fieldset>                     
+    </div>
+    <div class="govuk-grid-column-two-thirds">  
+      <p class="govuk-body">
+        This is a placeholder for the employer agreement
+      </p>
+
+      {{ govukButton({
+        text: "Sign and submit",
+        href: "approve-apprentices"
+      }) }}
+
+      <p class="govuk-body govuk-!-margin-top-6">
+        <a href="approve-apprentices-unsigned-agreement">Go back to apprentice details</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}

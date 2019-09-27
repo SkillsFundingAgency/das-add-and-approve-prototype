@@ -182,54 +182,17 @@
 
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-bottom-6" id="approve">
 
-        {% set textHtml %}
-        {{ govukTextarea({
-          id: "msg-content",
-          name: "msg-content",
-          type: "textarea",
-          classes: "govuk-textarea",
-          label: {
-            html: "Leave "+data['provider-name']+" a message (optional)"
-          },
-          rows: 5
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-9">
+        Sign your employer agreement to continue   
+        </h2>
+
+        {{ govukButton({
+          text: "View employer agreement"
         }) }}
-        {% endset -%}
 
-          {{ govukRadios({
-            idPrefix: "approve",
-            name: "approve",
-            fieldset:
-            {
-              legend:
-              {
-                text: "Choose an option",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
-              }
-            },
-            items: [
-            {
-              value: "yes",
-              text: "View employer agreement"
-            },
-            {
-              value: "no",
-              text: "Send to the training provider to review or add details",
-              conditional: {
-                html: textHtml
-              }
-            }
-            ]
-          }) }}
-
-            {{ govukButton({
-              text: "Save and submit"
-            }) }}
-
-            <p class="govuk-body govuk-!-margin-top-6">
-              <a href="your-cohorts">Save and exit</a>
-            </p>
-
+        <p class="govuk-body">
+          <a href="your-cohorts">Save and exit</a>
+        </p>
 
       </div>
     </form>
