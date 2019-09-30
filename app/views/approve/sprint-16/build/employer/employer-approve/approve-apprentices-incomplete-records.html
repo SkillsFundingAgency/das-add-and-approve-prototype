@@ -143,7 +143,7 @@
             </div>
             <div class="govuk-grid-column-one-third">
               <h2 class="govuk-heading-m margin-bottom-6 govuk-!-margin-top-6" style="float:right; padding-right: 54px;">
-                £43,500
+                £30,000
               </h2>
             </div>
         </div>
@@ -175,7 +175,7 @@
           {
             legend:
             {
-              text: "Approve these details?",
+              text: "Choose an option",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m govuk-!-margin-top-4"
             }
@@ -183,17 +183,14 @@
           items: [
           {
             value: "yes",
-            text: "Yes, approve and notify training provider",
+            text: "Request changes from training provider",
             conditional: {
               html: textHtml
             }
           },
           {
             value: "no",
-            text: "No, request changes from training provider",
-            conditional: {
-              html: textHtml
-            }
+            text: "Go to homepage"
           }
           ]
         }) }}
@@ -202,9 +199,9 @@
           text: "Save and submit"
         }) }}
 
-        <p class="govuk-body  govuk-!-margin-top-6">
+        <!--<p class="govuk-body  govuk-!-margin-top-6">
           <a href="your-cohorts">Save and exit</a>
-        </p>
+        </p>-->
 
       </div>
     </form>
