@@ -1,0 +1,42 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Add apprentice details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form method="post" class="form">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+          Add apprentice details
+        </h1>
+      </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        <b>Organisation:</b> {{data['employer']}}
+      </p>
+      <p>
+        <b>Reference:</b> XFGBNH
+      </p>
+  
+      {{ govukButton({
+        text: "Add apprentice details"
+      }) }}
+      
+      </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
