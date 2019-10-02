@@ -10,14 +10,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('*/manage-your-apprentices', function (req, res) {
-	res.render('approve/sprint-17/research/employer/manage-your-apprentices/manage-your-apprentices', {
+	res.render('approve/sprint-18/research/employer/manage-your-apprentices/manage-your-apprentices', {
    "query" : req.query,
    }
   )
  })
 
  router.get('*/manage-your-apprentices-filters', function (req, res) {
-	res.render('approve/sprint-17/research/employer/manage-your-apprentices/manage-your-apprentices-filters', {
+	res.render('approve/sprint-18/research/employer/manage-your-apprentices/manage-your-apprentices-filters', {
    "query" : req.query,
    }
   )
