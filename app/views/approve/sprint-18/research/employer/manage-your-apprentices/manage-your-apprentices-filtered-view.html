@@ -68,8 +68,7 @@ Manage your apprentices
           Apprenticeship training course
         </label>          
         <select class="govuk-select" id="course" name="course" style="min-width:100%;">
-          <option value="-" selected></option>
-          <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
+          <option value="accountancy-level7" selected>Accountancy: Level 7 (Standard)</option>
           <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
           <option value="saddler">Bespoke Saddler: Level 3 (Standard)</option>
         </select>  
@@ -103,7 +102,6 @@ Manage your apprentices
         <p class="govuk-body">
           <a href="manage-your-apprentices-filters">Reset</a>
         </p>
-        
       </div>
     </div>
 
@@ -126,10 +124,9 @@ Manage your apprentices
           Planned end date
         </label>
         <select class="govuk-select" id="end-date" name="end-date" style="min-width:100%;">
-            <option value="-" selected></option>
-          <option value="jan2019">Apr 2019</option>
-          <option value="mar2019">Apr 2020</option>
-          <option value="mar2020">Apr 2021</option>
+          <option value="apr2019">Apr 2019</option>
+          <option value="apr2020">Apr 2020</option>
+          <option value="apr2021" selected>Apr 2021</option>
         </select>
       </div>         
     </div>  
@@ -140,7 +137,7 @@ Manage your apprentices
 <div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4 govuk-!-margin-top-6">
   <p class="govuk-grid-row" style="background-color:#fff;"> 
     <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total. <a href="manage-your-apprentices-filters" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
-    <span style="float:right; padding-right:15px;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
+    <span style="float:right; padding-right:15px;"><a href="download" title="Download all data as a spreadsheet">Download filtered data (CSV)</a></span>
   </p>
 </div>
 
