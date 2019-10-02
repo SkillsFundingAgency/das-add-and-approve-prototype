@@ -22,5 +22,12 @@ router.get('*/manage-your-apprentices', function (req, res) {
    }
   )
  })
+
+ router.get('*/manage-your-apprentices-filtered-view', function (req, res) {
+	res.render('approve/sprint-18/research/employer/manage-your-apprentices/manage-your-apprentices-filtered-view', {
+   "query" : req.query,
+   }
+  )
+ })
   
   module.exports = router

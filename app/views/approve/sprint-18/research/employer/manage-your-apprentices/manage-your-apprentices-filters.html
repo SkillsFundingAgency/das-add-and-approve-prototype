@@ -31,7 +31,7 @@ Manage your apprentices
             <input type="hidden" name="clientsFilter" value="new">
             <div class="search-input search-input-with-button">
               <label class="govuk-label" for="search">                     
-                Search by apprentice name or training provider                 
+                Search by apprentice or training provider                 
               </label>
               <div class="autocomplete__parent_wrapper">
                 <div class="autocomplete__wrapper">
@@ -68,8 +68,7 @@ Manage your apprentices
           Apprenticeship training course
         </label>          
         <select class="govuk-select" id="course" name="course" style="min-width:100%;">
-          <option value="-" selected></option>
-          <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
+          <option value="accountancy-level7" selected>Accountancy: Level 7 (Standard)</option>
           <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
           <option value="saddler">Bespoke Saddler: Level 3 (Standard)</option>
         </select>  
@@ -97,8 +96,7 @@ Manage your apprentices
       </div>-->                     
       <div class="govuk-form-group">
         {{ govukButton ({
-          text: "Filter",
-          href: "manage-your-apprentices-filtered-view"
+          text: "Filter"
         })}}
 
         <p class="govuk-body">
@@ -127,10 +125,9 @@ Manage your apprentices
           Planned end date
         </label>
         <select class="govuk-select" id="end-date" name="end-date" style="min-width:100%;">
-            <option value="-" selected></option>
-          <option value="jan2019">Apr 2019</option>
-          <option value="mar2019">Apr 2020</option>
-          <option value="mar2020">Apr 2021</option>
+          <option value="apr2019">Apr 2019</option>
+          <option value="apr2019">Apr 2020</option>
+          <option value="apr2020" selected>Apr 2021</option>
         </select>
       </div>         
     </div>  

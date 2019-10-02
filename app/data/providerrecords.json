@@ -1,13 +1,32 @@
 [
   {
+    "name": "Darryl Hannah",
+    "uln": "13579252",  
+    "employer": "Red Shoes Limited",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Feb 2021",
+    "status": "Live",
+    "alert": "ILR data mismatch"  
+  },
+  {
+    "name": "Bev Knight",
+    "uln": "13579252",  
+    "employer": "Grooverider",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Feb 2021",
+    "status": "Live",
+    "alert": "Changes pending"  
+  },
+  {
     "name": "Abby Ling",
     "uln": "13579247",
     "employer": "Grooverider",   
     "course": "Bespoke Saddler: Level 3 (Standard)",
     "startDate": "Mar 2019",
     "endDate": "Apr 2021",
-    "status": "Live",
-    "alert": "ILR data mismatch"
+    "status": "Live"
   },{
     "name": "Abdul Smyth",
     "uln": "13579249",  
@@ -15,8 +34,7 @@
     "course": "Accountancy: Level 7 (Standard)",
     "startDate": "Mar 2020",
     "endDate": "Apr 2021",
-    "status": "Live",
-    "alert": "Changes pending"
+    "status": "Live"
   },
   {
     "name": "Abraham Ling",
@@ -305,16 +323,6 @@
     "status": "Live",
     "alert": ""  },
   {
-    "name": "Bev Knight",
-    "uln": "13579252",  
-    "employer": "Grooverider",
-    "course": "Bespoke Saddler: Level 3 (Standard)",
-    "startDate": "Mar 2020",
-    "endDate": "Feb 2021",
-    "status": "Live",
-    "alert": ""  
-  },
-  {
     "name": "Big Donald",
     "uln": "13579252",  
     "employer": "Grooverider",
@@ -509,26 +517,6 @@
     "employer": "Grooverider",
     "course": "Accountancy: Level 3 (Standard)",
     "startDate": "Jan 2018",
-    "endDate": "Feb 2021",
-    "status": "Live",
-    "alert": ""  
-  },
-  {
-    "name": "Darryl Hannah",
-    "uln": "13579252",  
-    "employer": "Red Shoes Limited",
-    "course": "Bespoke Saddler: Level 3 (Standard)",
-    "startDate": "Mar 2020",
-    "endDate": "Feb 2021",
-    "status": "Live",
-    "alert": ""  
-  },
-  {
-    "name": "Dave Eames",
-    "uln": "13579252",  
-    "employer": "Red Shoes Limited",
-    "course": "Accountancy: Level 7 (Standard)",
-    "startDate": "May 2019",
     "endDate": "Feb 2021",
     "status": "Live",
     "alert": ""  

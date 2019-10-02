@@ -31,7 +31,7 @@ Manage your apprentices
             <input type="hidden" name="clientsFilter" value="new">
             <div class="search-input search-input-with-button">
               <label class="govuk-label" for="search">                     
-                Search by apprentice name or ULN
+                Search by apprentice or ULN
               </label>
               <div class="autocomplete__parent_wrapper">
                 <div class="autocomplete__wrapper">
@@ -58,8 +58,7 @@ Manage your apprentices
 
 <div class="govuk-grid-column-full" style="background-color:#DEE0E2;">
   <p class="govuk-grid-row govuk-!-margin-top-4"> 
-    <span class="govuk-heading-s" style="float:left; padding-left:15px; font-weight:700;">Filter apprentices</span>           
-    <span style="float:right; padding-right:15px;"><a href="manage-your-apprentices-filters">Show</a></span>
+    <span class="govuk-heading-s" style="float:left; padding-left:5px; font-weight:700;">Filter apprentices <a href="manage-your-apprentices-filters" style="padding-right:20px;"></span><a href="manage-your-apprentices-filters">Show</a>
   </p>
 </div>
 
@@ -93,7 +92,7 @@ Manage your apprentices
     <tbody class="govuk-table__body">
       {%for record in data.providerrecords%}
       {%if query.search %}
-        {% if query.search in record.name or query.search in record.uln %}
+        {% if query.search in record.name %}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
           <td class="govuk-table__cell">{{record.uln}}</td>                            

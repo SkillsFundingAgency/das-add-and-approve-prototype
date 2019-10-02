@@ -23,7 +23,7 @@ Manage your apprentices
 </div>
 
 <div class="govuk-grid-column-two-thirds govuk-grid-row">
-  <form action="manage-your-apprentices-filters" method="get">
+  <form action="manage-your-apprentices-filtered-view" method="get">
     <div class="row-group">
       <div class="search-table column-two-thirds govuk-!-margin-bottom-4">                
         <fieldset class="govuk-fieldset">
@@ -67,9 +67,8 @@ Manage your apprentices
           Employer
         </label>
         <select class="govuk-select" id="employer" name="employer" style="min-width:100%;">
-          <option value="-" selected></option>
           <option value="grooverider">Grooverider</option>
-          <option value="redshoeslimited">Red Shoes Limited</option>
+          <option value="redshoeslimited" selected>Red Shoes Limited</option>
         </select>
       </div>
       <div class="govuk-form-group">
@@ -110,7 +109,7 @@ Manage your apprentices
           Apprenticeship training course
         </label>          
         <select class="govuk-select" id="course" name="course" style="min-width:100%;">
-          <option value="-" selected></option>
+          <option value="-" ></option>
           <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
           <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
           <option value="saddler">Bespoke Saddler: Level 3 (Standard)</option>
@@ -121,9 +120,8 @@ Manage your apprentices
           Planned end date
         </label>
         <select class="govuk-select" id="end-date" name="end-date" style="min-width:100%;">
-          <option value="-" selected></option>
           <option value="feb2019">Feb 2019</option>
-          <option value="feb2021">Feb 2021</option>
+          <option value="feb2021" selected>Feb 2021</option>
           <option value="mar2021">Mar 2021</option>
           <option value="apr2021">Apr 2021</option>
           <option value="apr2022">Apr 2022</option>
@@ -163,7 +161,7 @@ Manage your apprentices
 <div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4 govuk-!-margin-top-6">
   <p class="govuk-grid-row" style="background-color:#fff;"> 
     <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>2</b> with alerts. <a href="manage-your-apprentices-filters" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
-    <span style="float:right;"><a href="download" title="Download all data as a spreadsheet">Download all data (CSV)</a></span>
+    <span style="float:right;"><a href="download" title="Download filtered data (CSV))">Download filtered data (CSV)</a></span>
   </p>
 </div>
 
