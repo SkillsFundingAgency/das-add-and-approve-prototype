@@ -15,11 +15,16 @@
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full-width">
+      <div class="govuk-grid-column-full">
+        <div class="govuk-panel govuk-panel--confirmation govuk-body govuk-!-margin-bottom-9" style="background-color: white; border: solid 5px #28a197">
+          <h1 class="govuk-panel__title" style="color:black;">
+            Apprentice record deleted
+          </h1>
+        </div>
         <form action="" method="post">
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
-              Draft apprentice records
-            </h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+            Draft apprentice records
+          </h1>
 
 {{ govukTable({
   
@@ -27,6 +32,10 @@
   head: [
     {
       text: "Training provider"
+    },
+    {
+      text: "Number of apprentices",
+      format: "numeric"
     },
     {
       text: "Reference"
@@ -44,6 +53,10 @@
         text: "ABC Training Limited"
       },
       {
+        text: "0",
+        format: "numeric"
+      },
+      {
         text: "XFGBNH"
       },
       {
@@ -58,6 +71,10 @@
         text: "ABC Training Limited"
       },
       {
+        text: "4",
+        format: "numeric"
+      },
+      {
         text: "ASDFGH"
       },
       {
@@ -70,6 +87,10 @@
     [
       {
         text: "DEF Providers"
+      },
+      {
+        text: "26",
+        format: "numeric"
       },
       {
         text: "VBNMCS"
