@@ -1,0 +1,32 @@
+{% extends "layout-account.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Apprentice details have been approved
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-body">
+        <h1 class="govuk-heading-xl">Apprentice details have been approved</h1>
+      </div>
+
+      <p class="govuk-body">The records you're trying to access have been approved.</p>
+      
+      <p class="govuk-body">To continue you can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">manage your apprentices</a> to view or update details</li>
+        <li>return to the <a href="account-home">homepage</a></li>
+        <li>do something else</li>
+      </ul>
+
+
+    </div>
+  </div>
+
+{% endblock %}
