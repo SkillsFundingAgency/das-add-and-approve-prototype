@@ -39,7 +39,7 @@ Manage your apprentices
                     <span>,,</span>
                   </div>
                   <p id="search-default-value" class="hidden">{% if search %}{{search}}{% endif%}</p>
-                  <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="Search by apprentice name or ULN" role="combobox" type="text" value="{%if search %}{{search}}{%endif%}">
+                  <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="Search by apprentice name or training provider" role="combobox" type="text" value="{%if search %}{{search}}{%endif%}">
                   <ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="searchClients__listbox" role="listbox"></ul>
                 </div>
               </div>
@@ -54,7 +54,7 @@ Manage your apprentices
     </div>
   </form>
 
-  <div class="govuk-body govuk-!-margin-top-9">
+  <div class="govuk-body govuk-!-margin-top-4">
     <h3 class="govuk-heading-s"><a href="manage-your-apprentices-filters-1">Show filters</a></h3>
   </div>
 </div>
@@ -62,7 +62,7 @@ Manage your apprentices
     <div style="padding:10px; height:25px;">
     <p class="govuk-grid-row govuk-!-margin-bottom-9"> 
         <span style="float:left; padding-left:5px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>2</b> with alerts. <a href="manage-your-apprentices-1" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
-        <span style="float:right; padding-right:5px;"><a href="download" title="Download all data (CSV)">Download all data (CSV)</a></span>
+        <span style="float:right;"><a href="download" title="Download all data (CSV)">Download all data (CSV)</a></span>
     </p>
   </div>
   <div class="govuk-visually-hidden">
