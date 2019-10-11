@@ -29,9 +29,11 @@ Manage your apprentices
           <div class="form-group search-field search-field-darker">
             <input type="hidden" name="clientsFilter" value="new">
             <div class="search-input search-input-with-button">
-              <label class="govuk-label" for="search">                     
-                Search by apprentice or training provider
-              </label>
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--m" for="search">
+                    Search by apprentice or training provider
+                  </label>          
+                </h1>
               <div class="autocomplete__parent_wrapper">
                 <div class="autocomplete__wrapper">
                   <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
@@ -39,7 +41,7 @@ Manage your apprentices
                     <span>,,</span>
                   </div>
                   <p id="search-default-value" class="hidden">{% if search %}{{search}}{% endif%}</p>
-                  <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="Search by apprentice name or ULN" role="combobox" type="text" value="{%if search %}{{search}}{%endif%}">
+                  <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="Search by apprentice name or training provider" role="combobox" type="text" value="{%if search %}{{search}}{%endif%}">
                   <ul class="autocomplete__menu autocomplete__menu--overlay autocomplete__menu--hidden" id="searchClients__listbox" role="listbox"></ul>
                 </div>
               </div>
@@ -54,19 +56,16 @@ Manage your apprentices
     </div>
   </form>
 
-  <div style="background-color:#DEE0E2; padding:10px; height:25px;">
-    <p class="govuk-!-margin-bottom-9"> 
-      <span class="govuk-heading-s" style="float:left; padding-left:5px; font-weight:700;">Filter apprentices <a href="manage-your-apprentices-filters" style="padding-right:20px;"></span><a href="manage-your-apprentices-filters">Show</a>
-    </p>
+  <div class="govuk-body govuk-!-margin-top-6">
+      <h3 class="govuk-heading-m"><a href="manage-your-apprentices-filters">Filter apprentices</a></h3>
+    </div>
   </div>
-</div>
-<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
+  
+  <div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-6">
     <div style="padding:10px; height:25px;">
-    <p class="govuk-grid-row govuk-!-margin-bottom-9"> 
+        <p class="govuk-grid-row govuk-!-margin-bottom-9"> 
         <span style="float:left; padding-left:5px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>2</b> with alerts. <a href="manage-your-apprentices" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
-        <span style="float:right; padding-right:5px;"><a href="download" title="Download all data (CSV)">Download all data (CSV)</a></span>
-        <!--<br><br>    
-        <span style="float:right; padding-right:15px;"><a href="download" title="Download current view as a spreadsheet">Download current view (CSV)</a></span>-->
+        <span style="float:right;"><a href="download" title="Download all data (CSV)">Download all data (CSV)</a></span>
     </p>
   </div>
   <div class="govuk-visually-hidden">
