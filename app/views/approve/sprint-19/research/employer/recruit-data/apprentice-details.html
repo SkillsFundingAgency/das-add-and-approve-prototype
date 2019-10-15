@@ -1,0 +1,104 @@
+{% extends "./layout--employer.html" %}
+
+{% block pageTitle %}
+  Apprentice details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Apprentice details
+    </h1>
+
+    <form action="details-sent">
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">Darren Diamond</td>      
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Date of birth</th>
+            <td class="govuk-table__cell">01 Feb 2001</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Application ID</th>
+            <td class="govuk-table__cell">C5662EA</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Apprenticeship training course</th>
+            <td class="govuk-table__cell">Bespoke Saddler, Level: 3 (standard)</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Planned training start date</th>
+            <td class="govuk-table__cell">01 Nov 2019</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Projected training end date</th>
+            <td class="govuk-table__cell">01 Dec 2020</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">Total agreed apprenticeship price</th>
+            <td class="govuk-table__cell">£4,500 excluding VAT</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break">
+
+      {{ govukRadios({
+        idPrefix: "submit-and-notify",
+        name: "submit-and-notify",
+        fieldset: {
+          legend: {
+            text: "How do you want to mark this application?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "successful",
+            text: "Mark as successful and notify applicant"
+          },
+          {
+            value: "unsuccessful",
+            text: "Mark as unsuccessful and notify applicant"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Submit and notify applicant",
+        classes: "govuk-!-margin-top-0 govuk-!-display-inline-block"
+      }) }}
+
+      <p class="govuk-body govuk-!-margin-bottom-9">
+        <a href="manage-vacancy">
+          Cancel
+        </a>
+      </p>
+
+      {{ govukDetails({
+        summaryText: "Get help",
+        html: "Contact our helpdesk on:<br>08000 150 600<br><a href='mailto:helpdesk@manage-apprenticeships.service.gov.uk'>helpdesk@manage-apprenticeships.service.gov.uk</a>"
+      }) }}
+    </form>
+  </div>
+
+  {% endblock %}

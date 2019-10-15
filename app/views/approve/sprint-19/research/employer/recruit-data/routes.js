@@ -420,5 +420,13 @@ router.post('/funding--deleted', (req, res) => {
 	}
 })
 
+// mark applicant
+router.post('/apprentice-details', (req, res) => {
+	if (req.session.data['submit-and-notify'] == 'successful' ) {
+		res.redirect(`details-sent`)
+	} else if (req.session.data['submit-and-notify'] == 'unsuccessful' ) {
+		res.redirect(`#`)
+	}
+})
 
 module.exports = router
