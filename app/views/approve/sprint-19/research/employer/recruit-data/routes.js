@@ -440,13 +440,13 @@ router.post('/details-sent', (req, res) => {
 
 // add apprentice details
 router.post('/add--start-adding', (req, res) => {
-	if (req.session.data['start-adding'] == 'yes' ) {
-		res.redirect(`add--apprentice-details`)
-	} else if (req.session.data['start-adding'] == 'no' ) {
-		res.redirect(`manage-vacancies`)
+	if (req.session.data['start-adding'] == 'yes') {
+	  res.redirect('add--apprentice-details')
+	} else if (req.session.data['start-adding'] == 'no') {
+	  res.redirect('login')
 	} else {
-		res.redirect(`add--apprentice-details-prepop`)
-	}
+	res.redirect('add--apprentice-details-prepop')
+  }
 })
 
 module.exports = router
