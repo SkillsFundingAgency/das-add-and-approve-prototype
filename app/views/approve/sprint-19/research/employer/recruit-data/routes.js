@@ -411,13 +411,15 @@ router.post('/funding--delete', (req, res) => {
 })
 
 
-// funding deleted
-router.post('/funding--deleted', (req, res) => {
-	if (req.session.data['whats-next'] == 'manage' ) {
-		res.redirect(`funding--manage`)
-	} else if (req.session.data['whats-next'] == 'return-to-homepage' ) {
-		res.redirect(`account-home`)
-	}
+// approve an apprentice
+router.post('/approve-an-apprentice', (req, res) => {
+	if (req.session.data['approve'] == 'yes') {
+	  res.redirect('confirmation')
+	} else if (req.session.data['approve'] == 'no') {
+	  res.redirect('confirmation')
+	} else {
+	res.redirect('approve-apprentices-error')
+  }
 })
 
 // mark applicant
@@ -443,9 +445,20 @@ router.post('/add--start-adding', (req, res) => {
 	if (req.session.data['start-adding'] == 'yes') {
 	  res.redirect('add--apprentice-details')
 	} else if (req.session.data['start-adding'] == 'no') {
-	  res.redirect('login')
+	  res.redirect('message')
 	} else {
-	res.redirect('add--apprentice-details-prepop')
+	res.redirect('choose-from-recruit')
+  }
+})
+
+// choose from recruit
+router.post('/choose-from-recruit', (req, res) => {
+	if (req.session.data['choose-recruit'] == '1') {
+	  res.redirect('add--apprentice-details')
+	} else if (req.session.data['choose-recruit'] == '2') {
+	  res.redirect('add--apprentice-details-prepop')
+	} else {
+	res.redirect('add--start-adding')
   }
 })
 
