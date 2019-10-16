@@ -16,10 +16,12 @@
 	<div class="govuk-grid-column-two-thirds">
 		{{ govukPanel({
 			titleText: "Applicant marked as successful",
-			classes: "govuk-!-margin-bottom-8"
+			classes: "govuk-!-margin-bottom-2"
 		}) }}
 
-		
+		<p class="gov-body govuk-!-margin-bottom-6">
+			Darren Diamond has been notified to say that they have been accepted for this apprenticeship.
+		</p>
 
 		<form method="post">
 			{{ govukRadios({
@@ -29,26 +31,27 @@
 				{
 					legend:
 					{
-						text: "Do you want send Darren Diamond's apprentice details to your account?",
-						isPageHeading: true,
-						classes: "govuk-fieldset__legend--l"
-					}
+						text: "Do you want send Darren Diamond's apprentice details to your account?",						
+						isPageHeading: false,
+						classes: "govuk-fieldset__legend--m"
+					}				
 				},
 				items: [
 				{
 					value: "yes",
-					text: "Yes"
+					text: " Yes, send applicant details to my account"
 				},
 				{
 					value: "no",
-					text: "No"
+					text: "No, I will do this later"
 				}
 				]
 			}) }}
 
 			<p>
 				{{ govukButton ({
-					text: "Save and continue"
+					text: "Save and continue",
+					href: "add--start"
 				})}}
 			</p>
 		</form>

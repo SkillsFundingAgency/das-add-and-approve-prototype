@@ -429,4 +429,24 @@ router.post('/apprentice-details', (req, res) => {
 	}
 })
 
+// send applicant to approvals
+router.post('/details-sent', (req, res) => {
+	if (req.session.data['send'] == 'yes' ) {
+		res.redirect(`add--start-adding`)
+	} else if (req.session.data['send'] == 'no' ) {
+		res.redirect(`manage-vacancies`)
+	}
+})
+
+// add apprentice details
+router.post('/add--start-adding', (req, res) => {
+	if (req.session.data['start-adding'] == 'yes' ) {
+		res.redirect(`add--apprentice-details`)
+	} else if (req.session.data['start-adding'] == 'no' ) {
+		res.redirect(`manage-vacancies`)
+	} else {
+		res.redirect(`add--apprentice-details-prepop`)
+	}
+})
+
 module.exports = router
