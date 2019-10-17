@@ -440,7 +440,7 @@ router.post('/details-sent', (req, res) => {
 	}
 })
 
-// add apprentice details
+// start adding
 router.post('/add--start-adding', (req, res) => {
 	if (req.session.data['start-adding'] == 'yes') {
 	  res.redirect('add--apprentice-details')
@@ -448,6 +448,17 @@ router.post('/add--start-adding', (req, res) => {
 	  res.redirect('message')
 	} else {
 	res.redirect('choose-from-recruit')
+  }
+})
+
+// how would you like to add
+router.post('/add--how', (req, res) => {
+	if (req.session.data['start-adding'] == 'yes') {
+	  res.redirect('add--apprentice-details')
+	} else if (req.session.data['start-adding'] == 'no') {
+	  res.redirect('message')
+	} else {
+	res.redirect('add--apprentice-details-prepop')
   }
 })
 
