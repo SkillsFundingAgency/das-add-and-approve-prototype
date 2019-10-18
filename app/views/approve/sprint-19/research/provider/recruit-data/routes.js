@@ -438,11 +438,11 @@ router.post('/add--start-adding', (req, res) => {
 })
 
 // how would you like to add
-router.post('/add--how', (req, res) => {
-	if (req.session.data['start-adding'] == 'yes') {
+router.post('/start-adding', (req, res) => {
+	if (req.session.data['start-adding'] == 'add-1') {
 	  res.redirect('add--apprentice-details')
-	} else if (req.session.data['start-adding'] == 'no') {
-	  res.redirect('message')
+	} else if (req.session.data['start-adding'] == 'upload') {
+	  res.redirect('upload')
 	} else {
 	res.redirect('add--apprentice-details-prepop')
   }
@@ -457,6 +457,16 @@ router.post('/choose-from-recruit', (req, res) => {
 	} else {
 	res.redirect('add--start-adding')
   }
+})
+
+// Confirm employer (add)
+router.post('/add__confirm-employer', (req, res) => {
+	if (req.session.data['confirm-employer'] == 'yes' ) {
+		res.redirect(`start-adding`)
+	} else {
+		req.session.data['employer'] = ''
+		res.redirect(`add__choose-employer`)
+	}
 })
 
 module.exports = router

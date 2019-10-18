@@ -34,7 +34,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="approve-an-apprentice">
+    <form method="post">
       <h2 class="govuk-heading-xl">
         Add apprentice details
       </h2>
@@ -49,13 +49,13 @@
       {% call govukFieldset({
         legend:
         {
-          text: "Training provider",
+          text: "Employer",
           classes: "govuk-fieldset__legend--s",
           isPageHeading: false
         }
       }) %}
       <p class="govuk-hint  govuk-!-margin-bottom-9">
-        APEX TRAINING LIMITED
+        {{data['employer']}}
       </p>
       {% endcall %}
 
@@ -135,18 +135,17 @@
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      {% call govukFieldset({
-        legend:
-        {
-          text: "Unique learner number",
-          classes: "govuk-fieldset__legend--s",
-          isPageHeading: false
-        }
-      }) %}
-      <p class="govuk-hint">
-        This will be added by your training provider.
-      </p>
-      {% endcall %}
+      
+      {{ govukInput({
+        label: {
+          text: "Unique Learner Number",
+          classes: "govuk-!-font-weight-bold"
+        },
+        id: "uln",
+        name: "uln",
+        value: "",
+        classes: "govuk-input--width-20"
+      }) }}
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -292,7 +291,8 @@
 
       <p>
         {{ govukButton ({
-          text: "Save and continue"
+          text: "Save and continue",
+          href: ""
         })}}
       </p>
     </form>

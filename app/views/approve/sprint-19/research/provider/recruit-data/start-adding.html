@@ -1,0 +1,76 @@
+{% extends "layout-provider-account.html" %}
+
+{% block pageTitle %}
+  Start adding apprentices
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" class="form">
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+            How would you like to add apprentice details?
+          </h1>
+    
+          {{ govukRadios({
+            idPrefix: "start-adding",
+            name: "start-adding",
+            fieldset:
+            {
+              legend:
+              {
+                text: "I will use successful candidates from Recruitment",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s govuk-!-font-weight-regular"
+              }
+            },
+            items:
+            [
+            {
+              value: "add-1",
+              text: "Bobby Tester",
+              hint: {
+                text: "Accountancy, Level: 7 (Standard)"
+              }
+            },
+            {
+              value: "recruit",
+              text: "Darren Diamond",
+              hint: {
+                text: "Bespoke Saddler, Level: 3 (Standard)"
+              }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "add-1",
+              text: "I will enter apprentices manually one at a time"
+            },{
+              value: "upload",
+              text: "I will upload apprentice details from a file"
+            }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+          
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
