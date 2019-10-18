@@ -1,0 +1,81 @@
+
+{% extends "./layout--employer.html" %}
+
+{% block pageTitle %}
+  How would you like to add apprentice details?
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post" class="form">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        How would you like to add apprentice details?
+      </h1>
+
+      <!--<p class="govuk-body-l">
+        You can start adding details of your apprentices manually or use successful candidates from the Recruitment service. Alternatively, ask your training provider to add them for you.
+      </p>
+
+      <p class="govuk-body-l">
+        If you ask your training provider to add them, you need to check and agree the details before any payments are made.
+      </p>-->
+
+    {{ govukRadios({
+        idPrefix: "start-adding",
+        name: "start-adding",
+        fieldset:
+        {
+          legend:
+          {
+            text: "I will use successful candidates from recruitment",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s govuk-!-font-weight-regular"
+          }
+        },
+        items:
+        [
+        {
+          value: "yes",
+          text: "Bobby Tester",
+          hint: {
+            text: "Accountancy, Level: 7 (Standard)"
+          }
+        },
+        {
+          value: "recruit",
+          text: "Darren Diamond",
+          hint: {
+            text: "Bespoke Saddler, Level: 3 (Standard)"
+          }
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "yes",
+          text: "I will enter apprentices manually"
+        },{
+          value: "no",
+          text: "I would like my provider to add apprentices"
+        }
+        ]
+      }) }}
+
+    <p>
+      {{govukButton({
+        text: "Continue"
+      })}}
+    </p>
+  </form>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout-provider-account.html" %}
+
+{% block pageTitle %}
+	Applicant marked as successful
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+	text: "Back",
+	href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		{{ govukPanel({
+			titleText: "Applicant marked as successful",
+			classes: "govuk-!-margin-bottom-2"
+		}) }}
+
+		<p class="gov-body govuk-!-margin-bottom-6">
+			Darren Diamond has been notified to say that they have been accepted for this apprenticeship.
+		</p>
+
+		<form method="post">
+			{{ govukRadios({
+				idPrefix: "send",
+				name: "send",
+				fieldset:
+				{
+					legend:
+					{
+						text: "Do you want add Darren Diamond's details to your account?",						
+						isPageHeading: false,
+						classes: "govuk-fieldset__legend--m"
+					}				
+				},
+				items: [
+				{
+					value: "yes",
+					text: " Yes, send their details to my account"
+				},
+				{
+					value: "no",
+					text: "No, I will do this later"
+				}
+				]
+			}) }}
+
+			<p>
+				{{ govukButton ({
+					text: "Save and continue"
+				})}}
+			</p>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

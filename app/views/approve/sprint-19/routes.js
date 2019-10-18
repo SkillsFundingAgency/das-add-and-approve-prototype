@@ -27,4 +27,9 @@ router.use('/research/employer/recruit-data', (req, res, next) => {
   require(`./research/employer/recruit-data/routes`)(req, res, next);
 })
 
+// provider recruit data
+router.use('/research/provider/recruit-data', (req, res, next) => {
+  require(`./research/provider/recruit-data/routes`)(req, res, next);
+})
+
 module.exports = router

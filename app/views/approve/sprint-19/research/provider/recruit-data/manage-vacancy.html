@@ -1,0 +1,143 @@
+{% extends "layout-provider-account.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Manage vacancy
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      
+        <h1 class="govuk-heading-xl">Manage vacancy</h1>
+
+
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Closed
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Vacancy title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Bespoke Saddler, Level: 3 (Standard)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Vacancy reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            VAC1000000997
+          </dd>
+        </div>        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Vacancy closing date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            30 Sep 2019
+          </dd>
+        </div>        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Planned training start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            01 Nov 2020
+          </dd>
+        </div>        
+      </dl>
+
+      <p class="govuk-body">
+        <a href="#" style="float:left; padding-right:25px;">Edit vacancy</a><a href="#" style="float:left; padding-right:25px;">Close vacancy</a><a href="#">View vacancy</a>
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Manage applications
+      </h2>
+
+      {{ govukTable({
+        caption: "",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Application ID"
+          },
+          {
+            text: "Status"
+          },
+          {
+            text: "Date applied"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='apprentice-details'>Darren Diamond</a>"
+            },
+            {
+              text: "C5662EA"
+            },
+            {
+              text: "New"
+            },
+            {
+              text: "18 Sep 2019"
+            }
+          ],
+          [
+            {
+              html: "<a href='apprentice-details'>Johnny Dogs</a>"
+            },
+            {
+              text: "C3432TR"
+            },
+            {
+              text: "Unsuccessful"
+            },
+            {
+              text: "29 Sep 2019"
+            }
+          ],
+          [
+            {
+              html: "<a href='apprentice-details'>Sarah Philips</a>"
+            },
+            {
+              text: "C8824ED"
+            },
+            {
+              text: "Unsuccessful"
+            },
+            {
+              text: "8 Sep 2019"
+            }
+          ]
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
