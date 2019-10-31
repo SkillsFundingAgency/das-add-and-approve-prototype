@@ -232,8 +232,8 @@ function getData() {
       data.push(name);
     }
   }
-  for (var i = 0; i < providers.length; i++) {
-    var org = providers[i].textContent;
+  for (var i = 0; i < uln.length; i++) {
+    var org = uln[i].textContent;
     if (data.indexOf(org) == -1) {
       // no duplicate
       data.push(org);

@@ -23,6 +23,20 @@ router.get('*/manage-your-apprentices', function (req, res) {
   )
  })
 
+ router.get('*/manage-your-apprentices-filters-100', function (req, res) {
+	res.render('approve/sprint-20/research/employer/manage-your-apprentices/manage-your-apprentices-filters-100', {
+   "query" : req.query,
+   }
+  )
+ })
+
+ router.get('*/manage-your-apprentices-filters-pg2', function (req, res) {
+	res.render('approve/sprint-20/research/employer/manage-your-apprentices/manage-your-apprentices-filters-pg2', {
+   "query" : req.query,
+   }
+  )
+ })
+
  router.get('*/manage-your-apprentices-filtered-view', function (req, res) {
 	res.render('approve/sprint-20/research/employer/manage-your-apprentices/manage-your-apprentices-filtered-view', {
    "query" : req.query,
