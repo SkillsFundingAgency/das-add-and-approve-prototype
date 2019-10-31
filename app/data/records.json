@@ -743,15 +743,7 @@
     "status": "Live"
   },
   {
-    "name": "Ricky Hattoff",
-    "course": "Accountancy: Level 3 (Standard)",
-    "startDate": "Jan 2018",
-    "endDate": "Apr 2020",
-    "trainingProvider": "DEF Providers",
-    "status": "Completed"
-  },
-  {
-    "name": "Sid Smake",
+    "name": "Owen Owens",
     "course": "Bespoke Saddler: Level 3 (Standard)",
     "startDate": "Mar 2020",
     "endDate": "Apr 2021",
@@ -759,9 +751,49 @@
     "status": "Live"
   },
   {
-    "name": "Tim Booth",
-    "course": "Accountancy: Level 7 (Standard)",
-    "startDate": "May 2019",
+    "name": "Pat Fox",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Apr 2021",
+    "trainingProvider": "ABC Training Ltd",
+    "status": "Live"
+  },
+  {
+    "name": "Paul Pope",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Apr 2021",
+    "trainingProvider": "ABC Training Ltd",
+    "status": "Live"
+  },
+  {
+    "name": "Pauline Quark",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Apr 2021",
+    "trainingProvider": "ABC Training Ltd",
+    "status": "Live"
+  },
+  {
+    "name": "Petra Peters",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Apr 2021",
+    "trainingProvider": "ABC Training Ltd",
+    "status": "Live"
+  },
+  {
+    "name": "Piers Brighton",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
+    "endDate": "Apr 2021",
+    "trainingProvider": "ABC Training Ltd",
+    "status": "Live"
+  },
+  {
+    "name": "Reg Dwight",
+    "course": "Bespoke Saddler: Level 3 (Standard)",
+    "startDate": "Mar 2020",
     "endDate": "Apr 2021",
     "trainingProvider": "ABC Training Ltd",
     "status": "Live"

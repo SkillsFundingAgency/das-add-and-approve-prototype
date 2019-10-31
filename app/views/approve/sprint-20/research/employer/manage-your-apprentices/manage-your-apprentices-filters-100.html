@@ -30,9 +30,9 @@ Manage your apprentices
           <div class="form-group search-field search-field-darker">
             <input type="hidden" name="clientsFilter" value="new">
             <div class="search-input search-input-with-button">
-              <label class="govuk-label" for="search">
-                Search apprentice name or training provider
-              </label>          
+                <label class="govuk-label" for="search">
+                  Search apprentice name or training provider
+                </label>                        
               <div class="autocomplete__parent_wrapper">
                 <div class="autocomplete__wrapper">
                   <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
@@ -69,7 +69,7 @@ Manage your apprentices
                 <option value="all">All</option>
                 <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
                 <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
-                <option value="saddler" selected>Bespoke Saddler: Level 3 (Standard)</option>                
+                <option value="saddler">Bespoke Saddler: Level 3 (Standard)</option>                
               </select>
             </div>
         </div>
@@ -81,7 +81,7 @@ Manage your apprentices
             </label>
             <select class="govuk-select" id="end-date-filter" name="end-date-filter" style="min-width: 100%">
               <option value="all">All</option>              
-              <option value="apr2019" selected>Apr 2019</option>
+              <option value="apr2019">Apr 2019</option>
               <option value="apr2020">Apr 2020</option>
               <option value="apr2021">Apr 2021</option>              
             </select>
@@ -112,23 +112,15 @@ Manage your apprentices
     </div>
   </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-      <p class="govuk-body">
-          <a href="manage-your-apprentices-filters-100">Clear search and filters</a>
-        </p>
-  </div>
-</div>
-
 <div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
   <p class="govuk-grid-row" style="background-color:#fff;"> 
-    <span style="float:left; padding-left:15px;">{{data.recordsfilter.length}} records matching <b>Bespoke Saddler: Level 3 (Standard)</b> and <b>apr 2019</b></span>          
-    <span style="float:right;"><a href="download" title="Download filtered data (CSV))">Download filtered data (CSV)</a></span>
+    <span style="float:left; padding-left:15px;">106 records <!--<a href="manage-your-apprentices-filters" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a>--></span>          
+    <span style="float:right;"><a href="download" title="Download all data (CSV))">Download all data (CSV)</a></span>
   </p>
 </div>
 
 <div class="govuk-visually-hidden">
-  {%for record in data.recordsfilter%}
+  {%for record in data.records%}
   <span class="data-name">{{record.name}}</span>          
   <span class="data-uln">{{record.trainingProvider}}</span>
   {%endfor%}
@@ -147,7 +139,7 @@ Manage your apprentices
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    {%for record in data.recordsfilter%}
+    {%for record in data.records%}
     {%if query.search %}
       {% if query.search in record.name or query.search in record.trainingProvider %}
       <tr class="govuk-table__row">
@@ -173,12 +165,12 @@ Manage your apprentices
       {%endif%}          
     {%endfor%}            
   </tbody>
-</table>      
+</table>    
 
-<!--<div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <nav role="navigation" aria-label="Pagination">
-          <p class="pagination__summary">Showing 1 – {{data.recordsfilter.length}} of {{data.recordsfilter.length}} records</p>
+          <p class="pagination__summary">Showing 1 – 100 of 106 records</p>
           <ul class="pagination govuk-list">
             
             <li class="pagination__item"><a class="pagination__link govuk-link govuk-link--no-visited-state current" href="#0" aria-label="Page 1, current page">1</a></li>
@@ -188,7 +180,7 @@ Manage your apprentices
           </ul>
         </nav>
     </div>
-</div>-->
+</div>
 
 {% endblock %}
 
@@ -234,7 +226,7 @@ function suggest(data, populateResults) {
   populateResults(filteredResults);
 }
 
-// Trigger search click.  Taken out the clich for the prototype.
+// Trigger search click.  Taken out the click for the prototype.
 function fireSearch() {
   //console.log("search fired")
   setTimeout(function() {

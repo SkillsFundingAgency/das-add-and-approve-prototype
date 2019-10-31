@@ -39,7 +39,7 @@ $govuk-global-styles: true;
 @import "components/search";
 @import "components/search-autocomplete";
 @import "tables/transactions";
-
+@import "components/pagination";
 
 .heading-dashboard {
 	padding-bottom: $govuk-gutter;
