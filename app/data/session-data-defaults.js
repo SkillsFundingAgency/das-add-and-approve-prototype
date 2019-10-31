@@ -18,9 +18,12 @@ Example usage:
 */
 
 var records = require('./records.json');
-var providerrecords = require('./providerrecords.json');
 var records2 = require('./records2.json');
 var recordsfilter = require('./recordsfilter.json');
+
+var providerrecords = require('./providerrecords.json');
+var providerrecords2 = require('./providerrecords2.json');
+var providerrecordsfilters = require('./providerrecordsfilters.json');
 
 var moment = require('moment');
 
@@ -45,6 +48,8 @@ module.exports = {
 	"records": records,
 	"providerrecords": providerrecords,
 	"records2": records2,
+	"providerrecords2": providerrecords2,
 	"recordsfilter": recordsfilter,
+	"providerrecordsfilters": providerrecordsfilters,
 	"name": "Sarah Philips"
 }

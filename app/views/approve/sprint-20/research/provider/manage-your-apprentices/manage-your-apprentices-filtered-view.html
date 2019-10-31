@@ -30,14 +30,9 @@ Manage your apprentices
           <div class="form-group search-field search-field-darker">
             <input type="hidden" name="clientsFilter" value="new">
             <div class="search-input search-input-with-button">
-              <!--<label class="govuk-label" for="search">                     
-                Search by apprentice or ULN                    
-              </label>-->
-              <h1 class="govuk-label-wrapper">
-                  <label class="govuk-label govuk-label--m" for="search">
-                    Search by apprentice or unique learner number (ULN)
-                  </label>          
-                </h1>
+              <label class="govuk-label" for="search">
+                Search apprentice name or unique learner number (ULN)
+              </label>          
               <div class="autocomplete__parent_wrapper">
                 <div class="autocomplete__wrapper">
                   <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
@@ -61,112 +56,104 @@ Manage your apprentices
   </form>
 </div>
 
-<div class="govuk-grid-column-full" style="background-color:#DEE0E2;">
-  <p class="govuk-grid-row">
-    <h3 class="govuk-heading-m">Filter apprentices <a href="manage-your-apprentices" style="font-weight:400; font-size:19px;" class="govuk-!-margin-left-4">Hide</a></h3>
-  </p>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">                  
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="employer">
-          Employer
-        </label>
-        <select class="govuk-select" id="employer" name="employer" style="min-width:100%;">
-          <option value="grooverider">Grooverider</option>
-          <option value="redshoeslimited" selected>Red Shoes Limited</option>
-        </select>
-      </div>
-      <div class="govuk-form-group">
-          <label class="govuk-label" for="start-date">
-            Planned start date
-          </label>
-          <select class="govuk-select" id="start-date" name="start-date" style="min-width:100%;">
-              <option value="-" selected></option>
-            <option value="jan2019">Jan 2019</option>
-            <option value="mar2019">Mar 2019</option>
-            <option value="mar2020">Mar 2020</option>
-          </select>
-        </div>   
-        <!--<div class="govuk-form-group">
-          <label class="govuk-label" for="funding-status">
-            Funding status
-          </label>
-          <select class="govuk-select" id="funding-status" name="funding-status" style="min-width:100%;">
-            <option value="-" selected></option>
-            <option value="Transferred funds">Transferred funds</option>            
-          </select>
-        </div>-->                     
-        <div class="govuk-form-group">
-          {{ govukButton ({
-            text: "Apply filters",
-            href: "manage-your-apprentices-filtered-view-1"
-          })}}
-
-          <p class="govuk-body">
-            <a href="manage-your-apprentices-filters">Clear</a>
-          </p>
+<!--Filters-->
+<div class="govuk-grid-column-full" style="background-color:#DEE0E2; margin-bottom: 20px; padding-top: 15px">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">                  
+            <!-- Employer -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="employer">
+                Employer
+              </label>
+              <select class="govuk-select" id="employer" name="employer" style="min-width:100%;">
+                <option value="all">All</option>
+                <option value="grooverider">Grooverider</option>
+                <option value="redshoeslimited">Red Shoes Limited</option>
+              </select>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <!-- Apprenticeship training course -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="course">
+                Apprenticeship training course
+              </label>          
+              <select class="govuk-select" id="course" name="course" style="min-width:100%;">
+                <option value="All">All</option>
+                <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
+                <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
+                <option value="saddler" selected>Bespoke Saddler: Level 3 (Standard)</option>
+              </select>          
+            </div> 
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <!-- Status -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="status">
+                Status
+              </label>
+              <select class="govuk-select" id="status" name="status" style="min-width:100%;">
+                  <option value="All">All</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Live">Live</option>
+                  <option value="Paused">Paused</option>
+                  <option value="Stopped">Stopped</option>
+                  <option value="Waiting to start">Waiting to start</option>
+                </select>
+            </div>    
+          </div>
         </div>
-    </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <div class="gov-form-group">
+              <label class="govuk-label" for="start-date">
+                Planned start date
+              </label>
+              <select class="govuk-select" id="start-date" name="start-date" style="min-width:100%;">
+                <option value="All">All</option>
+                <option value="feb2019">Feb 2019</option>
+                <option value="feb2021">Feb 2021</option>
+                <option value="mar2021">Mar 2021</option>
+                <option value="apr2021" selected>Apr 2021</option>
+                <option value="apr2022">Apr 2022</option>
+              </select>
+            </div>              
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="status">
+                Planned end date
+              </label>
+              <select class="govuk-select" id="end-date" name="status" style="min-width:100%;">
+                <option value="All">All</option>
+                <option value="Completed">Completed</option>
+                <option value="Live">Live</option>
+                <option value="Paused">Paused</option>
+                <option value="Stopped">Stopped</option>
+                <option value="Waiting to start">Waiting to start</option>
+              </select>      
+            </div> 
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <a class="govuk-button" href="manage-your-apprentices-filtered-view" style="margin-bottom: 20px">Apply filters</a>
+          </div>
+        </div>
+  </div>
 
-    <div class="govuk-grid-column-one-third">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="course">
-          Apprenticeship training course
-        </label>          
-        <select class="govuk-select" id="course" name="course" style="min-width:100%;">
-          <option value="-" ></option>
-          <option value="accountancy-level7">Accountancy: Level 7 (Standard)</option>
-          <option value="accountancy-level3">Accountancy: Level 3 (Standard)</option>
-          <option value="saddler">Bespoke Saddler: Level 3 (Standard)</option>
-        </select>          
-      </div>  
-      <div class="gov-form-group">
-        <label class="govuk-label" for="end-date">
-          Planned end date
-        </label>
-        <select class="govuk-select" id="end-date" name="end-date" style="min-width:100%;">
-          <option value="feb2019">Feb 2019</option>
-          <option value="feb2021" selected>Feb 2021</option>
-          <option value="mar2021">Mar 2021</option>
-          <option value="apr2021">Apr 2021</option>
-          <option value="apr2022">Apr 2022</option>
-        </select>
-      </div>              
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="status">
-          Status
-        </label>
-        <select class="govuk-select" id="end-date" name="status" style="min-width:100%;">
-          <option value="-" selected></option>
-          <option value="Completed">Completed</option>
-          <option value="Live">Live</option>
-          <option value="Paused">Paused</option>
-          <option value="Stopped">Stopped</option>
-          <option value="Waiting to start">Waiting to start</option>
-        </select>      
-      </div>  
-      <!--<div class="gov-form-group">
-        <label class="govuk-label" for="alerts">
-          Alerts
-        </label>
-        <select class="govuk-select" id="end-date" name="alerts" style="min-width:100%;">
-          <option value="-" selected></option>
-          <option value="Changes pending">Changes pending</option>
-          <option value="ILR data mismatch">ILR data mismatch</option>
-        </select>
-      </div>-->          
-    </div>
-
-  </div>    
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+      <p class="govuk-body">
+          <a href="manage-your-apprentices-filters-100">Clear search and filters</a>
+        </p>
+  </div>
 </div>
 
-<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4 govuk-!-margin-top-6">
+
+<div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
   <p class="govuk-grid-row" style="background-color:#fff;"> 
-    <span style="float:left; padding-left:15px;"><b>{{data.records.length}}</b> records found of {{data.records.length}} total, <b>2</b> with alerts. <a href="manage-your-apprentices-filters" title="View all apprentice records" style="padding-left:10px;">View all apprentice records</a></span>          
+    <span style="float:left; padding-left:15px;">4 records matching <b>Bespoke Saddler: Level 3 (Standard)</b> and <b>apr 2019</b></span>          
     <span style="float:right;"><a href="download" title="Download filtered data (CSV))">Download filtered data (CSV)</a></span>
   </p>
 </div>
@@ -181,7 +168,7 @@ Manage your apprentices
 <table class="govuk-table" id="apprentice-table" style="font-size:18px;">          
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:15%;">Name</th>      
+          <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:15%;">Apprentice name</th>      
             <th class="govuk-table__header" scope="col" aria-sort="ascending">ULN</th>        
             <th class="govuk-table__header" scope="col" aria-sort="ascending">Employer</th>    
             <th class="govuk-table__header" scope="col" aria-sort="ascending" style="width:20%;">Apprenticeship training course</th>
@@ -192,7 +179,7 @@ Manage your apprentices
         </tr>
       </thead>
       <tbody class="govuk-table__body">
-        {%for record in data.providerrecords%}
+        {%for record in data.providerrecordsfilters%}
         {%if query.search %}
           {% if query.search in record.name or query.search in record.uln %}
           <tr class="govuk-table__row">
