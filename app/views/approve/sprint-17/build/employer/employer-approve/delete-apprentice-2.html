@@ -21,7 +21,11 @@
             <h1 class="govuk-heading-xl govuk-!-margin-top-4 govuk-!-margin-bottom-6">
                 Delete the apprentice Bobby Wright?
             </h1>
-           
+            {{ govukWarningText({
+              text: "Deleting this apprentice will also delete the group it was part of.",
+              iconFallbackText: "Warning"
+            }) }}
+            
             {{ govukRadios({
               idPrefix: "delete",
               name: "delete",            

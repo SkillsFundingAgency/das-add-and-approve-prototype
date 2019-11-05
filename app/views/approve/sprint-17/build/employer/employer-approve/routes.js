@@ -92,4 +92,16 @@ router.post('/delete-apprentice-1', (req, res) => {
 	}
 	})
 
+//delete the only apprentice version 2
+router.post('/delete-apprentice-2', (req, res) => {
+	if (req.session.data['delete'] == 'yes') {
+	  res.redirect('draft-apprentices-deletion-1')
+	} else if (req.session.data['delete'] == 'no') {
+	  res.redirect('approve-apprentices-delete-apprentice')
+	}
+	else {
+	  res.redirect('delete-apprentice-error')
+	}
+	})
+
 module.exports = router
