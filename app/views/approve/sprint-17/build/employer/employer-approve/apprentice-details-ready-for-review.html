@@ -1,0 +1,95 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Apprentice details ready for review
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form action="" method="post">
+          <h1 class="govuk-heading-xl">
+            Apprentice details ready for review
+          </h1>
+          <p class="govuk-body govuk-!-margin-bottom-6">
+            You have 16 apprentices ready for review
+          </p>
+          {{ govukTable({
+            
+            firstCellIsHeader: false,
+            head: [
+              {
+                text: "Training provider",
+                classes: 'govuk-!-width-one-quarter'
+              },
+              {
+                text: "Reference"
+              },
+              {
+                text: "Number of apprentices",
+                format: "numeric"
+              },
+              {
+                text: "Last message",
+                classes: 'govuk-!-width-one-third'
+              },
+              {
+                text: ""
+              }
+            ],
+            rows: [
+              [
+                {
+                  text: "ABC Training Limited"
+                },                
+                {
+                  text: "ASDFGH"
+                },
+                {
+                  text: "4",
+                  format: "numeric"
+                },
+                {
+                  text: "No message added"
+                },
+                {
+                  html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  text: "DEF Providers"
+                },                
+                {
+                  text: "VBNMCS"
+                },
+                {
+                  text: "12",
+                  format: "numeric"
+                },
+                {
+                  text: "No message added"
+                },
+                {
+                  html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ]
+            ]
+          }) }}
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
