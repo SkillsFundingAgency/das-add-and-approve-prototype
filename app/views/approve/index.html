@@ -19,7 +19,7 @@ Add and approve
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './sprint-20/_summary.html' %}
+    {% include './sprint-21/_summary.html' %}
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-!-margin-bottom-9">
     <br><br><br>
@@ -27,6 +27,10 @@ Add and approve
       Previous sprints
     </h2>
 
+    {% set sprint20Html %}
+    {% include './sprint-20/_summary.html' %}
+    {% endset %} 
+    
     {% set sprint19Html %}
     {% include './sprint-19/_summary.html' %}
     {% endset %}
@@ -109,6 +113,20 @@ Add and approve
       items:
       [
       {
+        heading:
+        {
+          text: "Sprint 20"
+        },
+        content:
+        {
+          html: sprint20Html
+        },
+        summary:
+        {
+          html: '25th October&mdash;7th November 2019'
+        }
+      },
+        {
         heading:
         {
           text: "Sprint 19"
