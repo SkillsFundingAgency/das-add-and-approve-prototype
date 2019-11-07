@@ -68,6 +68,15 @@ router.post('/confirm-deletion', (req, res) => {
 	}
 	})
 
+//review an apprentice
+router.post('/confirm-deletion-1', (req, res) => {
+	if (req.session.data['delete'] == 'yes') {
+	  res.redirect('approve-apprentices-group-deletion')
+	} else {
+	  res.redirect('approve-apprentices')
+	}
+	})
+
 //delete apprentice
 router.post('/delete-apprentice', (req, res) => {
 	if (req.session.data['delete'] == 'yes') {
