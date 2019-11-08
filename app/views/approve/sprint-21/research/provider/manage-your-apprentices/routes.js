@@ -9,36 +9,36 @@ router.get('/', (req, res) => {
 	res.redirect(`/${req.feature}/email`)
 })
 
-router.get('*/manage-your-apprentices', function (req, res) {
-	res.render('approve/sprint-20/research/provider/manage-your-apprentices/manage-your-apprentices', {
+router.get('*/apprentice-requests', function (req, res) {
+	res.render('approve/sprint-21/research/provider/apprentice-requests/apprentices', {
    "query" : req.query,
    }
   )
  })
 
  router.get('*/manage-your-apprentices-filters', function (req, res) {
-	res.render('approve/sprint-20/research/provider/manage-your-apprentices/manage-your-apprentices-filters', {
+	res.render('approve/sprint-21/research/provider/manage-your-apprentices/manage-your-apprentices-filters', {
    "query" : req.query,
    }
   )
  })
 
  router.get('*/manage-your-apprentices-filters-100', function (req, res) {
-	res.render('approve/sprint-20/research/provider/manage-your-apprentices/manage-your-apprentices-filters-100', {
+	res.render('approve/sprint-21/research/provider/manage-your-apprentices/manage-your-apprentices-filters-100', {
    "query" : req.query,
    }
   )
  })
 
  router.get('*/manage-your-apprentices-filters-pg2', function (req, res) {
-	res.render('approve/sprint-20/research/provider/manage-your-apprentices/manage-your-apprentices-filters-pg2', {
+	res.render('approve/sprint-21/research/provider/manage-your-apprentices/manage-your-apprentices-filters-pg2', {
    "query" : req.query,
    }
   )
  })
 
  router.get('*/manage-your-apprentices-filtered-view', function (req, res) {
-	res.render('approve/sprint-20/research/provider/manage-your-apprentices/manage-your-apprentices-filtered-view', {
+	res.render('approve/sprint-21/research/provider/manage-your-apprentices/manage-your-apprentices-filtered-view', {
    "query" : req.query,
    }
   )

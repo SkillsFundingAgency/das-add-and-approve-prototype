@@ -17,9 +17,19 @@ router.use('/research/provider/manage-your-apprentices', (req, res, next) => {
   require(`./research/provider/manage-your-apprentices/routes`)(req, res, next);
 })
 
+// provider apprentice requests
+router.use('/research/provider/apprentice-requests', (req, res, next) => {
+  require(`./research/provider/apprentice-requests/routes`)(req, res, next);
+})
+
 // employer manage your apprentices
 router.use('/research/employer/manage-your-apprentices', (req, res, next) => {
   require(`./research/employer/manage-your-apprentices/routes`)(req, res, next);
+})
+
+// employer apprentice requests
+router.use('/research/employer/apprentice-requests', (req, res, next) => {
+  require(`./research/employer/apprentice-requests/routes`)(req, res, next);
 })
 
 module.exports = router
