@@ -80,7 +80,7 @@ router.post('/confirm-deletion-1', (req, res) => {
 //delete apprentice
 router.post('/delete-apprentice', (req, res) => {
 	if (req.session.data['delete'] == 'yes') {
-	  res.redirect('approve-apprentices-group-deletion')
+	  res.redirect('approve-apprentices-deletion')
 	} else if (req.session.data['delete'] == 'no') {
 	  res.redirect('approve-apprentices')
 	}
