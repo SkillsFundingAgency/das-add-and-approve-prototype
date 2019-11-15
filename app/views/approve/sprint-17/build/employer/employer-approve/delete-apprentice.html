@@ -18,29 +18,29 @@
       <div class="govuk-grid-column-two-thirds">
         <form action="" method="post">
           <div class="govuk-form-group">
-            {{ govukRadios({
-              idPrefix: "delete",
-              name: "delete",
-              fieldset:
+            <h1 class="govuk-heading-xl govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+              Delete the apprentice Bobby Wright?
+          </h1>
+          {{ govukWarningText({
+            text: "Deleting this apprentice will delete all the details associated with them.",
+            iconFallbackText: "Warning"
+          }) }}
+          
+          {{ govukRadios({
+            idPrefix: "delete",
+            name: "delete",            
+            items: [
+              
               {
-                legend:
-                {
-                  html: "Delete apprentice Bobby Wright's record?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl govuk-!-margin-top-4 govuk-!-margin-bottom-6"
-                }
+                value: "yes",
+                text: "Yes, delete"
               },
-              items: [
-                {
-                  value: "yes",
-                  text: "Yes, delete the record"
-                },
-                {
-                  value: "no",
-                  text: "No, don't delete"
-                }
-              ]
-            }) }}
+              {
+                value: "no",
+                text: "No, don't delete"
+              }
+            ]
+          }) }}
 
             {{ govukButton({
               text: "Save and continue"
