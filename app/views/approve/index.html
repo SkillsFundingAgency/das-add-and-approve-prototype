@@ -19,13 +19,17 @@ Add and approve
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './sprint-21/_summary.html' %}
+    {% include './sprint-22/_summary.html' %}
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-!-margin-bottom-9">
     <br><br><br>
     <h2 class="govuk-heading-l govuk-!-margin-top-9">
       Previous sprints
     </h2>
+
+    {% set sprint21Html %}
+    {% include './sprint-21/_summary.html' %}
+    {% endset %} 
 
     {% set sprint20Html %}
     {% include './sprint-20/_summary.html' %}
@@ -112,6 +116,20 @@ Add and approve
       id: "accordion-default",
       items:
       [
+      {
+        heading:
+        {
+          text: "Sprint 21"
+        },
+        content:
+        {
+          html: sprint21Html
+        },
+        summary:
+        {
+          html: '8th&mdash;22nd November 2019'
+        }
+      },
       {
         heading:
         {
@@ -462,7 +480,7 @@ Add and approve
       </ul>    
   
       <p class="govuk-body-s">
-        Being built by the Approvals team.
+        Built by the Approvals team.
       </p>
 
       <hr class="govuk-section-break--l"><h2 class="govuk-heading-s">
