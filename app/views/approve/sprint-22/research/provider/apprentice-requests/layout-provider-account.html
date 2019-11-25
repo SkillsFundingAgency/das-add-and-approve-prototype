@@ -18,6 +18,10 @@
 </div>
 {% endblock %}
 
+{% block beforeContent %}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block header %}
 {% include "includes/cookie-banner.html" %}
 {# Set serviceName in config.js. #}
@@ -82,16 +86,16 @@
 	<nav class="header-inner">
 		<ul role="menubar" id="global-nav-links">
 			<li>
-				<a href="/{{feature}}/account-home" class="{{'selected' if currentPage == 'account-home' }}" role="menuitem">Home</a>
+				<a href="account-home" class="{{'selected' if currentPage == 'account-home' }}" role="menuitem">Home</a>
 			</li>
 			<li>
-				<a href="#" role="menuitem">Apprentice requests</a>
+				<a href="apprentice-requests-tabs" role="menuitem">Add and approve apprentices</a>
 			</li>
 			<li>
-				<a href="#" class="{{'selected' if currentPage == 'finance' }}" role="menuitem">Manage your apprentices</a>
+				<a href="manage-your-apprentices-filters-100" class="{{'selected' if currentPage == 'finance' }}" role="menuitem">Manage live apprentices</a>
 			</li>
 			<li>
-				<a href="#" class="{{'selected' if currentPage == 'finance' }}" role="menuitem">Recruit apprentices</a>
+				<a href="#" class="{{'selected' if currentPage == 'finance' }}" role="menuitem">Recruitment</a>
 			</li>
 			<li>
 				<a href="#" role="menuitem">Organisations and agreements</a>
