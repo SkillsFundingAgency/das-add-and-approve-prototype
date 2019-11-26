@@ -1,4 +1,4 @@
-{% extends "./layout-provider-account.html" %}
+{% extends "layout-account.html" %}
 
 {% block pageTitle %}
   Add and approve apprentices
@@ -13,7 +13,7 @@
     <form method="post">      
       {{ govukButton({
         text: "Add new apprentice",
-        href: "add__choose-employer"
+        href: "add--start"
       }) }}
     </form>
 
@@ -46,38 +46,42 @@
             
       firstCellIsHeader: false,
       head: [
-      {
-        text: "Employer"
-      },
-      {
-        text: "Reference"
-      },
-      {
-        text: "Number of apprentices",
-        format: "numeric"
-      },
-      {
-        text: ""
-      }
-    ],
-    rows: [
-      [
         {
-          text: "BIG COUNTRY LIMITED"
+          text: "Training provider",
+          classes: 'govuk-!-width-one-quarter'
         },
         {
-          text: "POIUTR"
+          text: "Reference",
+          classes: 'govuk-!-width-one-quarter'
         },
         {
-          text: "1",
-          format: "numeric"
+          text: "Number of apprentices",
+          format: "numeric",
+          classes: 'govuk-!-width-one-quarter'
         },
         {
-          html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
-          format: "numeric"
+          text: "",
+          classes: 'govuk-!-width-one-quarter'
         }
+      ],
+      rows: [        
+        [
+          {
+            text: "A2Z TRAINING"
+          },                
+          {
+            text: "XGVBNH"
+          },
+          {
+            text: "2",
+            format: "numeric"
+          },
+          {
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
+          }
+        ]
       ]
-    ]
     }) }}
 
   </div>

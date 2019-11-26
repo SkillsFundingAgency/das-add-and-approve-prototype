@@ -1,4 +1,4 @@
-{% extends "./layout-provider-account.html" %}
+{% extends "layout-account.html" %}
 
 {% block pageTitle %}
   Add and approve apprentices
@@ -13,7 +13,7 @@
     <form method="post">      
       {{ govukButton({
         text: "Add new apprentice",
-        href: "add__choose-employer"
+        href: "add--start"
       }) }}
     </form>
 
@@ -26,7 +26,7 @@
     <a>
       <div class="govuk-grid-column-one-quarter" style="background-color: white; margin: 0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
         <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">3</div>
-        <p class="govuk-body" style="color:#005ea5;">With employers</p><br>
+        <p class="govuk-body" style="color:#005ea5;">With training providers</p>
       </div>
     </a>
     <a href="apprentice-requests-boxes-1c">
@@ -46,84 +46,84 @@
             
       firstCellIsHeader: false,
       head: [
-    {
-      text: "Employer",
-      classes: 'govuk-!-width-one-quarter'
-    },
-    {
-      text: "Reference"
-    },
-    {
-      text: "Number of apprentices",
-      format: "numeric"
-    },
-    {
-      text: "Last message",
-      classes: 'govuk-!-width-one-third'
-    },
-    {
-      text: ""
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "ALDI LTD"
-      },
-      {
-        text: "ASDRTH"
-      },
-      {
-        text: "20",
-        format: "numeric"
-      },
-      {
-        text: "Please could you get these 20 apprentices approved"
-      },
-      {
-        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "APEX TRAINING LIMITED"
-      },
-      {
-        text: "VHJUIA"
-      },
-      {
-        text: "2",
-        format: "numeric"
-      },
-      {
-        text: "No message added"
-      },
-      {
-        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
-        format: "numeric"
-      }
-    ],
-    [
-      {
-        text: "BIG COUNTRY LIMITED"
-      },
-      {
-        text: "SDGFHJ"
-      },
-      {
-        text: "6",
-        format: "numeric"
-      },
-      {
-        text: "These 6 need adding asap, please!"
-      },
-      {
-        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
-        format: "numeric"
-      }
-    ]
-  ]
+        {
+          text: "Training provider",
+          classes: 'govuk-!-width-one-quarter'
+        },
+        {
+          text: "Reference"
+        },
+        {
+          text: "Number of apprentices",
+          format: "numeric"
+        },
+        {
+          text: "Last message",
+          classes: 'govuk-!-width-one-third'
+        },
+        {
+          text: ""
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "ABC TRAINING LTD"
+          },                
+          {
+            text: "ASDFGH"
+          },
+          {
+            text: "3",
+            format: "numeric"
+          },
+          {
+            text: "No message added"
+          },
+          {
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "ABC TRAINING LTD"
+          },                
+          {
+            text: "XGVBNH"
+          },
+          {
+            text: "1",
+            format: "numeric"
+          },
+          {
+            text: "No message added"
+          },
+          {
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "A2Z TRAINING"
+          },                
+          {
+            text: "XGVBNH"
+          },
+          {
+            text: "20",
+            format: "numeric"
+          },
+          {
+            text: "No message added"
+          },
+          {
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
+          }
+        ]
+      ]
     }) }}
 
   </div>
