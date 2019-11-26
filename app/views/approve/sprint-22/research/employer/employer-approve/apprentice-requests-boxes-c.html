@@ -1,4 +1,4 @@
-{% extends "./layout-provider-account.html" %}
+{% extends "layout-account.html" %}
 
 {% block pageTitle %}
   Add and approve apprentices
@@ -13,7 +13,7 @@
     <form method="post">      
       {{ govukButton({
         text: "Add new apprentice",
-        href: "add__choose-employer"
+        href: "add--start"
       }) }}
     </form>
 
@@ -22,15 +22,15 @@
         <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">2</div>
         <p class="govuk-body" style="color:#005ea5; text-decoration:underline;">Ready for review</p><br>
       </div>
-    </a> 
+    </a>   
     <a href="apprentice-requests-boxes-b">
       <div class="govuk-grid-column-one-quarter" style="background-color: white; margin:0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
         <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">3</div>
-        <p class="govuk-body" style="color:#005ea5; text-decoration:underline;">With employers</p><br>
+        <p class="govuk-body" style="color:#005ea5; text-decoration:underline;">With training providers</p>
       </div>
     </a>
     <a>
-      <div class="govuk-grid-column-one-quarter" style="background-color: #005ea5; margin: 0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
+      <div class="govuk-grid-column-one-quarter" style="background-color: #005ea5; margin: 0 20px 20px 0; width:22%;">
         <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">1</div>
         <p class="govuk-body" style="color:white;">Drafts</p><br>
       </div>
@@ -44,40 +44,44 @@
 
     {{ govukTable({
             
-      firstCellIsHeader: false,      
-        head: [
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Training provider",
+          classes: 'govuk-!-width-one-quarter'
+        },
+        {
+          text: "Reference",
+          classes: 'govuk-!-width-one-quarter'
+        },
+        {
+          text: "Number of apprentices",
+          format: "numeric",
+          classes: 'govuk-!-width-one-quarter'
+        },
+        {
+          text: "",
+          classes: 'govuk-!-width-one-quarter'
+        }
+      ],
+      rows: [        
+        [
           {
-            text: "Employer"
+            text: "A2Z TRAINING"
+          },                
+          {
+            text: "XGVBNH"
           },
           {
-            text: "Reference"
-          },
-          {
-            text: "Number of apprentices",
+            text: "2",
             format: "numeric"
           },
           {
-            text: ""
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
           }
-        ],
-        rows: [
-          [
-            {
-              text: "BIG COUNTRY LIMITED"
-            },
-            {
-              text: "POIUTR"
-            },
-            {
-              text: "1",
-              format: "numeric"
-            },
-            {
-              html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
-              format: "numeric"
-            }
-          ]
         ]
+      ]
     }) }}
 
   </div>
