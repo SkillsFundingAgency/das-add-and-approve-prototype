@@ -4,14 +4,7 @@
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block pageTitle %}
-  Apprentice details approved
-{% endblock %}
-
-{% block beforeContent %}
-{{ govukBackLink({
-  text: "Back to Apprentices",
-  href: "javascript: window.history.go(-1)"
-}) }}
+  Change of employer approved
 {% endblock %}
 
 {% block content %}
@@ -20,10 +13,10 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Apprentice details approved</h1>
+        <h1 class="govuk-panel__title">Change of employer approved</h1>
       </div>
 
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!--<dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Reference
@@ -48,16 +41,16 @@
             {{data['employer']}}
           </dd>
         </div>        
-      </dl>
+      </dl>-->
 
       <h2 class="govuk-heading-m">
         What's next?
       </h2>
-      <!--<p>
-        Your training provider will receive notification of the approval shortly.
-      </p>-->
+      <p class="govuk-body">
+        Your training provider will receive an email confirming the change of employer.
+      </p>
 
-      <p>You've approved these apprentice details. <a href="">Manage your apprentices</a> to view or update details.</p>
+      <p class="govuk-body"><a href="account-home">Return to homepage</a></p>
 
       <div class="govuk-!-margin-top-9" style="padding:20px 20px 0 20px; background-color: lightgray; border-left-color:#666;">
           <h2 class="govuk-heading-m">

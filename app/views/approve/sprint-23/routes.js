@@ -23,8 +23,8 @@ router.use('/research/employer/manage-your-apprentices', (req, res, next) => {
 })
 
 // employer apprentice requests
-router.use('/research/employer/apprentice-requests', (req, res, next) => {
-  require(`./research/employer/apprentice-requests/routes`)(req, res, next);
+router.use('/research/employer/employer-approve', (req, res, next) => {
+  require(`./research/employer/employer-approve/routes`)(req, res, next);
 })
 
 module.exports = router
