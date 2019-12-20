@@ -32,4 +32,9 @@ router.use('/research/employer/change-provider', (req, res, next) => {
   require(`./research/employer/change-provider/routes`)(req, res, next);
 })
 
+// employer apprentice requests
+router.use('/research/provider/provider-approve', (req, res, next) => {
+  require(`./research/provider/provider-approve/routes`)(req, res, next);
+})
+
 module.exports = router
