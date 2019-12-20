@@ -19,39 +19,14 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form method="post" novalidate>
-
+          <h1 class="govuk-heading-xl">
+            Training end and start dates
+          </h1>
           <div class="govuk-form-group">
-            {{ govukDateInput({
-              id: "stop-date",
-              namePrefix: "stop-date",
-              fieldset:
-              {
-                legend:
-                {
-                  text: "Training end and start dates",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-9"
-                }             
-              },
-              items:
-              [
-              {
-                name: "month",
-                id: "month",
-                classes: "govuk-input--width-2"
-              },
-              {
-                name: "year",
-                id: "year",
-                classes: "govuk-input--width-4"
-              }
-              ],
-              hint:
-              {
-                html: "<span style='color:#000;'>The date the previous employer stopped the apprenticeship.</span> 
-                <br>For example, 1 2020"
-              }
-            }) }}
+            <label class="govuk-label govuk-!-margin-bottom-4" for="stop-date">
+              The date the previous employer stopped the apprenticeship
+            </label>
+            <span class="govuk-body">December 2019</span>
           </div>
           <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
           <div class="govuk-form-group">
@@ -74,7 +49,7 @@
               hint:
               {
                 html: "<span style='color:#000;'>When does the training restart with the new employer?
-                        <br> The date must be after the training was stopped.
+                        <br> The restart date must be on or after the date the training was stopped.
                       </span> 
                       <br>For example, 1 2020",
                 classes: "govuk-!-margin-top-6"

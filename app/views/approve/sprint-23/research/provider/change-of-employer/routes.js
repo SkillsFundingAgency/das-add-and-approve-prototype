@@ -21,10 +21,6 @@ router.post('/add__confirm-employer', (req, res) => {
 
 //training-dates
 router.post('/training-dates', (req, res) => {
-	var month = req.session.data['stop-date-month']
-	var year =  req.session.data['stop-date-year']
-	req.session.data['formattedDate'] = moment().date(1).month(month - 1).year(year).format('MMMM YYYY')
-
 	var startMonth = req.session.data['start-date-month']
 	var startYear =  req.session.data['start-date-year']
 	req.session.data['formattedDate'] = moment().date(1).month(startMonth - 1).year(startYear).format('MMMM YYYY')
@@ -135,5 +131,40 @@ router.post('/delete-apprentice-2', (req, res) => {
 	  res.redirect('delete-apprentice-error')
 	}
 	})
+
+	router.get('*/manage-your-apprentices', function (req, res) {
+		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filters', function (req, res) {
+		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filters', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filters-100', function (req, res) {
+		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filters-100', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filters-pg2', function (req, res) {
+		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filters-pg2', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filtered-view', function (req, res) {
+		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filtered-view', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
 
 module.exports = router
