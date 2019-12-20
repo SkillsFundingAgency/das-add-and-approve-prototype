@@ -1,19 +1,19 @@
 {% extends "layout_unbranded.html" %}
 
 {% block pageTitle %}
-APEX TRAINING LIMITED sent you apprentice details to approve
+  Notification
 {% endblock %}
 
 {% block content %}
 <!--<main id="content" role="main" style="text-align: center;">-->
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <img src="/public/images/email-desktop-sprint13.png" width="1280px" id="email">
+          <img src="/public/images/approved-new-employer-details-email.png" width="1280px" id="email">
           <div style="margin-left: 45%;">
-          <h1 class="govuk-heading-m">APEX TRAINING LIMITED sent you apprentice details to approve.</h1>
+          <h1 class="govuk-heading-m">{{data['employer']}} approved the apprentice details and confirmed the apprentice move to their account.</h1>
           <p class="govuk-body">
             Sign into your apprenticeship service account to view these details - <br>
-            <a href="login1">https://apprenticeships.service.gov.uk/review-apprentice</a><br><br>
+            <a href="login2">https://apprenticeships.service.gov.uk/apprentice-approved</a><br><br>
             This is an automated message. Please don't reply to this email.<br><br>
             Kind regards,<br>
             Apprenticeship service team
