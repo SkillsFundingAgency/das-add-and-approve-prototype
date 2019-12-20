@@ -51,5 +51,6 @@ module.exports = {
 	"providerrecords2": providerrecords2,
 	"recordsfilter": recordsfilter,
 	"providerrecordsfilters": providerrecordsfilters,
-	"name": "Sarah Philips"
+	"name": "Darren Diamond",
+	"agreed-price": "£1,500"
 }

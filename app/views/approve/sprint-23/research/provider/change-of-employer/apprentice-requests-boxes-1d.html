@@ -1,0 +1,51 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+  Add and approve apprentices
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+      Add and approve apprentices
+    </h1>
+    <form method="post">      
+      {{ govukButton({
+        text: "Add new apprentice",
+        href: "add__choose-employer"
+      }) }}
+    </form>
+
+    <a href="apprentice-requests-boxes-1a">
+      <div class="govuk-grid-column-one-quarter" style="background-color: #005ea5; margin:0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">2</div>
+        <p class="govuk-body" style="color:white; text-decoration:underline;">Ready for review</p><br>
+      </div>
+    </a>
+    <a href="apprentice-requests-boxes-1b">
+      <div class="govuk-grid-column-one-quarter" style="background-color: #005ea5; margin:0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">3</div>
+        <p class="govuk-body" style="color:white; text-decoration:underline;">With employers</p><br>
+      </div>
+    </a>   
+    <a href="apprentice-requests-boxes-1d">
+      <div class="govuk-grid-column-one-quarter" style="background-color: #005ea5; margin: 0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">1</div>
+        <p class="govuk-body" style="color:white; text-decoration:underline;">Drafts</p><br>
+      </div>
+    </a>
+    <a>
+      <div class="govuk-grid-column-one-quarter" style="background-color: white; margin-bottom:20px; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">0</div>
+        <p class="govuk-body" style="color:#005ea5;">With transfer sending employers</p>
+      </div>
+    </a>
+
+    <div class="govuk-body" style="clear:both;">
+      <h2 class="govuk-heading-s">You currently have no apprentices with transfer sending employers</h2>
+    </div>
+
+  </div>
+</div>    
+{% endblock %}
