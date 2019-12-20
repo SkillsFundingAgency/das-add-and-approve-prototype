@@ -160,4 +160,13 @@ router.get('*/manage-your-apprentices', function (req, res) {
   )
  })
 
+ //training-dates
+router.post('/training-dates', (req, res) => {
+	var startMonth = req.session.data['start-date-month']
+	var startYear =  req.session.data['start-date-year']
+	req.session.data['formattedDate'] = moment().date(1).month(startMonth - 1).year(startYear).format('MMMM YYYY')
+
+	res.redirect(`price`)
+})
+
 module.exports = router
