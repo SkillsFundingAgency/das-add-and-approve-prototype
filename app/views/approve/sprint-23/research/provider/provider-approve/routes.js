@@ -114,7 +114,7 @@ router.post('/delete-apprentice-2', (req, res) => {
 	})
 
 //approve new employer
-router.post('/approve-new-employer', (req, res) => {
+router.post('/approve-new-provider', (req, res) => {
 	if (req.session.data['approve'] == 'yes') {
 	  res.redirect('confirmation')
 	} else if (req.session.data['approve'] == 'no') {

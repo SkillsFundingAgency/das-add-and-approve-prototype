@@ -4,7 +4,7 @@
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block pageTitle %}
-  Change of employer approved
+  Change of training provider confirmed
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Change of employer approved</h1>
+        <h1 class="govuk-panel__title">Change of training provider confirmed</h1>
       </div>
 
       <!--<dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -47,7 +47,7 @@
         What's next?
       </h2>
       <p class="govuk-body">
-        Your training provider will receive an email confirming the change of employer for the apprentice.
+        {{data['employer']}} will receive an email confirming the change of training provider.
       </p>
 
       <p class="govuk-body"><a href="account-home">Return to homepage</a></p>

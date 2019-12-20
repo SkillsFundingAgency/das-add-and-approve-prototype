@@ -21,7 +21,7 @@
             Employer
           </dt>
           <dd class="app-check-your-answers__answer">
-            Grooveholding UK Ltd
+            BIG COMPANY LIMITED
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="add__choose-employer">
@@ -142,7 +142,7 @@
             type: "textarea",
             classes: "govuk-textarea",
             label: {
-              html: "Leave "+data['provider-name']+" a message (optional)"
+              html: "Leave "+data['employer']+" a message (optional)"
             },
             rows: 5
           }) }}
@@ -163,14 +163,14 @@
             items: [
             {
               value: "yes",
-              text: "Yes, approve and notify training provider",
+              text: "Yes, approve and notify employer",
               conditional: {
                 html: textHtml
               }
             },
             {
               value: "no",
-              text: "No, request changes from training provider",
+              text: "No, request changes from employer",
               conditional: {
                 html: textHtml
               }
