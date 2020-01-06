@@ -1,0 +1,113 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Apprentice details with transfer sending employers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form action="" method="post">
+          <h1 class="govuk-heading-xl">
+            Apprentice details with transfer sending employers
+          </h1>
+          {{ govukTable({
+            
+            firstCellIsHeader: false,
+            head: [
+              {
+                text: "Sending employer",
+                classes: 'govuk-!-width-one-third'
+              },
+              {
+                text: "Training provider",
+                classes: 'govuk-!-width-one-quarter'
+              },
+              {
+                text: "Reference"
+              },
+              {
+                text: "Number of apprentices",
+                format: "numeric",
+                classes: 'govuk-!-width-one-quarter'
+              },
+              {
+                text: "",
+                classes: 'govuk-!-width-one-quarter'
+              }
+            ],
+            rows: [
+              [
+                {
+                  text: "BIG COMPANY LTD"
+                },   
+                {
+                  text: "ABC Training Limited"
+                },                
+                {
+                  text: "ASDFGH"
+                },
+                {
+                  text: "4",
+                  format: "numeric"
+                },
+                {
+                  html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  text: "BIG COMPANY LTD"
+                }, 
+                {
+                  text: "ABC Training Limited"
+                },                
+                {
+                  text: "SDFGH6"
+                },
+                {
+                  text: "1",
+                  format: "numeric"
+                },
+                {
+                  html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  text: "BIG LITTLE COMPANY LTD"
+                }, 
+                {
+                  text: "DEF Providers"
+                },                
+                {
+                  text: "VBNMCS"
+                },
+                {
+                  text: "12",
+                  format: "numeric"
+                },
+                {
+                  html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ]
+            ]
+          }) }}
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

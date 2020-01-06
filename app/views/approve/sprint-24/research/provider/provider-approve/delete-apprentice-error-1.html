@@ -1,0 +1,76 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Delete apprentice record
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "You must choose an option",
+              href: "#delete"
+            }
+          ]
+        }) }}
+    
+      </div>
+    </div>  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post">
+          <div class="govuk-form-group" id="delete">
+            {{ govukRadios({
+              idPrefix: "delete",
+              name: "delete",
+              errorMessage: {
+                "text": "You must choose an option"
+              },
+              fieldset:
+              {
+                legend:
+                {
+                  html: "Delete apprentice Bobby Wright's record?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl govuk-!-margin-top-4 govuk-!-margin-bottom-6"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes, delete the record"
+                },
+                {
+                  value: "no",
+                  text: "No, don't delete"
+                }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Save and continue"
+            }) }}
+             
+              {{ govukRadios({
+                
+              }) }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
