@@ -23,7 +23,7 @@
 
       {{ govukDetails({
         summaryText: "Help with changes in apprentice's circumstances",
-        text: "Content will be inserted here."
+        html: "<p class='govuk-body'>If an apprentice you're training needs to move to a new employer, you should:</p><ul class='govuk-list govuk-list--bullet'><li>contact their original employer and ask them to stop the apprentice record</li><li>speak to the new employer to agree new training dates, price and request permission to move the apprentice to their apprenticeship service account</li></ul><p class='govuk-body'>Once you've agreed these details, you can change the employer.</p><p class='govuk-body'>No new funding reservation is required when moving an apprentice to a new employer.</p>"
       }) }}
 
       
@@ -94,14 +94,27 @@
           </div>
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
+              Stop applies from
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              January 2020
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="change-apprentice-status">
+                <span class="govuk-visually-hidden">Edit stop date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
               Employer
             </dt>
             <dd class="app-check-your-answers__answer">
               ABC COMPANY LIMITED
             </dd>
             <dd class="app-check-your-answers__change">
-              <a href="add__choose-employer">
-                Edit<span class="govuk-visually-hidden"></span>
+              <a href="what-youll-need">
+                Change<span class="govuk-visually-hidden"></span>
               </a>
             </dd>
           </div>
@@ -134,7 +147,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Planned training start date
+            Training start date
           </dt>
           <dd class="app-check-your-answers__answer">
             February 2019
@@ -148,7 +161,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Planned training finish date
+            Training end date
           </dt>
           <dd class="app-check-your-answers__answer">
             March 2021
@@ -175,7 +188,7 @@
         </div>
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Reference
+            Your reference
           </dt>
           <dd class="app-check-your-answers__answer">
             

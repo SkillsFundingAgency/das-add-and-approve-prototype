@@ -1,7 +1,7 @@
-{% extends "layout-provider-account.html" %}
+{% extends "./layout-provider-account.html" %}
 
 {% block pageTitle %}
-  Total new agreed apprenticeship price
+  New agreed apprenticeship price
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@
       <div class="govuk-grid-column-two-thirds">
         <form method="post" novalidate>
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
-            Total new agreed apprenticeship price
+            New agreed apprenticeship price
           </h1>
 
           <div class="govuk-form-group">
@@ -43,7 +43,7 @@
 
           {{ govukButton({
             text: "Save and continue",
-            href: "confirmation",
+            href: "check-your-answers",
             classes: "govuk-!-margin-top-6"
           }) }}
 

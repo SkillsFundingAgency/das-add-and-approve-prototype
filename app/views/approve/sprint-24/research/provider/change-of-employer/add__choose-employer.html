@@ -1,4 +1,4 @@
-{% extends "layout-provider-account.html" %}
+{% extends "./layout-provider-account.html" %}
 
 {% block pageTitle %}
 Choose a new employer for this apprentice
@@ -19,13 +19,10 @@ Choose a new employer for this apprentice
         Choose a new employer for this apprentice
       </h1>
 
-      <p class="govuk=body">
-        You can move an apprentice to a new employer without having to make a new funding reservation or using a reservation from the new employer's limit.
-      </p>
-      <p class="govuk=body">
-        The new employer must have set up permissions for you in order to appear in this list.
-      </p>
-
+      {{ govukInsetText({
+        html: "<p class='govuk=body'>You can move an apprentice to a new employer without making a new funding reservation on behalf of the employer. This apprentice does not count towards this employer's funding reservation limit.</p><p class='govuk=body'>The new employer must have set up permissions for you in order to appear in this list.</p>"
+      }) }}
+   
       {% import './apprentices.json' as apprenticesData %}
       <table class="govuk-table">
         <thead class="govuk-table__head">

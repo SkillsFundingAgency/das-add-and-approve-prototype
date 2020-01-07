@@ -1,4 +1,4 @@
-{% extends "layout-provider-account.html" %}
+{% extends "./layout-provider-account.html" %}
 
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
@@ -16,7 +16,7 @@
         <h1 class="govuk-panel__title">Change of employer requested</h1>
       </div>
 
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <!--<dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             New employer
@@ -33,15 +33,15 @@
             {{data['agreed-price']}}
           </dd>
         </div>
-        <!--<div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Approved by
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['employer']}}
           </dd>
-        </div>-->        
-      </dl>
+        </div>    
+      </dl>-->    
 
       <h2 class="govuk-heading-m">
         What's next?
