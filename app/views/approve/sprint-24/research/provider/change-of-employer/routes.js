@@ -29,6 +29,17 @@ router.post('/training-dates', (req, res) => {
 })
 
 //approve apprentices
+router.post('/view-changes', (req, res) => {
+	if (req.session.data['undo'] == 'yes') {
+	  res.redirect('apprentice-undone')
+	} else if (req.session.data['undo'] == 'no') {
+	  res.redirect('apprentice-details-awaiting-approval-a')
+	} else {
+	res.redirect('apprentice-details-awaiting-approval-a')
+  }
+})
+
+//approve apprentices
 router.post('/approve-apprentices', (req, res) => {
 	if (req.session.data['approve'] == 'yes') {
 	  res.redirect('confirmation')
