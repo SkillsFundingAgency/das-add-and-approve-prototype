@@ -20,6 +20,17 @@ router.post('/approve-apprentices', (req, res) => {
   }
 })
 
+//approve apprentices
+router.post('/approve-apprentices-change', (req, res) => {
+	if (req.session.data['approve'] == 'yes') {
+	  res.redirect('confirmation')
+	} else if (req.session.data['approve'] == 'no') {
+	  res.redirect('not-confirmed')
+	} else {
+	res.redirect('approve-apprentices-error')
+  }
+})
+
 //approve apprentices edited
 router.post('/approve-apprentices-edited', (req, res) => {
 	if (req.session.data['approve'] == 'yes') {
