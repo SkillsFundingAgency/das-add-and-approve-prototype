@@ -144,35 +144,70 @@ router.post('/delete-apprentice-2', (req, res) => {
 	})
 
 	router.get('*/manage-your-apprentices', function (req, res) {
-		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices', {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices', {
 	   "query" : req.query,
 	   }
 	  )
 	 })
 	
 	 router.get('*/manage-your-apprentices-filters', function (req, res) {
-		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filters', {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters', {
 	   "query" : req.query,
 	   }
 	  )
 	 })
 	
 	 router.get('*/manage-your-apprentices-filters-100', function (req, res) {
-		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filters-100', {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-100', {
 	   "query" : req.query,
 	   }
 	  )
 	 })
 	
 	 router.get('*/manage-your-apprentices-filters-pg2', function (req, res) {
-		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filters-pg2', {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-pg2', {
 	   "query" : req.query,
 	   }
 	  )
 	 })
 	
 	 router.get('*/manage-your-apprentices-filtered-view', function (req, res) {
-		res.render('approve/sprint-23/research/provider/change-of-employer/manage-your-apprentices-filtered-view', {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filtered-view', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+
+	 router.get('*/manage-your-apprentices-b', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-b', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filters-b', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-b', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filters-100b', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-100b', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filters-pg2b', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-pg2b', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+	
+	 router.get('*/manage-your-apprentices-filtered-view-b', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filtered-view-b', {
 	   "query" : req.query,
 	   }
 	  )
