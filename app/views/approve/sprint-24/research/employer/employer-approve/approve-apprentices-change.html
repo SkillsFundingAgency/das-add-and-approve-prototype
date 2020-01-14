@@ -37,6 +37,7 @@
               <th class="govuk-table__header" scope="col">Date of birth</th>
               <th class="govuk-table__header" scope="col">Training dates</th>
               <th class="govuk-table__header" scope="col" style="text-align: right;">Price</th>
+              <th class="govuk-table__header" scope="col"></th>
             </tr>
           </thead>
           {% set name = data['name'] %}
@@ -46,6 +47,9 @@
               <td class="govuk-table__cell">5 Jan 2002</td>
               <td class="govuk-table__cell">Jan 2020 to Nov 2020</td>
               <td class="govuk-table__cell" style="text-align: right;">£1,500</td>
+              <td class="govuk-!-font-size-16 govuk-table__cell" style="text-align: right;">
+                <a href="apprentice-details">Edit</a>
+              </td>
             </tr>
           </tbody>          
         </table>
@@ -60,7 +64,7 @@
               </h2>
             </div>
             <div class="govuk-grid-column-one-third">
-              <h2 class="govuk-heading-m margin-bottom-6 govuk-!-margin-top-6" style="float:right;">
+              <h2 class="govuk-heading-m margin-bottom-6 govuk-!-margin-top-6" style="float:right; padding-right: 50px;">
                 £1,500
               </h2>
             </div>
@@ -96,10 +100,7 @@
             items: [
             {
               value: "yes",
-              text: "Yes, approve and notify training provider",
-              conditional: {
-                html: textHtml
-              }
+              text: "Yes, approve and notify training provider"
             },
             {
               value: "no",

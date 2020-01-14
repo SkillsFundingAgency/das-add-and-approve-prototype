@@ -20,9 +20,9 @@ Choose a new employer for this apprentice
       </h1>
 
       {{ govukInsetText({
-        html: "<p class='govuk=body'>You can move an apprentice to a new employer without making a new funding reservation on behalf of the employer. This apprentice does not count towards this employer's funding reservation limit.</p><p class='govuk=body'>The new employer must have set up permissions for you in order to appear in this list.</p>"
+        html: "<p class='govuk=body'>The new employer must have <a href='https://www.gov.uk/government/publications/skills-funding-agency-business-update/business-update-issue-41-february-2019' class='govuk-link govuk-link--no-visited-state'>set up permissions</a> for you in order to appear in this list.</p><p class='govuk=body'>Where an apprentice is subject to a funding reservation, moving the apprentice to a new employer will not require a new reservation, or use a reservation from the new employer's limit.</p>"
       }) }}
-   
+      
       {% import './apprentices.json' as apprenticesData %}
       <table class="govuk-table">
         <thead class="govuk-table__head">
