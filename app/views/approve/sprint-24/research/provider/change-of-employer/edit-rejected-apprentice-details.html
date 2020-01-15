@@ -54,48 +54,25 @@ Edit apprentice details
       <br>
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Training provider
+        Employer
       </h3>
       <p class="govuk-!-margin-bottom-6">
-        APEX TRAINING LIMITED
+        Grooveholding UK LTD
       </p>
 
-      {% call govukFieldset({
-        legend:
-        {
-          text: "Name",
-          classes: "govuk-fieldset__legend--s",
-          isPageHeading: false
-        }
-      }) %}
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Name
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        Darren Diamond
+      </p>
 
-      {{ govukInput({
-        
-        id: "first-name",
-        name: "first-name",
-        classes: "govuk-input--width"
-      }) }}
-
-      
-      {% endcall %}
-
-      {{ govukDateInput({
-        id: "dob",
-        namePrefix: "dob",
-        fieldset:
-        {
-          legend:
-          {
-            text: "Date of birth",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint:
-        {
-          text: "For example, 31 3 1980"
-        }
-      }) }}
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Date of birth
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        5 January 2002
+      </p>
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
         Unique Learner Number (ULN)
@@ -104,61 +81,19 @@ Edit apprentice details
         123456789A
       </p>
 
-    
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Apprenticeship course
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        Accountancy: Level 7 (Standard)
+      </p>      
 
-      {% call govukFieldset({
-        legend:
-        {
-          text: "Apprenticeship course",
-          classes: "govuk-fieldset__legend--s",
-          isPageHeading: true
-        }
-      }) %}
-
-      <div class="govuk-form-group">
-        <div class="autocomplete-wrapper">
-          <select class="autocomplete-element" id="course-name" name="course-name">
-            <option value="">Select one</option>
-            {% import 'includes/apprenticeships-list.html' as apprenticeshipsData %}
-            {% for apprenticeship in apprenticeshipsData.apprenticeships %}
-            <option value="{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{' (Standard)' if apprenticeship.standard === true}}">{{apprenticeship.name}}, Level: {{apprenticeship.level}}{{" (Standard)" if apprenticeship.standard === true}}</option>
-            {% endfor %}
-          </select>
-        </div>
-      </div>
-
-      {% endcall %}
-
-      {{ govukDateInput({
-        id: "start-date",
-        namePrefix: "start-date",
-        fieldset:
-        {
-          legend:
-          {
-            text: "Planned training start date",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items:
-        [
-        {
-          name: "month",
-          id: "month",
-          classes: "govuk-input--width-2"
-        },
-        {
-          name: "year",
-          id: "year",
-          classes: "govuk-input--width-4"
-        }
-        ],
-        hint:
-        {
-          text: "For example, 2 2019"
-        }
-      }) }}
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Planned training start date
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        January 2020
+      </p>    
 
       {{ govukDateInput({
         id: "finish-date",
@@ -167,7 +102,7 @@ Edit apprentice details
         {
           legend:
           {
-            text: "Planned training finish date",
+            text: "Planned training end date",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }
@@ -205,23 +140,17 @@ Edit apprentice details
         name: "price"
       }) }}
 
-      {{ govukInput({
-        label:
-        {
-          text: "Reference (optional)"
-        },
-        hint:
-        {
-          html: "Add a reference, such as employee number or location. <br> This won't be seen by the employer."
-        },
-        id: "reference",
-        name: "reference"
-      }) }}
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Reference
+      </h3>
+      <p class="govuk-!-margin-bottom-9">
+        -
+      </p>     
 
       <p>
         {{ govukButton ({
-          text: "Save and continue",
-          href: "approve-apprentices-edited"
+          text: "Save",
+          href: "review-cohort"
         })}}
       </p>
     </form>

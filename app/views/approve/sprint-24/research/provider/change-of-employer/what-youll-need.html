@@ -1,16 +1,13 @@
 {% extends "./layout-provider-account.html" %}
-
 {% block pageTitle %}
 What you'll need
 {% endblock %}
-
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
   href: "javascript: window.history.go(-1)"
 }) }}
 {% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">    
     <div class="govuk-grid-column-two-thirds">
@@ -26,20 +23,17 @@ What you'll need
       <p class="govuk-body">If an apprentice you're training needs to move to a new employer, you should:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>speak to the new employer to agree new training dates and price</li>
-        <li><a href="https://www.gov.uk/government/publications/skills-funding-agency-business-update/business-update-issue-41-february-2019">request permission</a> to move the apprentice to their apprenticeship service account</li>
+        <li>ask the new employer to give you <a href="https://www.gov.uk/government/publications/skills-funding-agency-business-update/business-update-issue-41-february-2019">permission</a> to move the apprentice to their apprenticeship service account</li>
       </ul>
       <p class="govuk-body">Once you've agreed these details, you can change the employer.</p> 
       <p class="govuk-body govuk-!-margin-bottom-6">Where an apprentice is subject to a funding reservation, moving the apprentice to a new employer will not require a new reservation, or use a reservation from the new employer's limit.</p>
-
       {{ govukButton({
         text: "Change the employer",
         href: "add__choose-employer"
       }) }}
-
       <p class="govuk-body">
         <a href="apprentice-details" class="govuk-link govuk-link--no-visited-state">Cancel</a>
       </p>
-
     </div>
   </div>
 {% endblock %}
