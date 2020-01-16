@@ -10,6 +10,16 @@
     "alert": "Changes pending"  
   },
   {
+    "name": "Darren Diamond",
+    "uln": "123456789A",  
+    "employer": "ABC COMPANY LIMITED",
+    "course": "Accountancy: Level 7 (Standard)",
+    "startDate": "Feb 2019",
+    "endDate": "Nov 2020",
+    "status": "Stopped",
+    "alert": "Changes pending"  
+  },
+  {
     "name": "Darryl Hannah",
     "uln": "13579252",  
     "employer": "Red Shoes Limited",
@@ -499,16 +509,6 @@
     "startDate": "Mar 2020",
     "endDate": "Feb 2021",
     "status": "Live",
-    "alert": ""  
-  },
-  {
-    "name": "Darren Diamond",
-    "uln": "123456789A",  
-    "employer": "ABC COMPANY LIMITED",
-    "course": "Accountancy: Level 7 (Standard)",
-    "startDate": "Feb 2019",
-    "endDate": "Nov 2020",
-    "status": "Stopped",
     "alert": ""  
   },
   {

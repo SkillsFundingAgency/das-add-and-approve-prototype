@@ -67,7 +67,7 @@ Manage your apprentices
               </label>
               <select class="govuk-select" id="employer" name="employer" style="min-width:100%;">
                 <option value="all">All</option>
-                <option value="grooverider">Grooverider</option>
+                <option value="grooverider">Grooveholding UK Ltd</option>
                 <option value="redshoeslimited">Red Shoes Limited</option>
               </select>
             </div>
@@ -153,7 +153,7 @@ Manage your apprentices
 
 <div class="govuk-grid-column-full govuk-grid-row govuk-!-margin-bottom-4">
   <p class="govuk-grid-row" style="background-color:#fff;"> 
-    <span style="float:left; padding-left:15px;">4 records matching <b>Bespoke Saddler: Level 3 (Standard)</b> and <b>apr 2019</b></span>          
+    <span style="float:left; padding-left:15px;">4 records matching <b>Bespoke Saddler: Level 3 (Standard)</b> and <b>Apr 2019</b></span>          
     <span style="float:right;"><a href="download" title="Download filtered data (CSV))">Download filtered data (CSV)</a></span>
   </p>
 </div>
@@ -183,26 +183,26 @@ Manage your apprentices
         {%if query.search %}
           {% if query.search in record.name or query.search in record.uln %}
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
+            <td class="govuk-table__cell"><a href="apprentice-details-awaiting-approval-a">{{record.name}}</a></td>
             <td class="govuk-table__cell">{{record.uln}}</td>                            
             <td class="govuk-table__cell">{{record.employer}}</td>
             <td class="govuk-table__cell">{{record.course}}</td>
             <td class="govuk-table__cell">{{record.startDate}}</td>   
             <td class="govuk-table__cell">{{record.endDate}}</td>             
             <td class="govuk-table__cell">{{record.status}}</td>
-            <td class="govuk-table__cell"><a href="alerts">{{record.alert}}</a></td>
+            <td class="govuk-table__cell"><a href="apprentice-details-awaiting-approval-a">{{record.alert}}</a></td>
           </tr>
           {%endif%} 
           {%else%}
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="apprentice-details">{{record.name}}</a></td>
+            <td class="govuk-table__cell"><a href="apprentice-details-awaiting-approval-a">{{record.name}}</a></td>
             <td class="govuk-table__cell">{{record.uln}}</td>                            
             <td class="govuk-table__cell">{{record.employer}}</td>
             <td class="govuk-table__cell">{{record.course}}</td>
             <td class="govuk-table__cell">{{record.startDate}}</td> 
             <td class="govuk-table__cell">{{record.endDate}}</td>              
             <td class="govuk-table__cell">{{record.status}}</td>
-            <td class="govuk-table__cell"><a href="alerts">{{record.alert}}</a></td>
+            <td class="govuk-table__cell"><a href="apprentice-details-awaiting-approval-a">{{record.alert}}</a></td>
           </tr>
           {%endif%}          
         {%endfor%}            

@@ -23,6 +23,7 @@ var recordsfilter = require('./recordsfilter.json');
 
 var providerrecords = require('./providerrecords.json');
 var providerrecords2 = require('./providerrecords2.json');
+var providerrecords3 = require('./providerrecords3.json');
 var providerrecordsfilters = require('./providerrecordsfilters.json');
 
 var moment = require('moment');
@@ -51,6 +52,7 @@ module.exports = {
 	"providerrecords2": providerrecords2,
 	"recordsfilter": recordsfilter,
 	"providerrecordsfilters": providerrecordsfilters,
+	"providerrecords3": providerrecords3,
 	"name": "Darren Diamond",
 	"agreed-price": "£1,500"
 }
