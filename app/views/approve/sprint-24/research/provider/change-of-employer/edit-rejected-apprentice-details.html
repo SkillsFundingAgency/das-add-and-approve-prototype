@@ -88,21 +88,14 @@ Edit apprentice details
         Accountancy: Level 7 (Standard)
       </p>      
 
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-        Planned training start date
-      </h3>
-      <p class="govuk-!-margin-bottom-6">
-        January 2020
-      </p>    
-
       {{ govukDateInput({
-        id: "finish-date",
-        namePrefix: "finish-date",
+        id: "start-date",
+        namePrefix: "start-date",
         fieldset:
         {
           legend:
           {
-            text: "Planned training end date",
+            text: "Planned training start date",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }
@@ -112,11 +105,13 @@ Edit apprentice details
         {
           name: "month",
           id: "month",
+          value: "1",
           classes: "govuk-input--width-2"
         },
         {
           name: "year",
           id: "year",
+          value: "2020",
           classes: "govuk-input--width-4"
         }
         ],
@@ -125,6 +120,13 @@ Edit apprentice details
           text: "For example, 3 2020"
         }
       }) }}
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Planned training end date
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        November 2020
+      </p>    
 
       {{ govukInput({
           label:
@@ -137,7 +139,8 @@ Edit apprentice details
         },
 
         id: "price",
-        name: "price"
+        name: "price",
+        value: "£15,000"
       }) }}
 
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
