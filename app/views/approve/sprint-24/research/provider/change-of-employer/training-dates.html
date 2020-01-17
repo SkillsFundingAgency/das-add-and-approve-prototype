@@ -20,7 +20,7 @@
       <div class="govuk-grid-column-two-thirds">
         <form method="post" novalidate>
           <h1 class="govuk-heading-xl">
-            When does the training restart with the new employer?
+            New training start date
           </h1>
           <!--<div class="govuk-form-group">
             <label class="govuk-label govuk-!-margin-bottom-4" for="stop-date">
@@ -29,6 +29,23 @@
             <span class="govuk-body">December 2019</span>
           </div>
           <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">-->
+          <p class="govuk-body">The restart date must be on or after the stop date.</p>
+
+          {% from "components/summary-list/macro.njk" import govukSummaryList %}
+
+          {{ govukSummaryList({
+            classes: 'govuk-summary-list--no-border',
+            rows: [
+              {
+                key: {
+                  text: "Stop date"
+                },
+                value: {
+                  text: "January 2020"
+                }
+              }
+            ]
+          }) }}
 
           <div class="govuk-form-group">
             {{ govukDateInput({
@@ -49,8 +66,7 @@
               ],
               hint:
               {
-                html: "<span style='color:#000;'>The restart date must be on or after the stop date.<br><br><b style='padding-right:25px;'>Stop date</b> January 2020</span> 
-                <br><br><br>For example 11 2019",
+                text: "For example 11 2019",
                 classes: "govuk-!-margin-top-6"
               }
             }) }}
