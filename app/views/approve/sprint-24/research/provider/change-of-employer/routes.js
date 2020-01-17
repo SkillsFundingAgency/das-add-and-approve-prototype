@@ -198,6 +198,20 @@ router.post('/delete-apprentice-2', (req, res) => {
 	   }
 	  )
 	 })
+
+	 router.get('*/manage-your-apprentices-filters-100c', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-100c', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
+
+	 router.get('*/manage-your-apprentices-filters-100d', function (req, res) {
+		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-100d', {
+	   "query" : req.query,
+	   }
+	  )
+	 })
 	
 	 router.get('*/manage-your-apprentices-filters-pg2b', function (req, res) {
 		res.render('approve/sprint-24/research/provider/change-of-employer/manage-your-apprentices-filters-pg2b', {
