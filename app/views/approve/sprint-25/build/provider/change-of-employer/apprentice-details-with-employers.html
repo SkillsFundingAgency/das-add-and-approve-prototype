@@ -1,0 +1,110 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+  Apprentice details with employers
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form action="" method="post">
+          <h1 class="govuk-heading-xl">
+            Apprentice details with employers
+          </h1>
+          {{ govukTable({
+            
+            firstCellIsHeader: false,
+            head: [
+              {
+                text: "Employer",
+                classes: 'govuk-!-width-one-quarter'
+              },
+              {
+                text: "Reference"
+              },
+              {
+                text: "Last message",
+                classes: 'govuk-!-width-one-third'
+              },
+              {
+                text: ""
+              }
+            ],
+            rows: [
+              [
+                {
+                  html: "Grooveholding UK Ltd<!--br><span class='govuk-tag'>CHANGE IN PROGRESS</span>-->"
+                },                
+                {
+                  text: "ABC12D"
+                },
+                {
+                  html: ""
+                },
+                {
+                  html: "<a href='view-cohort' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  text: "BIG COMPANY LTD"
+                },                
+                {
+                  text: "ASDFGH"
+                },
+                {
+                  text: "Pls approve, thanks."
+                },
+                {
+                  html: "<a href='#' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  text: "BIG COMPANY LTD"
+                },                
+                {
+                  text: "SDFGH6"
+                },
+                {
+                  text: "Hi there, could you do the necessary for these apprentice records, please. Hopefully I've added the correct training course, but please amend if you need to. Thanks in advance, any problems call the office and ask for Bob Tester."
+                },
+                {
+                  html: "<a href='#' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  text: "ALDI LIMITED"
+                },                
+                {
+                  text: "VBNMCS"
+                },
+                {
+                  text: "No message added"
+                },
+                {
+                  html: "<a href='#' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+                  format: "numeric"
+                }
+              ]
+            ]
+          }) }}
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+Edit apprentice details
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.autocomplete-element').each(function() {
+      var selectEl = document.querySelector('#' + $(this).attr('id') )
+      accessibleAutocomplete.enhanceSelectElement({
+        autoselect: false,
+        defaultValue: '',
+        minLength: 2,
+        required: true,
+        selectElement: selectEl,
+        placeholder: 'Search for an apprenticeship',
+        showAllValues: true
+      })
+    })
+  })
+</script>
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      <h2 class="govuk-heading-xl">
+        Edit apprentice details
+      </h2>
+
+      <div class="govuk-details__text" id="details-content" aria-hidden="false">
+        <p>
+          You must add the apprentice’s name - fill in as many other fields as you can. You'll be able to return later to make changes or add more information.
+        </p>
+        <p>
+          You'll only be able to authorise payments for this apprentice once all the fields have been completed - either by yourself or your training provider.
+        </p>
+      </div>
+
+      <br>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      <br>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Employer
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        Grooveholding UK LTD
+      </p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Name
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        Darren Diamond
+      </p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Date of birth
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        5 January 2002
+      </p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Unique Learner Number (ULN)
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        123456789A
+      </p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Apprenticeship course
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        Accountancy: Level 7 (Standard)
+      </p>      
+
+      {{ govukDateInput({
+        id: "start-date",
+        namePrefix: "start-date",
+        fieldset:
+        {
+          legend:
+          {
+            text: "Planned training start date",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items:
+        [
+        {
+          name: "month",
+          id: "month",
+          value: "1",
+          classes: "govuk-input--width-2"
+        },
+        {
+          name: "year",
+          id: "year",
+          value: "2020",
+          classes: "govuk-input--width-4"
+        }
+        ],
+        hint:
+        {
+          text: "For example, 3 2020"
+        }
+      }) }}
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Planned training end date
+      </h3>
+      <p class="govuk-!-margin-bottom-6">
+        November 2020
+      </p>    
+
+      {{ govukInput({
+          label:
+          {
+            text: "Total agreed apprenticeship price (excluding VAT)"
+          },
+        hint:
+        {
+          text: "Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500"
+        },
+
+        id: "price",
+        name: "price",
+        value: "15000"
+      }) }}
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+        Reference
+      </h3>
+      <p class="govuk-!-margin-bottom-9">
+        -
+      </p>     
+
+      <p>
+        {{ govukButton ({
+          text: "Save",
+          href: "review-cohort"
+        })}}
+      </p>
+    </form>
+  </div>
+
+  {% endblock %}

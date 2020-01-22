@@ -1,0 +1,27 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		{{ govukPanel({
+			titleText: "Apprentice details changed and sent for approval",
+			classes: "govuk-!-margin-bottom-8"
+		}) }}
+
+		<h2 class="govuk-heading-m">
+			What's next?
+		  </h2>
+		  <p class="govuk-body">
+			The new employer will receive an email requesting confirmation of the change. Once they've confirmed the apprentice's details, the apprentice will move to the new employer and payments will restart.
+		  </p>
+	
+		  <p class="govuk-body"><a href="account-home">Return to homepage</a></p>
+		
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+Choose a new employer for this apprentice
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="add__confirm-employer">
+      <h1 class="govuk-heading-xl">
+        Choose a new employer for this apprentice
+      </h1>
+
+      {{ govukInsetText({
+        html: "<p class='govuk=body'>The new employer must have <a href='https://www.gov.uk/government/publications/skills-funding-agency-business-update/business-update-issue-41-february-2019' class='govuk-link govuk-link--no-visited-state'>set up permissions</a> for you in order to appear in this list.</p>"
+      }) }}
+      
+      {% import './apprentices.json' as apprenticesData %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Employer</th>
+            <th class="govuk-table__header" scope="col">Account name</th>
+            <th class="govuk-table__header" colspan="2" scope="col">Agreement ID</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          {% for apprentice in apprenticesData.apprentices %}
+          {% set name = apprentice["account name"] %}
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">{{apprentice.employer}}</th>
+            <td class="govuk-table__cell">{{name}}</td>
+            <td class="govuk-table__cell">{{apprentice.agreementID}}</td>
+            <td class="govuk-table__cell" style="text-align: right"><a href="add__confirm-employer?employer={{apprentice.employer}}&apprentice-name={{name}}&agreementID={{apprentice.agreementID}}">Select</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  {% endblock %}

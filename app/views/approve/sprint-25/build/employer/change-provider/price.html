@@ -1,0 +1,55 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Total new agreed apprenticeship price
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" novalidate>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+            Total new agreed apprenticeship price
+          </h1>
+
+          <div class="govuk-form-group">
+            {{ govukInput({
+              label:
+              {
+                text: "The price agreed between the training provider and the employer to complete the remainder of the apprenticeship training.",
+                classes: "govuk-!-margin-bottom-4"
+              },
+              hint:
+              {
+                text: "Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500"
+              },
+              classes: "govuk-input--width-10",
+              id: "agreed-price",
+              name: "agreed-price"
+            }) }}
+
+          </div>
+
+          {{ govukButton({
+            text: "Save and continue",
+            href: "confirmation",
+            classes: "govuk-!-margin-top-6"
+          }) }}
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

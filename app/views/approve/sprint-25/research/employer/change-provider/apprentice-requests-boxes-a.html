@@ -1,0 +1,113 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Add and approve apprentices
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+      Add and approve apprentices
+    </h1>
+    <form method="post">      
+      {{ govukButton({
+        text: "Add new apprentice",
+        href: "add--start"
+      }) }}
+    </form>
+
+    <a>
+      <div class="govuk-grid-column-one-quarter" style="background-color: #005ea5; margin: 0 20px 20px 0; width:22%;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:white; font-weight:700;">2</div>
+        <p class="govuk-body" style="color:white;">Ready for review</p><br>
+      </div>
+    </a>
+
+    <a href="apprentice-requests-boxes-b">
+      <div class="govuk-grid-column-one-quarter" style="background-color: white; margin:0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">3</div>
+        <p class="govuk-body" style="color:#005ea5; text-decoration:underline;">With training providers</p>
+      </div>
+    </a>
+    <a href="apprentice-requests-boxes-c">
+      <div class="govuk-grid-column-one-quarter" style="background-color: white; margin:0 20px 20px 0; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">1</div>
+        <p class="govuk-body" style="color:#005ea5; text-decoration:underline;">Drafts</p><br>
+      </div>
+    </a>
+    <a href="apprentice-requests-boxes-d">
+      <div class="govuk-grid-column-one-quarter" style="background-color: white; margin-bottom:20px; width:22%; border:#005ea5 solid 1px;">
+        <div class="govuk-!-font-size-48 govuk-!-margin-top-4" style="color:#005ea5; font-weight:700;">0</div>
+        <p class="govuk-body" style="color:#005ea5; text-decoration:underline;">With transfer sending employers</p>
+      </div>
+    </a>
+
+    {{ govukTable({
+            
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Training provider",
+          classes: 'govuk-!-width-one-quarter'
+        },
+        {
+          text: "Reference"
+        },
+        {
+          text: "Number of apprentices",
+          format: "numeric"
+        },
+        {
+          text: "Last message",
+          classes: 'govuk-!-width-one-third'
+        },
+        {
+          text: ""
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "ABC TRAINING LTD"
+          },                
+          {
+            text: "ASDFGH"
+          },
+          {
+            text: "4",
+            format: "numeric"
+          },
+          {
+            text: "No message added"
+          },
+          {
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "ABC TRAINING LTD"
+          },                
+          {
+            text: "XGVBNH"
+          },
+          {
+            text: "12",
+            format: "numeric"
+          },
+          {
+            text: "No message added"
+          },
+          {
+            html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+  </div>
+</div>    
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+  Confirm the information before sending your request
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% from "components/summary-list/macro.njk" import govukSummaryList %}
+
+{% block content %}
+  <div class="govuk-grid-row">    
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Confirm the information before sending your request</h1>
+   
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Apprentice name"
+            },
+            value: {
+              text: "Darren Diamond"
+            }
+          }
+        ]
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Current details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [        
+          {
+            key: {
+              text: "Employer"
+            },
+            value: {
+              text: "ABC TRADING LIMITED"
+            }
+          },
+          {
+            key: {
+              text: "Training start date"
+            },
+            value: {
+              html: "February 2019"
+            }
+          },
+          {
+            key: {
+              text: "Stop applies from"
+            },
+            value: {
+              html: "January 2020"
+            }
+          },
+          {
+            key: {
+              text: "Total agreed apprenticeship price"
+            },
+            value: {
+              text: "£5,000"
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Requested changes</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "New employer"
+            },
+            value: {
+              text: "Grooveholding UK Ltd"
+            }
+          },
+          {
+            key: {
+              text: "New training start date"
+            },
+            value: {
+              text: "January 2020"
+            },
+            actions: {
+              items: [
+                {
+                  href: "training-dates",
+                  classes: "govuk-link govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "start date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "New agreed apprenticeship price"
+            },
+            value: {
+              html: "£1,500"
+            },
+            actions: {
+              items: [
+                {
+                  href: "price",
+                  classes: "govuk-link govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "price"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!--<h2 class="govuk-heading-m">Now send your request</h2>
+
+      <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>-->
+
+      <form action="/form-handler" method="post" novalidate>
+
+        <input type="hidden" name="check-your-answers" value="true">
+
+        {{ govukButton({
+          text: "Save and send",
+          href: "confirmation"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,248 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Add and approve apprentices
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+      Add and approve apprentices
+    </h1>
+    <form method="post">      
+      {{ govukButton({
+        text: "Add new apprentice",
+        href: "add--start"
+      }) }}
+    </form>
+
+{% set readyforReviewHtml %}
+<!--<h2 class="govuk-heading-l">Ready for review</h2>-->
+{{ govukTable({
+  head: [
+    {
+      text: "Training provider",
+      classes: 'govuk-!-width-one-quarter'
+    },
+    {
+      text: "Reference"
+    },
+    {
+      text: "Number of apprentices",
+      format: "numeric"
+    },
+    {
+      text: "Last message",
+      classes: 'govuk-!-width-one-third'
+    },
+    {
+      text: ""
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "ABC TRAINING LTD"
+      },
+      {
+        text: "ASDFGH"
+      },
+      {
+        text: "4",
+        format: "numeric"
+      },
+      {
+        text: "No message added"
+      },
+      {
+        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "ABC TRAINING LTD"
+      },
+      {
+        text: "XGVBNH"
+      },
+      {
+        text: "12",
+        format: "numeric"
+      },
+      {
+        text: "No message added"
+      },
+      {
+        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set withProvidersHtml %}
+<!--<h2 class="govuk-heading-l">With employers</h2>-->
+{{ govukTable({
+  head: [
+    {
+      text: "Training provider",
+      classes: 'govuk-!-width-one-quarter'
+    },
+    {
+      text: "Reference"
+    },
+    {
+      text: "Number of apprentices",
+      format: "numeric"
+    },
+    {
+      text: "Last message",
+      classes: 'govuk-!-width-one-third'
+    },
+    {
+      text: ""
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "APEX TRAINING LIMITED"
+      },
+      {
+        text: "ASDRTH"
+      },
+      {
+        text: "20",
+        format: "numeric"
+      },
+      {
+        text: "Please could you approve these 20 apprentices, thanks!"
+      },
+      {
+        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "APEX TRAINING LIMITED"
+      },
+      {
+        text: "VHJUIA"
+      },
+      {
+        text: "2",
+        format: "numeric"
+      },
+      {
+        text: "No message added"
+      },
+      {
+        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "A2Z COLLEGE"
+      },
+      {
+        text: "SDGFHJ"
+      },
+      {
+        text: "6",
+        format: "numeric"
+      },
+      {
+        text: "Here are the 6 apprentices we spoke about on the phone, could you approve, please?"
+      },
+      {
+        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set draftsHtml %}
+<!--<h2 class="govuk-heading-l">Past month</h2>-->
+{{ govukTable({
+  head: [
+    {
+      text: "Training provider"
+    },
+    {
+      text: "Reference"
+    },
+    {
+      text: "Number of apprentices",
+      format: "numeric"
+    },
+    {
+      text: ""
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "ABC TRAINING LTD"
+      },
+      {
+        text: "POIUTR"
+      },
+      {
+        text: "1",
+        format: "numeric"
+      },
+      {
+        html: "<a href='approve-apprentices' class='govuk-link govuk-link--no-visited-state' title='Details' aria-describedby='Details'>Details</a>",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+{% endset -%}
+
+{% set withtransfersendingEmployersHtml %}
+<h2 class="govuk-heading-s">You currently have no apprentices with transfer sending employers</h2>
+{% endset -%}
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Ready for review (2)",
+      id: "ready-for-review",
+      panel: {
+        html: readyforReviewHtml
+      }
+    },
+    {
+      label: "With training providers (3)",
+      id: "with-provider",
+      panel: {
+        html: withProvidersHtml
+      }
+    },
+    {
+      label: "Drafts (1)",
+      id: "drafts",
+      panel: {
+        html: draftsHtml
+      }
+    },
+    {
+      label: "With transfer sending employers (0)",
+      id: "with-transfer-sending-employers",
+      panel: {
+        html: withtransfersendingEmployersHtml
+      }
+    }
+  ]
+}) }}
+  </div>
+</div>    
+{% endblock %}

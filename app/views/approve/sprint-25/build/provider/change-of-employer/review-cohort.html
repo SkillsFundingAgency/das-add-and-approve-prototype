@@ -1,0 +1,135 @@
+
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+Review your cohort
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+	text: "Back",
+	href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+			Review your cohort
+		</h1>
+
+		<div class="govuk-grid-row" id="app-review-cohorts">
+			<div class="govuk-grid-column-one-third">
+				<div class="all-apps">
+					<h2 class="govuk-heading-xl">1</h2>
+					<p class="govuk-!-font-weight-bold govuk-!-font-size-24">Apprentice</p>
+				</div>
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+				<div class="incomplete-apps">
+					<h2 class="govuk-heading-xl">0</h2>
+					<p class="govuk-!-font-weight-bold govuk-!-font-size-24">Incomplete records</p>
+				</div>
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+				<div class="total-cost">
+					<h2 class="govuk-heading-xl">£1,500</h2>
+					<p class="govuk-!-font-weight-bold govuk-!-font-size-24">Total cost</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-one-third">
+				<p>
+					<b>Employer:</b> Grooveholding UK Ltd
+				</p>
+
+				<p>
+					<b>Status:</b> Change of employer request rejected
+				</p>
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+				<p>
+					<b>Message:</b> I think £15,000 should be £1,500. Could you amend this, please?
+				</p>
+			</div>
+		</div>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+		<p class="govuk-!-margin-bottom-0">
+			{{govukButton({
+				text: "Save and continue",
+				classes: "govuk-!-display-inline-block",
+				href: "add--finished-check"
+			})}}			
+		</p>
+
+		<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+		
+		<h3 class="govuk-heading-m">
+			1 x Accountancy: Level 7 (Standard)
+		</h3>
+
+		<p>
+			Training code: 272
+		</p>
+
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="col">
+						Name
+					</th>
+					<th class="govuk-table__header" scope="col">
+						Unique learner number 	
+					</th>
+					<th class="govuk-table__header" scope="col">
+						Date of birth 	
+					</th>
+					<th class="govuk-table__header" scope="col">
+						Training dates 	
+					</th>
+					<th class="govuk-table__header" scope="col" colspan="2">
+						Cost
+					</th>
+				</tr>
+			</thead>
+
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">
+						Darren Diamond
+					</td>
+					<td class="govuk-table__cell">
+						123456789A
+					</td>
+					<td class="govuk-table__cell">
+						5 Jan 2002
+					</td>
+					<td class="govuk-table__cell">
+						February 2019 to November 2020 
+					</td>
+					<td class="govuk-table__cell">
+						£1,500
+					</td>
+					<td class="govuk-table__cell">
+						<a href="edit-rejected-apprentice-details" class="govuk-body-s">
+							Edit
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		
+	</div>
+</div>
+
+{% endblock %}
