@@ -19,6 +19,17 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form method="post" novalidate>
+          
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "The new agreed apprenticeship price must be £100,000 or less",
+                href: "#agreed-price"
+              }
+            ]
+          }) }}
+          
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
             What's the new agreed apprenticeship price?
           </h1>
@@ -35,9 +46,13 @@
                 html: "Enter the price, including any end-point assessment costs, in whole pounds.<br>
                 For example, for £1,500 enter 1500."
               },
-              classes: "govuk-input--width-10",
+              classes: "govuk-input--width-10 govuk-input--error",
               id: "agreed-price",
-              name: "agreed-price"
+              name: "agreed-price",
+              value: "100001",
+              errorMessage: {
+                text: "The new agreed apprenticeship price must be £100,000 or less"
+              }
             }) }}
 
           </div>

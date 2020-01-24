@@ -37,14 +37,19 @@ router.use('/research/provider/provider-approve', (req, res, next) => {
   require(`./research/provider/provider-approve/routes`)(req, res, next);
 })
 
-// provider manage your apprentices
+// provider change of employer
 router.use('/build/provider/change-of-employer', (req, res, next) => {
   require(`./build/provider/change-of-employer/routes`)(req, res, next);
 })
 
-// employer apprentice requests
+// provider approve change
 router.use('/build/provider/provider-approve', (req, res, next) => {
   require(`./build/provider/provider-approve/routes`)(req, res, next);
+})
+
+// employer approve change
+router.use('/build/employer/employer-approve', (req, res, next) => {
+  require(`./build/employer/employer-approve/routes`)(req, res, next);
 })
 
 module.exports = router

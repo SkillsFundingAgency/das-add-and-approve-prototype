@@ -1,0 +1,100 @@
+{% extends "layout-provider-account.html" %}
+
+{% block pageTitle %}
+  New training start date
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" novalidate>
+
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "The new training start date cannot be before the stop date",
+                href: "#start-date"
+              }
+            ]
+          }) }}
+
+          <h1 class="govuk-heading-xl">
+            New training start date
+          </h1>
+          <!--<div class="govuk-form-group">
+            <label class="govuk-label govuk-!-margin-bottom-4" for="stop-date">
+              The date the previous employer stopped the apprenticeship
+            </label>
+            <span class="govuk-body">December 2019</span>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">-->
+          <p class="govuk-body">The restart date must be on or after the stop date.</p>
+
+          {% from "components/summary-list/macro.njk" import govukSummaryList %}
+
+          {{ govukSummaryList({            
+            rows: [
+            {              
+            },  
+            {
+                key: {
+                  text: "Stop date"
+                },
+                value: {
+                  text: "January 2020"
+                }
+              }
+            ]
+          }) }}
+
+          <div class="govuk-form-group">
+            {{ govukDateInput({
+              id: "start-date",
+              namePrefix: "start-date",
+              errorMessage: {
+                text: "The new training start date cannot be before the stop date"
+              },              
+              items:
+              [
+              {
+                name: "month",
+                id: "start-month",
+                value: "12",
+                classes: "govuk-input--width-2 govuk-input--error"
+              },
+              {
+                name: "year",
+                id: "start-year",
+                value: "2019",
+                classes: "govuk-input--width-4 govuk-input--error"
+              }
+              ],
+              hint:
+              {
+                text: "For example 11 2019",
+                classes: "govuk-!-margin-top-6"
+              }
+            }) }}
+          </div>
+
+          {{ govukButton({
+            text: "Save and continue",
+            classes: "govuk-!-margin-top-6"
+          }) }}
+
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

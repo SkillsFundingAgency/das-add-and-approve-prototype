@@ -15,6 +15,16 @@ Confirm new employer
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form method="post">
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Please select an option",
+            href: "#confirm-employer"
+          }
+        ]
+      }) }}
+      
       <h1 class="govuk-heading-xl">
         Confirm new employer
       </h1>
@@ -38,6 +48,9 @@ Confirm new employer
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        errorMessage: {
+          text: "Please select an option"
         },
         items: [
           {

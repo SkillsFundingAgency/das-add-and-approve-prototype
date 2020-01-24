@@ -15,7 +15,17 @@ router.post('/add__confirm-employer', (req, res) => {
 		res.redirect(`training-dates`)
 	} else {
 		req.session.data['employer'] = ''
-		res.redirect(`add__choose-employer`)
+		res.redirect(`add__choose-employer-error-no-option`)
+	}
+})
+
+// Confirm employer error no option (add)
+router.post('/add__confirm-employer-error-no-option', (req, res) => {
+	if (req.session.data['confirm-employer'] == 'yes' ) {
+		res.redirect(`training-dates`)
+	} else {
+		req.session.data['confirm-employer'] = ''
+		res.redirect(`add__choose-employer-error-no-option`)
 	}
 })
 
