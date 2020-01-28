@@ -1,7 +1,7 @@
 {% extends "./layout-provider-account.html" %}
 
 {% block pageTitle %}
-  What is the new agreed apprenticeship price?
+  New agreed apprenticeship price
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,6 +19,17 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <form method="post" novalidate>
+          
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+              {
+                text: "Enter the new agreed apprenticeship price",
+                href: "#agreed-price"
+              }
+            ]
+          }) }}
+          
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
             What's the new agreed apprenticeship price?
           </h1>
@@ -27,17 +38,21 @@
             {{ govukInput({
               label:
               {
-                text: "This is the price agreed between you and the new employer to complete the remainder of the apprenticeship training and assessment.",
+                text: "This is the price agreed between you and the new employer to complete the remainder of the apprenticeship training.",
                 classes: "govuk-!-margin-bottom-4"
               },
               hint:
               {
-                html: "Enter the price in whole pounds.<br>
+                html: "Enter the price, including any end-point assessment costs, in whole pounds.<br>
                 For example, for £1,500 enter 1500."
               },
-              classes: "govuk-input--width-10",
+              classes: "govuk-input--width-10 govuk-input--error",
               id: "agreed-price",
-              name: "agreed-price"
+              name: "agreed-price",
+              value: "0",
+              errorMessage: {
+                text: "Enter the new agreed apprenticeship price"
+              }
             }) }}
 
           </div>
@@ -46,15 +61,6 @@
             text: "Save and continue",
             href: "check-your-answers",
             classes: "govuk-!-margin-top-6"
-          }) }}
-
-          {{ govukDetails({
-            summaryText: "Error states",
-            classes: "govuk-!-margin-top-9",
-            html: "<a href='price-error-no-price'>- Nothing input</a><br><br>
-            <a href='price-error-0-price'>- Zero input</a><br><br>
-            <a href='price-error-price'>- More than £100,000 input</a><br><br>
-            <a href='price-error-input'>- Incorrect characters input</a>"
           }) }}
 
         </form>
