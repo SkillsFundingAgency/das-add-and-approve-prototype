@@ -19,6 +19,11 @@
 
       <h1 class="govuk-heading-xl">Confirm the information before sending your request</h1>
    
+      <div class='govuk-inset-text' style='border-left-color:#1d70b8;'>
+        <h3 class='govuk-heading-s'>This apprenticeship is above the funding band maximum</h3>
+        <p>The costs are above the £1,000 <a href='#'>maximum value of the funding band</a> for this apprenticeship. You'll need to ask the employer to pay the difference directly to you - this can't be funded from their account.</p>
+      </div>
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -125,23 +130,6 @@
           }
         ]
       }) }}
-
-      <!--<div class='govuk-inset-text' style='border-left-color:#1d70b8;'>
-        <h3 class='govuk-heading-s'>This apprenticeship is above the funding band maximum</h3>
-        <p>The costs are above the £1,000 <a href='#'>maximum value of the funding band</a> for this apprenticeship. You'll need to ask the employer to pay the difference directly to you - this can't be funded from their account.</p>
-      </div>-->
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            This apprenticeship is above the funding band maximum
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          The costs are above the £1,000 <a href='#'>maximum value of the funding band</a> for this apprenticeship. You'll need to ask the employer to pay the difference directly to you - this can't be funded from their account.
-        </div>
-      </details>
-   
 
       <form action="/form-handler" method="post" novalidate>
         <input type="hidden" name="check-your-answers" value="true">
