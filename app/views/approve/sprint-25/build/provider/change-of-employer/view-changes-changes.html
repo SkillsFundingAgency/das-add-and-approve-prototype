@@ -1,0 +1,79 @@
+{% extends "./layout-provider-account.html" %}
+
+{% block pageTitle %}
+  Apprentice details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+  <form method="post" class="form">
+    <h1 class="govuk-heading-xl">
+      View changes
+    </h1>
+    <p class="govuk-body">Grooveholding UK Ltd requested further changes. <a href="add--review-cohort-1-apprentice" class="govuk-link">Review your cohort to update</a> these details.</p>
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Current details</th>
+            <th scope="col" class="govuk-table__header">Requested changes</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Employer</th>
+            <td class="govuk-table__cell">ABC TRADING LTD</td>
+            <td class="govuk-table__cell">Grooveholding UK Ltd</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Training start date</th>
+            <td class="govuk-table__cell">February 2019</td>
+            <td class="govuk-table__cell">January 2020</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total agreed apprenticeship price</th>
+            <td class="govuk-table__cell">£5,000</td>
+            <td class="govuk-table__cell">£1,500</td>
+          </tr>
+        </tbody>
+    </table>
+    <!--<div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h3 class="govuk-heading-m"> Do you want to undo these changes?</h3>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="undo" name="undo" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="undo">
+              Yes, undo these changes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="dont-undo" name="undo" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="dont-undo">
+              No, leave these changes
+            </label>
+          </div>
+        </div>
+        <button class="govuk-button govuk-!-margin-top-9" data-module="govuk-button">
+          Save and continue
+        </button>
+      </fieldset>  
+    </div>-->    
+  </form>
+</div>
+    </div>
+</main>
+</main>
+{% endblock %}
