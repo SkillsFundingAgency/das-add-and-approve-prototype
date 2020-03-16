@@ -1,0 +1,55 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Choose existing training provider
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<form action="/form-handler" method="post" novalidate>
+
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Choose an apprentice",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "Ben Crobbery",
+      text: "Ben Crobbery"
+    },
+    {
+      value: "Carlotta Tendant",
+      text: "Carlotta Tendant"
+    },
+    {
+      value: "Dan D. Lyon",
+      text: "Dan D. Lyon"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+    text: "Continue"
+  }) }}
+</form>
+
+{% endblock %}

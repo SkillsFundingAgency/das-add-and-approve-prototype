@@ -1,0 +1,53 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Choose existing training provider
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="are-the-dates-the-same-for-all" method="post" novalidate>
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "do-you-want-to-enter-dates-and-costs",
+        name: "do-you-want-to-enter-dates-and-costs",
+        fieldset: {
+          legend: {
+            text: "Do you want to enter dates and costs?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "If you don't enter dates and costs, the [training provider name] will be asked to provide these details."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I'll provide dates and costs"
+          },
+          {
+            value: "no",
+            text: "No, I don't want to enter dates and costs"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

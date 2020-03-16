@@ -19,7 +19,7 @@ Add and approve
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include './sprint-25/_summary.html' %}
+    {% include './sprint-26/_summary.html' %}
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-!-margin-bottom-9">
     <br><br><br>
@@ -27,30 +27,34 @@ Add and approve
       Previous design sprints
     </h2>
 
+    {% set sprint25Html %}
+    {% include './sprint-25/_summary.html' %}
+    {% endset %}
+
     {% set sprint24Html %}
     {% include './sprint-24/_summary.html' %}
-    {% endset %} 
+    {% endset %}
 
     {% set sprint23Html %}
     {% include './sprint-23/_summary.html' %}
-    {% endset %} 
+    {% endset %}
 
     {% set sprint22Html %}
     {% include './sprint-22/_summary.html' %}
-    {% endset %} 
+    {% endset %}
 
     {% set sprint21Html %}
     {% include './sprint-21/_summary.html' %}
-    {% endset %} 
+    {% endset %}
 
     {% set sprint20Html %}
     {% include './sprint-20/_summary.html' %}
-    {% endset %} 
-    
+    {% endset %}
+
     {% set sprint19Html %}
     {% include './sprint-19/_summary.html' %}
     {% endset %}
-    
+
     {% set sprint18Html %}
     {% include './sprint-18/_summary.html' %}
     {% endset %}
@@ -70,7 +74,7 @@ Add and approve
     {% set sprint14Html %}
     {% include './sprint-14/_summary.html' %}
     {% endset %}
-    
+
     {% set sprint13Html %}
     {% include './sprint-13/_summary.html' %}
     {% endset %}
@@ -78,7 +82,7 @@ Add and approve
     {% set sprint12Html %}
     {% include './sprint-12/_summary.html' %}
     {% endset %}
-    
+
     {% set sprint11Html %}
     {% include './sprint-11/_summary.html' %}
     {% endset %}
@@ -128,6 +132,20 @@ Add and approve
       id: "accordion-default",
       items:
       [
+      {
+        heading:
+        {
+          text: "Sprint 25"
+        },
+        content:
+        {
+          html: sprint25Html
+        },
+        summary:
+        {
+          html: '22nd January&mdash;18th February 2020'
+        }
+      },
       {
         heading:
         {
@@ -476,24 +494,24 @@ Add and approve
       <h2 class="govuk-heading-s">
         Change the employer
       </h2>
-        <p class="govuk-body govuk-!-margin-top-4">Provider journeys:</p>        
+        <p class="govuk-body govuk-!-margin-top-4">Provider journeys:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="sprint-25/build/provider/change-of-employer/account-home" class="govuk-link govuk-link--no-visited-state">Provider initiates a change of employer</a></li>      
+          <li><a href="sprint-25/build/provider/change-of-employer/account-home" class="govuk-link govuk-link--no-visited-state">Provider initiates a change of employer</a></li>
           <li><a href="sprint-25/build/provider/change-of-employer/account-home-b" class="govuk-link govuk-link--no-visited-state">Provider views the record while awaiting approval</a></li>
-          <li><a href="sprint-25/build/provider/change-of-employer/account-home-c" class="govuk-link govuk-link--no-visited-state">Provider views a record which has been rejected</a></li> 
+          <li><a href="sprint-25/build/provider/change-of-employer/account-home-c" class="govuk-link govuk-link--no-visited-state">Provider views a record which has been rejected</a></li>
           <li><a href="sprint-25/build/provider/change-of-employer/email-rejected" class="govuk-link govuk-link--no-visited-state">Provider fixes a rejected request</a></li>
           <li><a href="sprint-25/build/provider/change-of-employer/email1" class="govuk-link govuk-link--no-visited-state">Provider is notified of approval</a></li>
-          <li><a href="sprint-25/build/provider/change-of-employer/manage-your-apprentices-filters-100d?clientsFilter=new&search=Darren+Diamond" class="govuk-link govuk-link--no-visited-state">Provider views both records in Manage your apprentices</a></li>    
-          <li><a href="sprint-25/build/provider/change-of-employer/check-your-answers-funding-band-msg" class="govuk-link govuk-link--no-visited-state">Funding band maximum information panel</a></li> 
-        </ul>  
-        <p class="govuk-body govuk-!-margin-top-4">Employer journeys:</p>        
+          <li><a href="sprint-25/build/provider/change-of-employer/manage-your-apprentices-filters-100d?clientsFilter=new&search=Darren+Diamond" class="govuk-link govuk-link--no-visited-state">Provider views both records in Manage your apprentices</a></li>
+          <li><a href="sprint-25/build/provider/change-of-employer/check-your-answers-funding-band-msg" class="govuk-link govuk-link--no-visited-state">Funding band maximum information panel</a></li>
+        </ul>
+        <p class="govuk-body govuk-!-margin-top-4">Employer journeys:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li><a href="sprint-25/build/employer/employer-approve/email1" class="govuk-link govuk-link--no-visited-state">Employer actions the request (from notification)</a></li>
           <li><a href="sprint-25/build/employer/employer-approve/login1" class="govuk-link govuk-link--no-visited-state">Employer actions the request (from homepage)</a></li>
-        </ul>        
-        
+        </ul>
+
       <hr class="govuk-section-break--l">
-      
+
       <h2 class="govuk-heading-s">
         <a class="govuk-link govuk-link--no-visited-state" href="./sprint-22/research/employer/employer-approve/apprentices-1a">Employer apprentice requests</a>
       </h2>
@@ -534,7 +552,7 @@ Add and approve
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="./sprint-16/build/employer/employer-approve/review-an-apprentice">Mobile (responsive) view</a>
         </li>
-        <p class="govuk-body govuk-!-margin-top-4">Scenario screens:</p>        
+        <p class="govuk-body govuk-!-margin-top-4">Scenario screens:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="./sprint-17/build/employer/employer-approve/approve-apprentices-delete-apprentice-1">Deleting the last apprentice</a>
@@ -547,29 +565,29 @@ Add and approve
           </li>
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="./sprint-16/build/employer/employer-approve/approve-apprentices-incomplete-records">Incomplete records</a>
-          </li>   
+          </li>
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="./sprint-16/build/employer/employer-approve/approved-and-sent-to-provider">Approved and sent to training provider screen</a>
-          </li>  
+          </li>
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="./sprint-16/build/employer/employer-approve/transfer-sender-will-now-approve">Apprentice details approved and sending employer notified screen</a>
-          </li> 
+          </li>
           <li>
             <a class="govuk-link govuk-link--no-visited-state" href="./sprint-16/build/employer/employer-approve/browser-back-screen">Apprentice details approved - user uses browser back button</a>
-          </li> 
-        </ul>                 
-      </ul>    
-  
+          </li>
+        </ul>
+      </ul>
+
       <p class="govuk-body-s">
         Built by the Approvals team.
       </p>
 
       <hr class="govuk-section-break--l">
-      
+
       <h2 class="govuk-heading-s">
         <a class="govuk-link govuk-link--no-visited-state" href="./sprint-06/build/employers/stop-apprentice/apprentice-details">Employer stops apprenticeship</a>
       </h2>
-  
+
       <p class="govuk-body-s">
         Built by the CI team.
       </p>
@@ -579,11 +597,11 @@ Add and approve
       <h2 class="govuk-heading-s">
         <a class="govuk-link govuk-link--no-visited-state" href="./sprint-10/research/employer/two-reservations-add-three/choose-reservation-2">Employer adds multiple apprentices</a>
       </h2>
-  
+
       <p class="govuk-body-s">
         Built by the Approvals team.
       </p>
-  
+
     </div>
   </div>
 

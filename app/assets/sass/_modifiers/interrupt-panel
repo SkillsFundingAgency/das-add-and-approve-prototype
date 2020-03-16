@@ -1,0 +1,35 @@
+.interrupt-panel {
+    padding: 30px;
+    background:#005ea5;
+    color: #fff;
+}
+
+.interrupt-panel p {
+    color: #fff;
+}
+
+.interrupt-panel .govuk-button  {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 2px 0 #003618;
+  margin: 0;
+}
+
+.interrupt-panel a  {
+  color: #fff;
+}
+
+.heading-xlarge {
+    font-size: 48px;
+    line-height: 1.04167;
+}
+
+.heading-xlarge {
+    font-family: "nta",Arial,sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 32px;
+    line-height: 1.09375;
+    margin-top: .46875em;
+    margin-bottom: .9375em;
+}

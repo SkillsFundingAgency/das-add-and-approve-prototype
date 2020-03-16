@@ -1,0 +1,36 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Warning
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <div class="interrupt-panel">
+      <h1 class="heading-xlarge">Are you sure you want to change provider?</h1>
+      <div class="u-margin-bottom-40">
+        <p>Changing provider is a big deal.</p>
+      </div>
+      <a href="choose-existing-training-provider" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+
+        <p class="govuk-body-s govuk-!-margin-top-4"><a href="#">Cancel and return to defects</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
