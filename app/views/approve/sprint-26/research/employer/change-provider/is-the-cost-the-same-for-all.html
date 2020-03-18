@@ -1,10 +1,65 @@
-{% extends "layout.html" %}
+{% extends "layout-account.html" %}
 
 {% block pageTitle %}
-  Blank page
+  Choose existing training provider
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
+<form action="check-your-answers" method="post" novalidate>
+  {% set costKnown %}
+  {{ govukInput({
+    id: "yes-cost-known",
+    name: "yes-cost-known",
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "What's the cost?"
+    }
+  }) }}
+  {% endset -%}
 
+  {{ govukRadios({
+    idPrefix: "know-price-conditional",
+    name: "know-cost",
+    fieldset: {
+      legend: {
+        text: "Is the cost the same for all apprenticeships?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+
+    items: [
+      {
+        value: "yes",
+        text: "Yes, it's the same",
+        conditional: {
+          html: costKnown
+        }
+      },
+      {
+        value: "no",
+        text: "No, it's not the same"
+      }
+    ]
+  }) }}
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+</form>
+<p class="govuk-body"><a class="govuk-link" href="is-the-cost-the-same-for-all">Skip this step</a></p>
+</div>
+</div>
 {% endblock %}
