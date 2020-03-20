@@ -1,10 +1,60 @@
-{% extends "layout.html" %}
+{% extends "layout-account.html" %}
 
 {% block pageTitle %}
-  Blank page
+  Choose existing training provider
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="confirm-existing-training-provider" method="post" novalidate>
+        {{ govukRadios({
+          idPrefix: "choose-existing-training-provider",
+          name: "choose-existing-training-provider",
+          fieldset: {
+            legend: {
+              text: "Choose new training provider",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "Cyberdyne Training Ltd",
+              text: "Cyberdyne Training Ltd"
+            },
+            {
+              value: "Tyrell Corp Training",
+              text: "Tyrell Corp Training"
+            },
+            {
+              value: "Learnovate",
+              text: "Learnovate"
+            },
+            {
+              value: "Level Up",
+              text: "Level Up"
+            }
+          ]
+        }) }}
 
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+      <p class="govuk-body"><a class="govuk-link" href="#">Add a new training provider</a></p>
+    </div>
+  </div>
 
 {% endblock %}
