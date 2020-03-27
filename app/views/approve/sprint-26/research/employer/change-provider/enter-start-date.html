@@ -1,0 +1,143 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Choose existing training provider
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Enter a date on or after ((DATE))",
+            href: "#passport-issued-error"
+          }
+        ]
+      }) }} -->
+
+      <form action="enter-end-date" method="post" novalidate>
+
+        <!-- {{ govukDateInput({
+          id: "start-date",
+          namePrefix: "start-date",
+          fieldset: {
+            legend: {
+              text: "What is the new training start date?",
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "For example, 3 2020"
+          }
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }} -->
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What is the new training start date?
+      </h1>
+    </legend>
+
+    <p class="govuk-body">The restart date must be on or after the stop date.</p>
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">First 6 weeks</th>
+          <td class="govuk-table__cell">£109.80 per week</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <span id="passport-issued-hint" class="govuk-hint">
+      For example, 03 2020
+    </span>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+<!-- {{ govukDateInput({
+  fieldset: {
+    legend: {
+      text: "When was your passport issued?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2007"
+  },
+  errorMessage: {
+    text: "The date your passport was issued must be in the past"
+  },
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  items: [
+    {
+      classes: "govuk-input--width-2 govuk-input--error",
+      name: "day",
+      value: "6"
+    },
+    {
+      classes: "govuk-input--width-2 govuk-input--error",
+      name: "month",
+      value: "3"
+    },
+    {
+      classes: "govuk-input--width-4 govuk-input--error",
+      name: "year",
+      value: "2076"
+    }
+  ]
+}) }} -->
+
+
+{{ govukButton({
+  text: "Save and continue"
+}) }}
+
+      </form>
+      <!-- <p class="govuk-body"><a class="govuk-link" href="is-the-cost-the-same-for-all">Skip this step</a></p> -->
+    </div>
+  </div>
+
+{% endblock %}

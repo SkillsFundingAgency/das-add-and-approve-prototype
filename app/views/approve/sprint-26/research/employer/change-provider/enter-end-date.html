@@ -17,43 +17,29 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">What are the start and end dates?</h1>
 
-      <form action="is-the-cost-the-same-for-all" method="post" novalidate>
+    <form action="is-the-cost-the-same-for-all" method="post" novalidate>
 
         {{ govukDateInput({
           id: "start-date",
-          namePrefix: "start-date",
-          fieldset: {
-            legend: {
-              text: "Start date",
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "For example, 16 3 2020"
-          }
-        }) }}
-
-        <br>
-
-        {{ govukDateInput({
-          id: "end-date",
           namePrefix: "end-date",
           fieldset: {
             legend: {
-              text: "End date",
-              classes: "govuk-fieldset__legend--m"
+              text: "What is the new training end date?",
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
-            text: "For example, 21 6 2020"
+            text: "For example, 3 2020"
           }
         }) }}
 
+
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
+
+
       </form>
       <p class="govuk-body"><a class="govuk-link" href="is-the-cost-the-same-for-all">Skip this step</a></p>
     </div>
