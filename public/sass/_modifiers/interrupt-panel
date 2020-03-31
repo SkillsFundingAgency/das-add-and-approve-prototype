@@ -1,5 +1,5 @@
 .interrupt-panel {
-    padding: 30px;
+    padding: 30px 50px;
     background:#005ea5;
     color: #fff;
 }
@@ -8,10 +8,20 @@
     color: #fff;
 }
 
+.interrupt-panel .govuk-fieldset__heading {
+    color: #fff;
+}
+
+.interrupt-panel .govuk-radios__label {
+    color: #fff;
+}
+
+
 .interrupt-panel .govuk-button  {
   background-color: #fff;
-  color: #000;
-  box-shadow: 0 2px 0 #003618;
+  color: #1d70b8;
+  font-weight: bold;
+  box-shadow: 0 2px 0 #003078;
   margin: 0;
 }
 

@@ -41,6 +41,8 @@ $govuk-global-styles: true;
 @import "tables/transactions";
 @import "components/pagination";
 @import "_modifiers/interrupt-panel";
+@import "_modifiers/notifications";
+
 
 .heading-dashboard {
 	padding-bottom: $govuk-gutter;
