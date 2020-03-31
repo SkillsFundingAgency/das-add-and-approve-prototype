@@ -1,0 +1,94 @@
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  Apprentices
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a real service.'
+}) }}
+  <!-- {{ govukBackLink({
+    text: "Back",
+    href: "../index"
+  }) }} -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="info-summary">
+        <p class="govuk-body">
+            You paused ((number of apprenticeships)) on ((date of pause)). <a href="#" clas="govuk-link">Resume all apprenticeships paused on that date</a>.
+        </p>
+    </div>
+  </div>
+  </div>
+<div class="govuk-grid-row govuk-!-margin-top-7">
+	<div class="govuk-grid-column-full">
+		<h1 class="govuk-heading-xl heading-dashboard">
+			Apprentices
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<div class="govuk-grid-row page-dashboard">
+			<div class="govuk-grid-column-two-thirds">
+
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-one-half">
+						<h2 class="govuk-heading-m">
+							<a class="govuk-link--no-visited-state" href="#">Add an apprentice</a>
+						</h2>
+						<p>Add apprentices or ask your training provider to add them.</p>
+						<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+					</div>
+					<div class="govuk-grid-column-one-half">
+						<h2 class="govuk-heading-m">
+							<a class="govuk-link--no-visited-state" href="#">Your cohorts</a>
+							<!--<a class="govuk-link--no-visited-state" href="apprentice-requests-boxes-1a">Apprentice requests</a>-->
+						</h2>
+						<p>Review, edit, approve and add more apprentices.</p>
+						<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+					</div>
+				</div>
+
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-one-half">
+						<h2 class="govuk-heading-m">
+							<a class="govuk-link--no-visited-state" href="#">Manage your apprentices</a>
+						</h2>
+						<p>View approved apprentices, update details of existing apprentices or stop and pause payments to training providers.</p>
+					</div>
+					<div class="govuk-grid-column-one-half">
+						<h2 class="govuk-heading-m">
+							<a class="govuk-link--no-visited-state" href="#">Set payment order</a>
+						</h2>
+						<p>View and change the order in which your providers are paid from your available funds.</p>
+					</div>
+				</div>
+
+				<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-one-half">
+						<h2 class="govuk-heading-m">
+							<a class="govuk-link--no-visited-state" href="#">Report public sector apprentice target</a>
+						</h2>
+						<p>Submit data on your progress towards the public sector apprenticeship target.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
