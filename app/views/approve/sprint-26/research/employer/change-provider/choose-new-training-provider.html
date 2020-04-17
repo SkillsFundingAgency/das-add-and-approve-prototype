@@ -18,42 +18,35 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="do-you-want-to-enter-dates-and-costs" method="post" novalidate>
-        {{ govukRadios({
-          idPrefix: "choose-existing-training-provider",
-          name: "choose-existing-training-provider",
-          fieldset: {
-            legend: {
-              text: "Choose new training provider",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          items: [
-            {
-              value: "Cyberdyne Training Ltd",
-              text: "Cyberdyne Training Ltd"
-            },
-            {
-              value: "Tyrell Corp Training",
-              text: "Tyrell Corp Training"
-            },
-            {
-              value: "Learnovate",
-              text: "Learnovate"
-            },
-            {
-              value: "Level Up",
-              text: "Level Up"
-            }
-          ]
-        }) }}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Choose the new training provider
+                </h1>
+              </legend>
+              <p class="govuk-body">Choose from training providers you’ve worked with before or <a href="#">add a new training provider.</a></p>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                    Training provider name
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                    Training provider name
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
-
-      <p class="govuk-body"><a class="govuk-link" href="#">Add a new training provider</a></p>
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
     </div>
   </div>
 
