@@ -24,12 +24,24 @@
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
+        {% if data['apprentice-amount'] == 'multiple' %}
           <dt class="govuk-summary-list__key">
             Number of apprentices to move
           </dt>
           <dd class="govuk-summary-list__value">
             6
           </dd>
+        {% else %}
+          <dt class="govuk-summary-list__key">
+            Apprentice name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Apprentice name
+          </dd>
+        {% endif %}
+
+
+
           <dd class="govuk-summary-list__actions">
             <a href="#">
               Change

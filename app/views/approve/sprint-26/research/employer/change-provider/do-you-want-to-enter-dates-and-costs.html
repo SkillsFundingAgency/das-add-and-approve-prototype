@@ -17,32 +17,64 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+  {% if data['apprentice-amount'] == 'multiple' %}
       <form action="are-the-dates-the-same-for-all" method="post" novalidate>
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "do-you-want-to-enter-dates-and-costs",
-        name: "do-you-want-to-enter-dates-and-costs",
-        fieldset: {
-          legend: {
-            text: "Do you want to enter the restart date and new price?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes, I’ll enter the restart date and new price"
-          },
-          {
-            value: "no",
-            text: "No, I want ((Training Provider)) to enter the restart date and new price"
-          }
-        ]
-      }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Do you want to enter the restart date and new price?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="do-you-want-to-enter-dates-and-costs" name="do-you-want-to-enter-dates-and-costs" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="move-which-apprentice">
+                Yes, I’ll enter the restart date and new price
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="do-you-want-to-enter-dates-and-costs-2" name="do-you-want-to-enter-dates-and-costs-2" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="do-you-want-to-enter-dates-and-costs-2">
+                No, I want ((Training Provider)) to enter the restart date and new price
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+{% else %}
+<form action="enter-start-date" method="post" novalidate>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you want to enter the restart date?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="do-you-want-to-enter-dates-and-costs" name="do-you-want-to-enter-dates-and-costs" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="move-which-apprentice">
+          Yes, I’ll enter the restart date
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="do-you-want-to-enter-dates-and-costs-2" name="do-you-want-to-enter-dates-and-costs" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="do-you-want-to-enter-dates-and-costs">
+          No, I want ((Training Provider)) to enter the restart date
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+{% endif %}
+
       {{ govukButton({
         text: "Save and continue"
       }) }}
+
       </form>
     </div>
   </div>

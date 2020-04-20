@@ -19,23 +19,23 @@
     <div class="govuk-grid-column-two-thirds">
 
 <form action="check-your-answers" method="post" novalidate>
-  {% set costKnown %}
+  {% set priceKnown %}
   {{ govukInput({
-    id: "yes-cost-known",
-    name: "yes-cost-known",
+    id: "yes-price-known",
+    name: "yes-price-known",
     classes: "govuk-!-width-one-third",
     label: {
-      text: "What's the cost?"
+      text: "What's the price?"
     }
   }) }}
   {% endset -%}
 
   {{ govukRadios({
     idPrefix: "know-price-conditional",
-    name: "know-cost",
+    name: "know-price",
     fieldset: {
       legend: {
-        text: "Is the cost the same for all apprenticeships?",
+        text: "Is the price the same for all apprenticeships?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--xl"
       }
@@ -46,7 +46,7 @@
         value: "yes",
         text: "Yes, it's the same",
         conditional: {
-          html: costKnown
+          html: priceKnown
         }
       },
       {
@@ -59,7 +59,7 @@
     text: "Continue"
   }) }}
 </form>
-<p class="govuk-body"><a class="govuk-link" href="is-the-cost-the-same-for-all">Skip this step</a></p>
+<p class="govuk-body"><a class="govuk-link" href="is-the-price-the-same-for-all">Skip this step</a></p>
 </div>
 </div>
 {% endblock %}
