@@ -27,7 +27,7 @@
           }
         ]
       }) }} -->
-{% if data['apprentice-amount'] == 'multiple' %}
+  {% if data['apprentice-amount'] == 'multiple' %}
       <form action="is-the-cost-the-same-for-all" method="post" novalidate>
 {% else %}
       <form action="check-your-answers" method="post" novalidate>
@@ -71,7 +71,7 @@
     </table> -->
 
     <span id="passport-issued-hint" class="govuk-hint">
-      For example, 03 2020
+      For example, 04 2020
     </span>
     <div class="govuk-date-input" id="passport-issued">
       <div class="govuk-date-input__item">
