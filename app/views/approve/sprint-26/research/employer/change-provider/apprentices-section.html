@@ -71,7 +71,14 @@
 						<h2 class="govuk-heading-m">
 							<a class="govuk-link--no-visited-state" href="warning">Change training provider</a>
 						</h2>
-						<p>Move one or more apprentices to a different training provider.</p>
+
+            {% if data['apprentice-amount'] == 'multiple' %}
+            <p>Move one or more apprentices to a different training provider.</p>
+            {% else %}
+						<p>Move an apprentice to a different training provider.</p>
+            {% endif %}
+
+
 					</div>
 					<div class="govuk-grid-column-one-half">
 						<h2 class="govuk-heading-m">
