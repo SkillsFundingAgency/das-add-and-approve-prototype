@@ -1,58 +1,86 @@
 {% extends "layout-provider-account.html" %}
 
 {% block pageTitle %}
-  Choose existing training provider
+  New training end date
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "prototype"
-  },
-  html: 'This is not a real service.'
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript: window.history.go(-1)"
 }) }}
-<a href="javascript:history.back(1)" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form action="price" method="post" novalidate>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-              <h1 class="govuk-fieldset__heading">
-                What is the new training end date?
-              </h1>
-            </legend>
+<div class="govuk-width-container">
 
-            <span id="passport-issued-hint" class="govuk-hint">
-              For example, 04 2020
-            </span>
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
-      </form>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="price" method="post" novalidate>
+          <h1 class="govuk-heading-xl">
+            New training end date
+          </h1>
+          <!--<div class="govuk-form-group">
+            <label class="govuk-label govuk-!-margin-bottom-4" for="stop-date">
+              The date the previous employer stopped the apprenticeship
+            </label>
+            <span class="govuk-body">December 2019</span>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">-->
+          <p class="govuk-body">The new training end date must be after the new start date.</p>
+
+          {% from "components/summary-list/macro.njk" import govukSummaryList %}
+
+          {{ govukSummaryList({
+            rows: [
+            {
+            },
+            {
+                key: {
+                  text: "New training start date"
+                },
+                value: {
+                  text: "[[Date entered on previous screen]]"
+                }
+              }
+            ]
+          }) }}
+
+          <div class="govuk-form-group">
+            {{ govukDateInput({
+              id: "end-date",
+              namePrefix: "end-date",
+              items:
+              [
+              {
+                name: "month",
+                id: "end-month",
+                classes: "govuk-input--width-2"
+              },
+              {
+                name: "year",
+                id: "end-year",
+                classes: "govuk-input--width-4"
+              }
+              ],
+              hint:
+              {
+                text: "For example 04 2020",
+                classes: "govuk-!-margin-top-6"
+              }
+            }) }}
+          </div>
+
+          {{ govukButton({
+            text: "Save and continue",
+            classes: "govuk-!-margin-top-6"
+          }) }}
+
+        </form>
+      </div>
     </div>
-  </div>
+  </main>
+</div>
 {% endblock %}
