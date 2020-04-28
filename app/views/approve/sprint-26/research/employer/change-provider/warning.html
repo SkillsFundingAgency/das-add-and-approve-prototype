@@ -35,9 +35,18 @@
         </ul>
 
       </div>
-      <a href="choose-existing-training-provider" class="govuk-button" data-module="govuk-button">
-        Continue
-      </a>
+
+
+
+      {% if data['provider-known'] == 'yes' %}
+        <a href="choose-an-apprentice?apprentice-amount=single" class="govuk-button" data-module="govuk-button">
+          Continue
+        </a>
+      {% else %}
+        <a href="choose-existing-training-provider" class="govuk-button" data-module="govuk-button">
+          Continue
+        </a>
+      {% endif %}
 
         <p class="govuk-body-s govuk-!-margin-top-4"><a href="#">Cancel and return to homepage</a></p>
 
