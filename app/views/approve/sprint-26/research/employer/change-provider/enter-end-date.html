@@ -27,11 +27,13 @@
           }
         ]
       }) }} -->
-  {% if data['apprentice-amount'] == 'multiple' %}
-      <form action="is-the-cost-the-same-for-all" method="post" novalidate>
-{% else %}
-      <form action="check-your-answers" method="post" novalidate>
-{% endif %}
+
+      {% if data['apprentice-amount'] == 'multiple' %}
+          <form action="is-the-cost-the-same-for-all" method="post" novalidate>
+    {% else %}
+          <form action="check-your-answers" method="post" novalidate>
+    {% endif %}
+
         <!-- {{ govukDateInput({
           id: "start-date",
           namePrefix: "start-date",
@@ -55,20 +57,22 @@
   <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        What is the new training end date?
+        New training end date
       </h1>
     </legend>
 
-<!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+    <p class="govuk-body">The new training end date must be after the new start date.</p>
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">First 6 weeks</th>
-          <td class="govuk-table__cell">£109.80 per week</td>
+          <th scope="row" class="govuk-table__header">New training start date</th>
+          <td class="govuk-table__cell">[[Date entered on previous screen]]</td>
         </tr>
       </tbody>
-    </table> -->
+    </table>
 
     <span id="passport-issued-hint" class="govuk-hint">
       For example, 04 2020
@@ -140,6 +144,5 @@
       <p class="govuk-body"><a class="govuk-link" href="is-the-cost-the-same-for-all">Skip this step</a></p>
     </div>
   </div>
-
 
 {% endblock %}
