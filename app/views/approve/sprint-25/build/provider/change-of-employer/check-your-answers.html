@@ -14,11 +14,11 @@
 {% from "components/summary-list/macro.njk" import govukSummaryList %}
 
 {% block content %}
-  <div class="govuk-grid-row">    
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">Confirm the information before sending your request</h1>
-   
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -38,7 +38,7 @@
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
-        rows: [        
+        rows: [
           {
             key: {
               text: "Employer"
@@ -53,6 +53,14 @@
             },
             value: {
               html: "February 2019"
+            }
+          },
+          {
+            key: {
+              text: "Training end date"
+            },
+            value: {
+              html: "March 2020"
             }
           },
           {
@@ -101,6 +109,24 @@
                   classes: "govuk-link govuk-link--no-visited-state",
                   text: "Change",
                   visuallyHiddenText: "start date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "New training end date"
+            },
+            value: {
+              text: "April 2020"
+            },
+            actions: {
+              items: [
+                {
+                  href: "end-date",
+                  classes: "govuk-link govuk-link--no-visited-state",
+                  text: "Change",
+                  visuallyHiddenText: "end date"
                 }
               ]
             }

@@ -20,8 +20,6 @@
 
       <h1 class="govuk-heading-xl">Check your answers before continuing</h1>
 
-      <h2 class="govuk-heading-m">Change of training provider details</h2>
-
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
         {% if data['apprentice-amount'] == 'multiple' %}
@@ -49,6 +47,12 @@
             </a>
           </dd>
         </div>
+        </dl>
+
+
+      <h2 class="govuk-heading-m">Current details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Current training provider
@@ -63,6 +67,39 @@
             </a>
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            May 2019
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            July 2020
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Requested changes</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             New training provider
@@ -96,7 +133,7 @@
             New end date
           </dt>
           <dd class="govuk-summary-list__value">
-            July 2020
+            August 2020
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -107,9 +144,7 @@
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Now confirm and submit your changes</h2>
 
-      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
       <form action="confirmation-page" method="post" novalidate>
 
