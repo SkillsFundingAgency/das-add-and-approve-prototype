@@ -42,7 +42,11 @@
 
           <dd class="govuk-summary-list__actions">
             <a href="#">
+              {% if data['provider-known'] == 'yes' %}
+
+              {% else %}
               Change
+              {% endif %}
               <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
@@ -62,7 +66,11 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
+              {% if data['provider-known'] == 'yes' %}
+
+              {% else %}
               Change
+              {% endif %}
               <span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
