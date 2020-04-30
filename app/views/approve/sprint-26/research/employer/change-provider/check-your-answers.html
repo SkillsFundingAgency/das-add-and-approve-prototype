@@ -34,7 +34,7 @@
             Apprentice name
           </dt>
           <dd class="govuk-summary-list__value">
-            Apprentice name
+            {{data ['move-which-apprentice'] }}
           </dd>
         {% endif %}
 
@@ -62,7 +62,7 @@
             Current training provider
           </dt>
           <dd class="govuk-summary-list__value">
-            Cyberdyne Training Ltd
+            {{data ['choose-existing-training-provider']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -113,7 +113,7 @@
             New training provider
           </dt>
           <dd class="govuk-summary-list__value">
-            Tyrell Corp Training
+            {{data ['choose-new-training-provider']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
