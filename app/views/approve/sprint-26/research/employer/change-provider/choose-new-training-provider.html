@@ -18,23 +18,21 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="enter-start-date" method="post" novalidate>
-        {{ govukRadios({
-          idPrefix: "choose-new-training-provider",
-          name: "choose-new-training-provider",
 
 
-
-
-          fieldset: {
+          {% call govukFieldset({
             legend: {
               text: "Choose the new training provider",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
+              classes: "govuk-fieldset__legend--xl",
+              isPageHeading: true
             }
-          },
-          hint: {
-             text: "Choose from training providers you’ve worked with before."
-           },
+          }) %}
+
+          <p class="govuk-body">Choose from training providers you’ve worked with before or <a href="#">add a new training provider.</a></p>
+
+          {{ govukRadios({
+            idPrefix: "choose-new-training-provider",
+            name: "choose-new-training-provider",
           items: [
             {
               value: "Cyberdyne Training Ltd",
@@ -54,6 +52,8 @@
             }
           ]
         }) }}
+
+        {% endcall %}
 
         {{ govukButton({
           text: "Save and continue"
