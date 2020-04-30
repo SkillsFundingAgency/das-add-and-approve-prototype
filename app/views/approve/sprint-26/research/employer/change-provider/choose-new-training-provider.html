@@ -21,13 +21,20 @@
         {{ govukRadios({
           idPrefix: "choose-new-training-provider",
           name: "choose-new-training-provider",
+
+
+
+
           fieldset: {
             legend: {
-              text: "Choose the current training provider",
+              text: "Choose the new training provider",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
+          hint: {
+             text: "Choose from training providers you’ve worked with before."
+           },
           items: [
             {
               value: "Cyberdyne Training Ltd",
