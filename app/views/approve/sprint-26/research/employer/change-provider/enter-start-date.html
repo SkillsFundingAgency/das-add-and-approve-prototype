@@ -23,7 +23,7 @@
         errorList: [
           {
             text: "Enter a date on or after ((DATE))",
-            href: "#passport-issued-error"
+            href: "#start-date-error"
           }
         ]
       }) }} -->
@@ -50,7 +50,7 @@
         }) }} -->
 
         <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
         New training start date
@@ -70,24 +70,24 @@
       </tbody>
     </table>
 
-    <span id="passport-issued-hint" class="govuk-hint">
+    <span id="start-date-hint" class="govuk-hint">
       For example, 04 2020
     </span>
-    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input" id="start-date">
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          <label class="govuk-label govuk-date-input__label" for="start-date-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          <label class="govuk-label govuk-date-input__label" for="start-date-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
     </div>
@@ -109,8 +109,8 @@
   errorMessage: {
     text: "The date your passport was issued must be in the past"
   },
-  id: "passport-issued",
-  namePrefix: "passport-issued",
+  id: "start-date",
+  namePrefix: "start-date",
   items: [
     {
       classes: "govuk-input--width-2 govuk-input--error",

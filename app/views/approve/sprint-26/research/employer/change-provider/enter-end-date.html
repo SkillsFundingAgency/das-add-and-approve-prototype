@@ -23,7 +23,7 @@
         errorList: [
           {
             text: "Enter a date on or after ((DATE))",
-            href: "#passport-issued-error"
+            href: "#end-date-error"
           }
         ]
       }) }} -->
@@ -54,7 +54,7 @@
         }) }} -->
 
         <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="end-date-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
         New training end date
@@ -69,29 +69,68 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">New training start date</th>
-          <td class="govuk-table__cell">[[Date entered on previous screen]]</td>
+          <td class="govuk-table__cell">
+            {% if data['start-date-month'] == (01 or 1) %}
+            January
+            {% endif %}
+            {% if data['start-date-month'] == (02 or 2) %}
+            February
+            {% endif %}
+            {% if data['start-date-month'] == (03 or 3) %}
+            March
+            {% endif %}
+            {% if data['start-date-month'] == (04 or 4) %}
+            April
+            {% endif %}
+            {% if data['start-date-month'] == (05 or 5) %}
+            May
+            {% endif %}
+            {% if data['start-date-month'] == (06 or 6) %}
+            June
+            {% endif %}
+            {% if data['start-date-month'] == (07 or 7) %}
+            July
+            {% endif %}
+            {% if data['start-date-month'] == (08 or 8) %}
+            August
+            {% endif %}
+            {% if data['start-date-month'] == (09 or 9) %}
+            September
+            {% endif %}
+            {% if data['start-date-month'] == '10' %}
+            October
+            {% endif %}
+            {% if data['start-date-month'] == '11' %}
+            November
+            {% endif %}
+            {% if data['start-date-month'] == '12' %}
+            December
+            {% endif %}
+
+            {{data ['start-date-year']}}
+          </td>
         </tr>
       </tbody>
     </table>
 
-    <span id="passport-issued-hint" class="govuk-hint">
+    <span id="end-date-hint" class="govuk-hint">
       For example, 04 2020
     </span>
-    <div class="govuk-date-input" id="passport-issued">
+    <div class="govuk-date-input" id="end-date">
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+          <label class="govuk-label govuk-date-input__label" for="end-date-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="end-date-month" name="end-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          <label class="govuk-label govuk-date-input__label" for="end-date-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="end-date-year" name="end-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
         </div>
       </div>
     </div>
@@ -113,8 +152,8 @@
   errorMessage: {
     text: "The date your passport was issued must be in the past"
   },
-  id: "passport-issued",
-  namePrefix: "passport-issued",
+  id: "end-date",
+  namePrefix: "end-date",
   items: [
     {
       classes: "govuk-input--width-2 govuk-input--error",

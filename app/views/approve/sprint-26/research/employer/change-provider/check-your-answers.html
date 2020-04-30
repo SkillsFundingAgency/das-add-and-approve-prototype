@@ -127,7 +127,44 @@
             Training restart date
           </dt>
           <dd class="govuk-summary-list__value">
-            May 2020
+            {% if data['start-date-month'] == (01 or 1) %}
+            January
+            {% endif %}
+            {% if data['start-date-month'] == (02 or 2) %}
+            February
+            {% endif %}
+            {% if data['start-date-month'] == (03 or 3) %}
+            March
+            {% endif %}
+            {% if data['start-date-month'] == (04 or 4) %}
+            April
+            {% endif %}
+            {% if data['start-date-month'] == (05 or 5) %}
+            May
+            {% endif %}
+            {% if data['start-date-month'] == (06 or 6) %}
+            June
+            {% endif %}
+            {% if data['start-date-month'] == (07 or 7) %}
+            July
+            {% endif %}
+            {% if data['start-date-month'] == (08 or 8) %}
+            August
+            {% endif %}
+            {% if data['start-date-month'] == (09 or 9) %}
+            September
+            {% endif %}
+            {% if data['start-date-month'] == '10' %}
+            October
+            {% endif %}
+            {% if data['start-date-month'] == '11' %}
+            November
+            {% endif %}
+            {% if data['start-date-month'] == '12' %}
+            December
+            {% endif %}
+
+            {{data ['start-date-year']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
@@ -141,7 +178,44 @@
             New end date
           </dt>
           <dd class="govuk-summary-list__value">
-            August 2020
+            {% if data['end-date-month'] == (01 or 1) %}
+            January
+            {% endif %}
+            {% if data['end-date-month'] == (02 or 2) %}
+            February
+            {% endif %}
+            {% if data['end-date-month'] == (03 or 3) %}
+            March
+            {% endif %}
+            {% if data['end-date-month'] == (04 or 4) %}
+            April
+            {% endif %}
+            {% if data['end-date-month'] == (05 or 5) %}
+            May
+            {% endif %}
+            {% if data['end-date-month'] == (06 or 6) %}
+            June
+            {% endif %}
+            {% if data['end-date-month'] == (07 or 7) %}
+            July
+            {% endif %}
+            {% if data['end-date-month'] == (08 or 8) %}
+            August
+            {% endif %}
+            {% if data['end-date-month'] == (09 or 9) %}
+            September
+            {% endif %}
+            {% if data['end-date-month'] == '10' %}
+            October
+            {% endif %}
+            {% if data['end-date-month'] == '11' %}
+            November
+            {% endif %}
+            {% if data['end-date-month'] == '12' %}
+            December
+            {% endif %}
+
+            {{data ['end-date-year']}}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="#">
