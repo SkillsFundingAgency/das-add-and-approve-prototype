@@ -1,4 +1,7 @@
+const moment = require('moment')
 module.exports = function (env) {
+
+
   /**
    * Instantiate object used to store the methods registered as a
    * 'filter' (of the same name) within nunjucks. You can override
@@ -6,6 +9,10 @@ module.exports = function (env) {
    * @type {Object}
    */
   var filters = {}
+
+  filters.date = function(date,format) {
+  return moment(date).format(format)
+}
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
