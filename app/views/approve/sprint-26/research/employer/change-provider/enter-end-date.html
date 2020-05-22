@@ -28,11 +28,9 @@
         ]
       }) }} -->
 
-      {% if data['apprentice-amount'] == 'multiple' %}
+    
           <form action="is-the-cost-the-same-for-all" method="post" novalidate>
-    {% else %}
-          <form action="check-your-answers" method="post" novalidate>
-    {% endif %}
+
 
         <!-- {{ govukDateInput({
           id: "start-date",

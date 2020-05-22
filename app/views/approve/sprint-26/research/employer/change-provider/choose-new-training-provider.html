@@ -17,8 +17,13 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="enter-start-date" method="post" novalidate>
 
+      {% if data['conditions'] == 'no' %}
+        <form action="check-your-answers" method="post" novalidate>
+      {% endif %}
+      {% if data['conditions'] == 'yes' %}
+        <form action="enter-start-date" method="post" novalidate>
+      {% endif %}
 
           {% call govukFieldset({
             legend: {

@@ -25,10 +25,12 @@
     name: "yes-price-known",
     classes: "govuk-!-width-one-third",
     label: {
-      text: "What's the price?"
+      text: "What's the new price?"
     }
   }) }}
   {% endset -%}
+
+  {% if data['apprentice-amount'] == 'multiple' %}
 
   {{ govukRadios({
     idPrefix: "know-price-conditional",
@@ -58,6 +60,48 @@
   {{ govukButton({
     text: "Continue"
   }) }}
+
+
+
+  {% else %}
+
+  {{ govukRadios({
+    idPrefix: "know-price-conditional",
+    name: "know-price",
+    fieldset: {
+      legend: {
+        text: "Is the new price the same as the old one?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--xl"
+      }
+    },
+
+    items: [
+      {
+        value: "no",
+        text: "No, it's changed",
+        conditional: {
+          html: priceKnown
+        }
+      },
+      {
+        value: "Yes",
+        text: "Yes, it's the same"
+      }
+    ]
+  }) }}
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+
+
+
+
+
+
+{% endif %}
+
 </form>
 <p class="govuk-body"><a class="govuk-link" href="is-the-price-the-same-for-all">Skip this step</a></p>
 </div>
